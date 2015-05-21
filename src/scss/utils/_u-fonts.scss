@@ -1,0 +1,32 @@
+/**
+File: _u-fonts.scss
+
+Details:
+
+NOTE: Some of the fonts are used in the project, but I've left the code there in case they become used/useful.
+
+Also, I've commented out .eot and .svg files (since most browsers support .woff). But kept .ttf just in case for older Android devices.
+
+
+ALSO: See below for details on using @extend 
+
+*/
+
+.FontDefaultFont{font-family: "Roboto Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:400; font-stretch:normal;}
+
+// .FontHelveticaNeueUltraBlack{font-family: "Roboto Condensed", "HelveticaNeueBlack", "HelveticaNeue-Black", "Helvetica Neue Black", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold', "Arial Black", sans-serif; font-weight:800; font-stretch:normal;}
+ 
+// .FontHelveticaNeueUltraHeavy{font-family: "Roboto Condensed", "HelveticaNeueHeavy", "HelveticaNeue-Heavy", "Helvetica Neue Heavy", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold', "Arial Black", sans-serif; font-weight:700; font-stretch:normal;}
+ 
+// .FontHelveticaNeueUltraBold{font-family: "Roboto Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:600; font-stretch:normal;}
+ 
+// .FontHelveticaNeueUltraMedium{font-family: "Roboto Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:500; font-stretch:normal;}
+ 
+// .FontHelveticaNeueUltraNeue{font-family: "Roboto Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:400; font-stretch:normal;}
+ 
+// .FontHelveticaNeueUltraLight{font-family: "Roboto Condensed", "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal;}
+ 
+// .FontHelveticaNeueUltraThin{font-family: "Roboto Condensed", "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:200; font-stretch:normal;}
+
+// .FontHelveticaNeueUltraUltraLight{font-family: "Roboto Condensed", "HelveticaNeueUltraLight", "HelveticaNeue-Ultra-Light", "Helvetica Neue Ultra Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:100; font-stretch:normal;}
+

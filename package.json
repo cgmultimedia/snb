@@ -1,0 +1,21 @@
+{
+  "name": "SNB",
+  "description": "Grunt tasks for SNB",
+  "author": "Adam Jenkins <adamsjenkins@gmail.com>",
+  "version": "0.1.2",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-compass": "^1.0.1",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-uncss": "^0.3.7",
+    "mocha": "*",
+    "node-bourbon": "^1.2.3",
+    "should": "*",
+    "vows": "0.5.x"
+  },
+  "engine": "node >= 0.10.x"
+}

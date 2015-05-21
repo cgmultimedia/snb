@@ -1,0 +1,81 @@
+$cardSpacerWidth : $padding-CardTile;
+
+// Grid items
+.CardTile {
+	width: $width-CardTile; // 300px
+	background-color: #ffffff;
+	display: none; 
+	overflow: hidden;
+	margin-bottom: $padding-CardTile;
+	perspective: 500px;
+	@include transition(all $transitionTime-CardTile ease);
+
+	&.inactive {
+		visibility: hidden;
+		opacity: 0;
+	}
+	&--static {
+		display: block;
+		float: left;
+		margin-right: $cardSpacerWidth;
+	}
+
+	&--displayNone {
+		display: none;
+	}
+
+	// The grow on hover effect
+	&--videos,
+	&--pictures {
+		cursor: pointer;
+		//@include transition(scale $transitionTime-Card ease);
+		transform : scale(1);
+
+		&:hover {
+			transform : scale(1.05);
+		}
+	}
+
+	// @media (max-width: $gridWidth-1 - 1) {
+	//     width:100%;
+	// }
+
+	// @media (min-width: $gridWidth-1) and (max-width: $gridWidth-2 - 1) {
+	//     width:48%;
+	// }
+
+	// @media (min-width: $gridWidth-2) and (max-width: $gridWidth-3 - 1) {
+	//     width:32%;
+	// }
+
+	// @media (min-width: $gridWidth-3) and (max-width: $gridWidth-4 - 1) {
+	//     width:24%;
+	// }
+
+	// @media (min-width: $gridWidth-4) and (max-width: $gridWidth-5 - 1) {
+	//     width:19%;
+	// }
+
+	// @media (min-width: $gridWidth-5) and (max-width: $gridWidth-6 - 1) {
+	//     width:15%;
+	// }
+
+	// @media (min-width: $gridWidth-6) and (max-width: $gridWidth-7 - 1) {
+	//     width:13%;
+	// }
+
+	// @media (min-width: $gridWidth-7) and (max-width: $gridWidth-8 - 1) {
+	//     width:12.5%;
+	// }
+
+	// @media (min-width: $gridWidth-8) {
+	//     width:11%;
+	// }
+
+
+	// @media (min-width: $containerWidth + $extraSpace) {
+	// 	& {
+	//   		width: 24%;
+	//   	}
+	// }
+}

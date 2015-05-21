@@ -1,0 +1,149 @@
+/**
+Filename: _vars.scss
+Description:
+This contains variables which can be used globally throughout the .scss files.
+
+Note: placeholders (e.g. %fontColor-title { ...} ) are used for extending. So the compiled CSS will be DRY (Don't Repeat Yourself).
+*/
+
+// ======================================================================
+// 								  Fonts
+// ======================================================================
+
+$fontFamily-body                                   : ".FontDefaultFont";
+$fontFamily-LoveYaLikeASister                      : 'Love Ya Like A Sister', cursive;
+$fontFamily-ComingSoon                             : 'Coming Soon', cursive;
+$fontFamily-defaultTitle                           : $fontFamily-LoveYaLikeASister;
+$fontFamily-defaultSubTitle                        : $fontFamily-ComingSoon;
+
+$fontFamily-NavAreaMobile                          : $fontFamily-defaultTitle;
+$fontFamily-NavArea-container                      : $fontFamily-defaultTitle;
+$fontFamily-PressPage-cell                         : $fontFamily-defaultTitle;
+$fontFamily-AboutPage-cell                         : $fontFamily-defaultTitle;
+$fontFamily-AboutPage-cell--bigyellowboot-text-reg : $fontFamily-defaultSubTitle;
+$fontFamily-AboutPage-cell-title 			 	   : $fontFamily-defaultTitle;
+$fontFamily-AboutPage-cell-subtitle 		       : $fontFamily-defaultSubTitle;
+
+// ======================================================================
+// 		Dimensions (widths / heights / padding / margins / top / bottom)
+// ======================================================================
+
+// ------------------------------------ 
+// Width & Height Layout dimension  
+// ------------------------------------
+$maxWrapperWidth   : 1200px;
+$maxwidth-youTubeModalWindow : 1000px;
+
+$switchWidthDesktopLarge   : 1200px; // Used to indicate when the 2 column switches to a 1 column. Esp in _Card.scss. 
+$switchWidthDesktopMedium  : 1050px;
+$switchWidthDesktop        : 900px; // Used in _Card.scss, and potentially others 
+$switchWidthiPad       	   : 800px; // Used in _Card.scss, and potentially others 
+$switchWidthiPad2 		   : 725px; // Used in _Card.scss, and potentially others 
+$switchWidthMobileBig 	   : 621px; // Used in _Card.scss, and potentially others 
+$switchWidthMobileBig 	   : 621px; // Used in _Card.scss, and potentially others 
+
+
+$width-CardTile 		   : 300px;
+$width-Card-title 		   : $width-CardTile; // This should be the same width as the CardTitle
+$padding-CardTile 		   : 10px;
+
+// Switch width for press area... based on width of CardTile and extra padding space
+$width-PressPage-content-1 : 1 * ($width-CardTile);
+$width-PressPage-content-2 : 2 * ($width-CardTile) + 1 * $padding-CardTile;
+$width-PressPage-content-3 : 3 * ($width-CardTile) + 2 * $padding-CardTile;
+$width-PressPage-content-4 : 4 * ($width-CardTile) + 3 * $padding-CardTile;
+
+// $switchWidth-PressPage-content-1 : 0;
+// $switchWidth-PressPage-content-2 : $width-PressPage-content-3;
+// $switchWidth-PressPage-content-3 : $width-PressPage-content-4;
+// $switchWidth-PressPage-content-4 : $width-PressPage-content-5;
+
+// heights
+$NavAreaMobile-mobileBar-height : 50px;
+
+// ======================================================================
+// 								 Colors
+// ======================================================================
+
+// $color-darkdeepgray         : #151515;
+// $color-darkgrey             : #222222;
+// $color-darkgrey2            : #2E2E2E;
+// $color-darkgrey3            : #202020;
+// $color-darkgrey4            : #333333;
+// $color-darkgrey5            : #383838;
+// $color-darkgrey-alphaZero   : rgba(38, 38, 38, 0);    // #222222
+// $color-darkgrey-alpha85     : rgba(38, 38, 38, 0.85); // #222222 alpha 85%
+
+// $color-grey                 : #999999;
+// $color-lightgrey            : #cccccc;
+
+// $color-brightgrey           : #e0e0e0;
+// $color-verybrightgrey       : #f0f0f0;
+
+// $color-borderUnderlineGrey  : #404040; 
+// $color-borderUnderlineGrey2 : #d8d8d8;
+// $color-borderUnderlineGrey3 : #989898;
+
+// $color-white                : white;
+
+$color-yellowSNB     : #F9EB30; // rgb(250, 236, 49);
+$color-darkYellow    : #817A18;
+$color-blueSNB       : #428ada; //#4E8DFF // rgb(66, 138, 218);
+$color-blueVeryLight : #93C3F7;
+$color-blueDark      : #3678C2; //#4E8DFF // rgb(66, 138, 218);
+
+//$color-blueDark    : #00537E; //#4E8DFF // rgb(66, 138, 218);
+//$color-blueSNB2    : #4E8DFF;
+
+$color-lightGrey     : #999999;
+$color-grey          : #666666;
+$color-darkGrey      : #333333;
+
+// ------------------
+// Box Shadow
+// ------------------
+$color-boxShadow 			 : $color-grey;
+$colorBorder-NavMobileBar    : $color-darkYellow;
+
+// ----------- 
+// Font Colors 
+// ----------- 
+
+// Default 
+$fontColor-default                         : $color-grey;
+$fontColor-links                           : $color-blueSNB;
+$fontColor-selected-background             : $color-blueSNB;
+$fontColor-selected                        : $color-yellowSNB;
+$fontColor-PressPage-cell                  : $color-blueSNB;
+
+$fontColor-Nav                             : $color-blueSNB;
+$fontColor-MastheadOverlays-title          : $color-blueSNB;
+
+$fontColor-AboutPage-cell--splash-title    : $color-yellowSNB;
+$fontColor-AboutPage-cell--boots-title     : $color-blueDark; 
+$fontColor-AboutPage-cell--yellowboot-text : $color-yellowSNB; 
+$fontColor-AboutPage-cell--friends-title   : $color-blueDark; 
+$fontColor-AboutPage-cell--awards-title    : $color-blueDark; 
+
+// --------------
+// Text Shadow
+// --------------
+$textShadowColor-AboutPage-cell--yellowboot-text : $color-blueDark; // #124074;
+
+// ------------------
+// Background Color
+// ------------------
+$backgroundColor-Nav 			: $color-yellowSNB;
+
+
+// ======================================================================
+// 								 Timing
+// ======================================================================
+
+// ---------------- 
+// Transition Times 
+// ---------------- 
+$transitionTime-default            : 800ms;
+$transitionTime-default--fast      : 500ms;
+$transitionTime-CardTile	 	   : 300ms;
+//$transitionTime-Card 			   : 200ms;

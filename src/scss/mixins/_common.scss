@@ -1,0 +1,166 @@
+// Transition
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}
+
+
+// border-radius
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// box-shadow
+@mixin box-shadow($shadow...) {
+-webkit-box-shadow: $shadow;
+-moz-box-shadow: $shadow;
+box-shadow: $shadow;
+}
+
+
+// background-image
+//************************************************************************//
+// Background-image property for adding multiple background images with
+// gradients, or for stringing multiple gradients together.
+//************************************************************************//
+// From Bourbon - https://github.com/thoughtbot/bourbon/blob/502c2108dea1970ffeb4f91cb95b545d67bddfd0/app/assets/stylesheets/css3/_background-image.scss
+@mixin background-image($images...) {
+  $webkit-images: ();
+  $spec-images: ();
+
+  @each $image in $images {
+    $webkit-image: ();
+    $spec-image: ();
+
+    @if (type-of($image) == string) {
+      $url-str:       str-slice($image, 0, 3);
+      $gradient-type: str-slice($image, 0, 6);
+
+      @if $url-str == "url" {
+        $webkit-image: $image;
+          $spec-image: $image;
+      }
+
+      @else if $gradient-type == "linear" {
+        $gradients: _linear-gradient-parser($image);
+        $webkit-image:  map-get($gradients, webkit-image);
+        $spec-image:    map-get($gradients, spec-image);
+      }
+
+      @else if $gradient-type == "radial" {
+        $gradients: _radial-gradient-parser($image);
+        $webkit-image: map-get($gradients, webkit-image);
+        $spec-image:   map-get($gradients, spec-image);
+      }
+    }
+
+    $webkit-images: append($webkit-images, $webkit-image, comma);
+    $spec-images:   append($spec-images,   $spec-image,   comma);
+  }
+
+  background-image: $webkit-images;
+  background-image: $spec-images; 
+}
+
+// linear-gradient 
+// From: bourbon 
+// https://github.com/thoughtbot/bourbon/blob/502c2108dea1970ffeb4f91cb95b545d67bddfd0/app/assets/stylesheets/css3/_linear-gradient.scss
+@mixin linear-gradient($pos, $G1, $G2: null,
+                       $G3: null, $G4: null,
+                       $G5: null, $G6: null,
+                       $G7: null, $G8: null,
+                       $G9: null, $G10: null,
+                       $fallback: null) {
+  // Detect what type of value exists in $pos
+  $pos-type: type-of(nth($pos, 1));
+  $pos-spec: null;
+  $pos-degree: null;
+
+  // If $pos is missing from mixin, reassign vars and add default position
+  @if ($pos-type == color) or (nth($pos, 1) == "transparent")  {
+    $G10: $G9; $G9: $G8; $G8: $G7; $G7: $G6; $G6: $G5;
+     $G5: $G4; $G4: $G3; $G3: $G2; $G2: $G1; $G1: $pos;
+     $pos: null;
+  }
+
+  @if $pos {
+    $positions: _linear-positions-parser($pos);
+    $pos-degree: nth($positions, 1);
+    $pos-spec:   nth($positions, 2);
+  }
+
+  $full: $G1, $G2, $G3, $G4, $G5, $G6, $G7, $G8, $G9, $G10;
+
+  // Set $G1 as the default fallback color
+  $fallback-color: nth($G1, 1);
+
+  // If $fallback is a color use that color as the fallback color
+  @if (type-of($fallback) == color) or ($fallback == "transparent") {
+    $fallback-color: $fallback;
+  }
+
+  background-color: $fallback-color;
+  background-image: -webkit-linear-gradient($pos-degree $full); // Safari 5.1+, Chrome
+  background-image: unquote("linear-gradient(#{$pos-spec}#{$full})");
+}
+
+// Background image property support for vendor prefixing within values.
+// @mixin background-image($images...) {
+//   @include image-property(background-image, $images...) {
+//     @if $current-prefix == -svg {
+//       background-size: 100%;
+//     }
+//   }
+// }
+
+// @mixin image-property($property, $values...) {
+//   @include each-gradient-prefix($values) {
+//     @if $current-prefix {
+//       #{$property}: prefix($current-prefix, $values);
+//     } @else {
+//       #{$property}: $values;
+//     }
+//     @content;
+//   }
+// }
+
+
+
+
+// @mixin transition($transition-property, $transition-time, $method) {
+//     -webkit-transition: $transition-property $transition-time $method;
+//     -moz-transition: $transition-property $transition-time $method;
+//     -ms-transition: $transition-property $transition-time $method;
+//     -o-transition: $transition-property $transition-time $method;
+//     transition: $transition-property $transition-time $method;
+// }
+

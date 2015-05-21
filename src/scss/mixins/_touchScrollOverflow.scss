@@ -1,0 +1,5 @@
+@mixin touchScrollOverflow() {
+    // Ensure on mobile devices there is a momentum scroll
+    overflow-y: scroll; // has to be scroll, not auto
+    -webkit-overflow-scrolling: touch;
+}

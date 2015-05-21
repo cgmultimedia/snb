@@ -1,0 +1,46 @@
+/**
+ * Filters
+ */
+.GridFilters {
+    list-style-type: none;
+    text-align: center;
+    height: 1em;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 12px 0;
+}
+
+.GridFilters li {
+    font-size: 12px;
+    //float: left;
+    padding: 6px 0 4px 0;
+    cursor: pointer;
+    margin: 0 1% 0 1%;
+    width: 11%;
+    // -webkit-transition    : all 0.15s ease-out;
+    // -moz-transition       : all 0.15s ease-out;
+    // -o-transition         : all 0.15s ease-out;
+    // transition            : all 0.15s ease-out;
+    @include transition(all 0.15s ease-out);
+    // -webkit-border-radius : 3px;
+    // -moz-border-radius    : 3px;
+    // border-radius         : 3px;
+    @include border-radius(3px);
+    display: table-cell;
+    //border-spacing: 2px;
+    border: 1px solid $color-blueSNB;
+    vertical-align: middle;
+}
+
+.GridFilters li:hover {
+    background: $color-blueSNB;
+    color: #ffffff;
+}
+
+.GridFilters li.active {
+    background: $color-blueSNB;
+    color: #ffffff;
+}

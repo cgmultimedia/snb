@@ -1,0 +1,667 @@
+/* CSS for the home hub */
+
+/**********************
+ * Indies vote button
+ */
+#indies-vote-button  {
+	display: none;
+	position: relative;
+	top: 178px;
+	left: 31px;
+	width: 85px;
+	height: 90px;
+	border: none;
+	text-indent: -9999px;
+	background-image: url('../media/img/hub/vote-here-button-2012-02-25.png'); 
+	background-position: -9px -5px;
+}
+#indies-vote-button:hover {
+	background-position: -109px -5px;
+}
+
+/****************************
+ * Special Treehouse menu 
+ */
+#nav-social-treehouse {
+	position: absolute;
+	top: 564px;
+	left: 377px;
+	z-index: 90;
+}
+/* NEW 2014-11-05 album release */
+#nav-social-treehouse {
+position: absolute;
+top: 80px;
+left: 242px;
+z-index: 90;
+}
+
+/* Commented out for JUNO awards home
+#menu_treehouse{
+	display: block;
+	position: absolute;
+	background-image: url("../images/menu-include/final-NAV-2013-07-16.png");
+	background-position: -590px -380px;
+	background-repeat: no-repeat;
+	opacity:0.75;
+	filter:alpha(opacity=75);
+	width: 135px;
+	height: 115px;
+	outline: none;
+}
+*/
+#menu_treehouse {
+	display: block;
+	position: absolute;
+	background-image: url("../images/menu-include/treehouse-splashnboots.png");
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	opacity:0.75;
+	filter:alpha(opacity=75);
+	width: 130px;
+	height: 70px;	
+	outline: none;
+}
+
+/* MORE 2014-11-05 album release stuff */
+#menu_treehouse {
+	display: block;
+	position: absolute;
+	background-image: url("../images/home-page/homepage-2014-11-05/treehouse2.png");
+        width: 174px;
+	height: 91px;
+}
+#BuyAlbum-button {
+        opacity: 0.8;
+        filter: alpha(opacity=80);
+}
+#BuyAlbum-button:hover {
+        opacity: 1.0;
+        filter: alpha(opacity=100);
+}
+@media (max-width: 1000px) {
+	#menu_treehouse{
+		background-image: url("../images/menu-include/final-NAV-2014-04-16-treehouse.png");	
+		background-position: -590px -380px;		
+	}
+}
+
+/********************
+ * Background images
+ */
+
+#top-hub-banner {
+	display:block;
+	width:786px;
+	/*height:122px;
+	*/
+	height:42px;
+	background-color:white;
+	/*border:1px solid #333;	*/
+	z-index:50;
+}
+
+#top-hub-banner-img {
+	/*
+	margin-top:0px;
+	width:100%;
+	height:122px;
+	background-image: url("../media/img/hub/home-banner.png");
+	background-repeat: no-repeat;
+	background-position: 0px 6px;
+	*/
+}
+
+#hub-left-container { 
+	position: relative;
+	float:left;	/*
+	width:284px;
+	width:378px;
+	height:540px;*/
+	width:440px;
+	height:610px;
+
+	/*background-color:white;
+	*/
+	z-index:50;
+	background-repeat: no-repeat;
+	/*
+	background-image: url("../media/img/hub/LEFT-HUB-image-2013-03-27.jpg"); 
+        background-image: url("../media/img/hub/LEFT-HUB-image-2013-04-29_CBC.png"); 
+        background-image: url("../media/img/hub/LEFT-HUB-image-2013-05-22-updated_03.png");         
+
+	background-image: url("../media/img/hub/LEFT-HUB-image-2013-09-16_03.jpg"); 
+
+	background-image: url("../images/home-page/splashnboots-juno-2014.png");
+	
+	background-image: url("../media/img/hub/LEFT-HUB-image-2013-09-16_03.jpg");
+	background-position:0px 0px;
+	*/
+	
+} 
+#snb-home-image {
+	position: absolute;
+	top: 178px;
+	left: 32px;
+}
+
+#juno2014 {
+	position: absolute;
+	top: 0px;
+	left: 30px;
+}
+
+
+#hub-left-headline-top {
+	width:369px;
+	height:132px;
+	position:relative;
+	top:-11px;
+	left:0px;
+	background-image: url("../media/img/hub/hub-left-headline-top.png");
+	display:none;
+}
+
+#hub-left-treehouse {
+	position: absolute;
+	top:0px;
+	top:130px;
+	left:6px;
+	width:170px;
+	height:110px;
+	background-image: url("../media/img/hub/hub-left-treehouse.png");
+	background-position: 0px 0px;
+	display:none;
+}
+
+#hub-left-treehouse:hover {
+	background-position: 0px -110px;
+}
+
+#hub-snb-rock-img { 
+	position: absolute;
+	top:-115px;
+	top:172px;
+	left:-10px;
+	width:285px;
+	height:387px;
+	width:370px;
+	height:502px;
+	background-image: url("../media/img/hub/snb-rock-hub-370.png");
+	background-repeat: no-repeat;
+	background-image: url("../media/img/hub/home-responsive-left_06.png");
+	display:none;
+}
+
+/******************
+ * Webkit Scroller
+ */
+/*
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+*/
+
+/**************
+ * Hub Posting box
+ */
+ 
+#ajaxcontent {
+	/* position:relative; */
+} 
+
+#entry-scroller {
+	position:relative;
+	width:1200px;
+	left:50%;
+	margin-left:-600px;
+/*	background-color:#99E;
+*/
+}
+
+#hub-entry-boxed-content {
+	display:relative;
+	left:50%;
+	margin-right:-600px;
+	/*border:1px solid #432;*/
+}
+ 
+#hub_postings_content {
+	float:right;
+	display: block;
+	top: 100px;
+	right:0px;
+	width:378px;
+	width:320px;
+	height:575px;
+	padding:10px;
+	border:1px solid #AAA;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	-ms-overflow-y: scroll;
+	/*font:16px/1.4 "myriad-pro-1","myriad-pro-2","Lucida Grande",Sans-Serif;
+	*/
+	color:#333;
+	/* Rounded corners */
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px; 
+
+	position: relative;
+	top: 0px;
+	
+	/* Ensures long words (e.g. urls) are broken and wrapped */
+	word-wrap:break-word;
+}
+
+/* Title of the hub content */
+#hub-title {
+	font-size:24px;
+	text-align:center;
+	/*font-weight:bold;*/
+	/*font-style:italic;*/
+	color:#0270BA;
+	text-shadow: 2px 2px 2px #CCC; 
+	
+	background-image: url('../media/img/hub/new-news.png');
+	background-repeat: no-repeat;
+	background-position: center 3px;
+	text-indent: -9999px;
+}
+
+/****************
+ * Entry CSS 
+ */
+.entry_title {
+/*	float:left;*/
+	height:60px;
+	width:300px;
+	font-weight:bold;
+	padding-bottom:10px;
+	/*border:1px solid #444;*/
+}
+
+.hub_entry_date {
+	width:224px;
+	float:left;
+	font-size:10px;
+	color:#666;
+	text-transform:uppercase;
+}
+
+.hub_type_box {
+	width:60px;
+	height:60px;
+	float:left;
+	margin-right:15px;
+/*	
+	border:1px solid #333;
+	*/
+}
+
+/* Images for hub_type_box */
+.hub_type_Announcement {
+	background-image: url("../media/img/hub/60-news.png");
+}
+
+.hub_type_Show {
+	background-image: url("../media/img/hub/60-show.png");	
+}
+
+.hub_type_Picture {
+	background-image: url("../media/img/hub/60-photo.png");
+}
+
+.hub_type_Instagram,
+.hub_type_InstagramWeekly,
+.hub_type_InstagramWeeklyNew {
+	background-image: url("../media/img/hub/60-photo.png");
+}
+
+.hub_type_Video {
+	background-image: url("../media/img/hub/60-video.png");	
+}
+
+.hub_type_Store {
+	background-image: url("../media/img/hub/60-store.png");	
+}
+
+.hub_type_Press {
+	background-image: url("../media/img/hub/60-newspaper.jpeg");
+	background-position: center;
+	background-repeat: no-repeat;	
+}
+
+.hub_store_img{
+	padding:4px;
+}
+.hub_store_img img {
+	border:1px solid #CCC;
+}
+
+.hub_type_Blog {
+	background-image: url("../media/img/hub/60-blog.png");	
+}
+
+.entry_title_bubble {
+	font-size: 14px;
+	color:#06B;
+	height:49px;
+	float:left;
+	width:286px;
+	width:230px;
+	width:225px;
+/*
+  height:60px;
+  display: table-cell;
+  vertical-align: middle;
+  padding:0px;
+*/
+}
+
+.entry_title_bubble p {
+/*
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  */
+}
+
+.entry_title_outter {
+	/*position: relative;
+	*/
+	display: table;
+	height:40px;
+}
+
+.entry_title_inner {
+	/*position: absolute;
+	top: 50%;
+	*/
+	display: table-cell;
+	vertical-align: bottom;
+	width: 100%;
+	line-height:14px;
+}
+  
+.entry_title_element {
+	/*position: relative;
+	top: -50%;
+	*/
+}
+
+.entry_title_element a {
+	color: #06B;
+	text-decoration: none;	
+}
+
+.entry_title_element a:hover {
+	text-decoration:underline;	
+}
+
+/* Content within hub post */
+.hub_post_content {
+	font-size:14px;
+	width: 305px;
+/*	float: left;*/
+	margin-bottom: 15px;	
+	position:relative;
+}
+
+.hub_post_content p {
+	padding:1px;
+	margin:1px;
+}
+
+.hub_post_content p img,
+.hub_post_content * p img {
+	-moz-box-shadow: 0px 0px 5px #CCC;
+	-webkit-box-shadow: 0px 0px 5px #CCC;
+	box-shadow: 0px 0px 5px #CCC;
+	border:1px solid #AAA;	
+	/*width:100%;*/
+}
+
+.hub_post hr {
+	width:100%;
+}
+
+/****************
+ * DISQUS CSS 
+ */
+ 
+.hub_entry {
+	width:305px;
+	position:static;
+}
+.disqus_button_show_hided {
+	border: 1px solid #34D;
+	margin:10px;
+	line-height:60px;
+}
+
+.disqus_button_show_hide {
+/*  display: inline-block;*/
+  /*line-height:60px;*/
+  font-size:13px;
+  background: #06c;
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3),
+  		    rgba(255, 255, 255, 0.1));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3),
+  		    rgba(255, 255, 255, 0.1));
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.3),
+    		    rgba(255, 255, 255, 0.1));
+  background-image: linear-gradient(top, rgba(255, 255, 255, 0.3),
+    		    rgba(255, 255, 255, 0.1)); 
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  color: #fff;
+  border: none;
+  padding: 4px 7px;
+  cursor: pointer;
+  text-decoration: none;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.15);
+  width: auto;
+  overflow: visible;
+  -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-appearance: none;
+}
+
+.disqus_button_show_hide:hover {
+  background: #09f;
+  color: #fff;
+}
+
+/* Initially hide all "Hide Comments" buttons & div."disqus_thread" */
+.hide_disqus_thread, div.disqus_thread {
+	display:none;
+}
+
+div.disqus_thread {
+	/* margin-top:40px;*/
+}
+
+/* Hide the Subscribe by email / RSS */
+#dsq-subscribe {
+  display:none;
+}
+
+.youtube_video {
+	width:360px;
+	width:300px;
+	height:208px;
+	height:200px;
+	-moz-box-shadow: 0px 0px 5px #000;
+	-webkit-box-shadow: 0px 0px 5px #000;
+	box-shadow: 0px 0px 5px #000;
+	border:1px solid #888;
+}
+
+.hub_video_container{
+	position:relative;
+	width: 320px;
+	height: 180px;
+}
+.hub_video_container img {
+	position:absolute;
+}
+
+// .hub_video_thumbnail{
+// 	width:320px;
+// 	height:180px;
+// 	position:absolute;
+// 	background-image:url("../media/img/hub/playbutton-dark.png");
+// 	background-repeat:no-repeat;
+// 	background-position:center center;
+// 	filter:alpha(opacity=70);
+// 	-moz-opacity:0.7;
+// 	-khtml-opacity: 0.7;
+// 	opacity: 0.7;	
+// }
+
+// .hub_video_thumbnail:hover{
+// 	filter:alpha(opacity=100);
+// 	-moz-opacity:1.0;
+// 	-khtml-opacity: 1.0;
+// 	opacity: 1.0;	
+// }
+
+/* Pictures from galleries hub css */
+.snb_picture_thumb {
+	/*width:122px;*/
+}
+
+.snb_hub_pictures {
+	float:left;
+	/*position:static;*/
+}
+
+
+/* Drop shadow for hub content */
+.shadow_box {
+-moz-box-shadow: 5px 5px 5px #AAA;
+-webkit-box-shadow: 5px 5px 5px #AAA;
+box-shadow: 5px 5px 5px #AAA;
+border:1px solid #AAA;
+/* For IE 8 */
+/*-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4,
+Direction=135, Color='#000000')";
+*/
+/* For IE 5.5 - 7 */
+/*
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135, Color='#000000');
+*/
+}
+
+/* Drop shadow for hub content */
+.shadow_box_small {
+	-moz-box-shadow: 3px 3px 3px #AAA;
+	-webkit-box-shadow: 3px 3px 3px #AAA;
+	box-shadow: 3px 3px 3px #AAA;
+	border:1px solid #888;
+/* For IE 8 */
+/*-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4,
+Direction=135, Color='#000000')";
+*/
+/* For IE 5.5 - 7 */
+/*
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135, Color='#000000');
+*/
+}
+
+/* Hub AJAX Loading  */
+#load-more {
+/*	background-color:#eee;
+	color:#999;
+	font-weight:bold;
+	text-align:center;
+	padding:10px 0;
+	cursor:pointer;
+	border:1
+	*/
+   background-color:#EEE;
+   color: #888; 	
+	
+   border: 1px solid #DDD;
+   border-radius: 3px;
+   /*text-shadow: 0 1px 1px white;*/
+   -webkit-box-shadow: 0 1px 1px #fff;
+   -moz-box-shadow:    0 1px 1px #fff;
+   box-shadow:         0 1px 1px #fff;
+   /*font: bold 12px Sans-Serif;*/
+   padding: 5px 10px;
+   white-space: nowrap;
+   vertical-align: middle;
+   /*background: transparent;*/
+   text-align:center;
+}
+#load-more.nonactive {
+   cursor: pointer;
+   background-color:#06C;
+   background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3),
+	    rgba(255, 255, 255, 0.1));
+   background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3),
+	    rgba(255, 255, 255, 0.1));
+   background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.3),
+	    rgba(255, 255, 255, 0.1));
+   background-image: linear-gradient(top, rgba(255, 255, 255, 0.3),
+	    rgba(255, 255, 255, 0.1));   
+   color: #FFF;
+   
+}	 
+#load-more.nonactive:hover,
+#load-more.nonactive:focus {
+   color:#EEE;
+   border-color: #999;
+   background-color:#59F;      
+   background: -webkit-linear-gradient(top, #38F, #59F);
+   background:    -moz-linear-gradient(top, #38F, #59F);
+   background:     -ms-linear-gradient(top, #38F, #59F);
+   background:      -o-linear-gradient(top, #38F, #59F);
+   
+   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #fff;
+   -moz-box-shadow:    0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #fff;
+   box-shadow:         0 1px 2px rgba(0,0,0,0.25), inset 0 0 3px #fff;	
+} 
+
+#load-more.nonactive:active {
+   border: 1px solid #66E;
+   border-bottom-color: #88F;
+   border-top-color: #55D;
+   background-color:#6AF;   
+   -webkit-box-shadow: inset 0 1px 2px #aaa;
+   -moz-box-shadow:    inset 0 1px 2px #aaa;
+   box-shadow:         inset 0 1px 2px #aaa;
+   background: -webkit-linear-gradient(top, #59F, #6AF);
+   background:    -moz-linear-gradient(top, #59F, #6AF);
+   background:     -ms-linear-gradient(top, #59F, #6AF);
+   background:      -o-linear-gradient(top, #59F, #6AF);
+}
+
+.load-more-activated {
+   color: #666;
+   background: -webkit-linear-gradient(top, #eee, #eee);
+   background:    -moz-linear-gradient(top, #eee, #eee);
+   background:     -ms-linear-gradient(top, #eee, #eee);
+   background:      -o-linear-gradient(top, #eee, #eee);
+	background:url('../media/img/hub/hub-loading2.gif') 86px 2px no-repeat #eee;
+	/*background-position:86px 2px;
+	*/
+}
+
+.loading-hub-entries {
+	display:none;
+}

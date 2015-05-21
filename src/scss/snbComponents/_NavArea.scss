@@ -1,0 +1,359 @@
+/**
+File: _NavArea.scss
+*/
+
+$NavArea-li-margin-right:	10px;
+$NavArea-li-margin-left: 	10px;
+$NavArea-li-padding-right: 	2px;
+$NavArea-li-padding-left: 	2px;
+
+$NavArea-li-marginPadding-right: $NavArea-li-margin-right + $NavArea-li-padding-right;
+$NavArea-li-marginPadding-left:  $NavArea-li-margin-left  + $NavArea-li-margin-left;
+
+.NavArea {
+	position: relative;
+	margin-top:-2px;
+	z-index: index($zIndexElements--bodyElements, 'NavArea');
+	height: 5em;
+
+	& a {
+		text-decoration: none;
+	}
+	
+	&-container {
+		font-family: $fontFamily-NavArea-container; 
+		font-size: 2.5em;
+		display: block;
+		text-align: center;
+		height: 2em;
+
+		&-logo {
+			position: static;
+			display: inline-block;
+			width: 2.7em;
+			margin-right: 10px;
+
+			@extend .u-extend-transition-all--fast;
+			//transition: 500s transform ease-in-out;
+			@include transform(translate(-20em,-0.2em));
+
+			& .SNBLogo {
+				display: inline-block;
+				position: static;
+				width: 100%;
+
+				&-img {
+					margin-top: 0.2em;
+				}
+			}
+		}		
+
+		//@include transition(all 0.8s);
+		//@extend .u-extend-transition-all--fast;
+
+		&-menu {
+			display: inline-block;
+			display: none;
+			&-word{
+				display: inline-block;
+				border: 1px solid #666;
+				border-right: transparent;
+				@include border-radius(40px 0 0px 40px);
+			}
+			&-x {
+				display: inline-block;
+				border: 1px solid #666;
+				border-left: transparent;
+				@include border-radius(0px 40px 40px 0px);
+				// @include border-top-right-radius(40px);
+				// @include border-bottom-right-radius(40px);
+				&-char {
+					opacity: 0; 
+				}
+			}
+		}
+
+		&-nav {
+			/* background-image: url(../media/img/general/nav-yellow.jpg); */
+			background-position: top center;
+			background-size: auto 2.5em;
+			background-repeat-y: no-repeat;
+			width: 100%;
+			height: 2em;
+			background-color: $backgroundColor-Nav;
+			//overflow: hidden;
+			white-space: nowrap;
+
+			//@extend .u-extend-transition-all--fast;
+
+			& ul {
+				display: inline-block;
+				list-style: none;
+				margin:0;
+				padding:0;
+				padding-top: 0.5em;
+				//overflow: hidden;
+				white-space: nowrap;
+				@include transform(translate(-1.4em, 0));
+				@extend .u-extend-transition-all--fast;
+
+				& li {
+					display: inline;
+					margin:0;
+
+					& a,
+					& a:hover {
+						margin: 0 $NavArea-li-margin-right 0 $NavArea-li-margin-left;
+						padding: 0 $NavArea-li-padding-right 0 $NavArea-li-padding-left;
+						color: $fontColor-Nav;
+					}
+
+					& a:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}	
+	}
+		//font-size:2.0em;
+	@media (max-width: $switchWidthDesktopLarge) {
+		& {
+			height: 4em;
+		}
+		&-container {
+			font-size:2.0em;
+		}	    
+	}
+
+	@media (max-width: $switchWidthDesktopMedium) {
+		& {
+			height: 3.5em;
+		}
+		&-container {
+			font-size:1.75em;
+		}	    
+	}
+
+	@media (max-width: $switchWidthDesktop) {
+		& {
+			height: 3em;
+		}
+		&-container {
+			font-size:1.50em
+		}	    
+	}
+
+	@media (max-width: $switchWidthiPad) {
+		& {
+			height: 2.6em;
+		}
+		&-container {
+			font-size:1.30em
+		}	    
+	}
+
+	@media (max-width: $switchWidthiPad2) {
+		& {
+			height: 2.2em;
+		}
+		&-container {
+			font-size:1.10em
+		}	    
+	}
+
+	&--sticky {
+		
+
+		& .NavArea-container {
+			position: fixed;
+			top:0;
+			left:0;
+			margin-top:0;
+			width: 100%;
+		}
+
+		& .NavArea-container-nav {
+			// position: fixed;
+			// top: 0;
+			// left: 0;
+			// right: 0;
+			// width: 100%;
+			position: fixed;
+			z-index: 9999;
+			top: 0;
+			left:0;
+			background-color: $color-yellowSNB;
+			width: 100%;
+			border-bottom: 1px solid $color-blueVeryLight; 
+
+			// &::after {
+			// 	content : "";
+			// 	display: block;
+			// 	position: relative;
+			// 	//top: $NavAreaMobile-mobileBarHeight;
+			// 	top:0;
+			// 	left:0;
+			// 	height: 6px;
+			// 	background: transparent url(../media/img/general/short-bg-shadow.png) repeat-x 0 bottom;
+			// 	width: 100%;
+			// }
+
+			& ul {
+				@include transform(translate(0, 0));
+			}
+		}
+
+		& .NavArea-container-logo {
+			@include transform(translate(0em,-0.2em));
+		}
+	} 
+
+	&-mobileBar {
+		display: none;
+
+		&-logo {
+			position: absolute;
+			top: 0px;
+			left: 50%;
+			margin-left: -33px;
+			width: 66px;
+
+			& .SNBLogo {
+				position: absolute;
+				top: 3px;
+				left: 50%;
+				margin-left: -33px;
+				width: 66px;
+			}
+		}
+
+	}
+
+	&-logo {
+		//display: none;
+		display: inline-block;
+		width: 3em;
+		position: relative;
+		//top: 0;
+		//left: 0;
+
+		& .SNBLogo {
+			display: inline-block;
+			width: 100%;
+			position: static;
+		}
+	}
+}
+
+@media (max-width: $switchWidthMobileBig) {
+	.NavArea {
+		display: none;
+	}
+}
+
+// Headroom specific classes
+
+/**
+ * Note: I have omitted any vendor-prefixes for clarity.
+ * Adding them is left as an exercise for the reader.
+ */
+// .headroom {
+//     transition: transform 200ms linear;
+// }
+// .headroom--pinned {
+//     transform: translateY(0%);
+// }
+// .headroom--unpinned {
+//     transform: translateY(-100%);
+// }
+
+
+/*
+$NavArea-nav-item-padding-topbottom : 10px;
+.NavArea {
+	& nav {
+		// position: absolute;
+		display: table;
+	    width: 100%;
+	    position: -webkit-sticky;
+		position: -moz-sticky;
+		position: -o-sticky;
+		position: -ms-sticky;
+		position: sticky;
+
+		z-index: 999;
+		max-width: $maxWrapperWidth;
+		box-shadow: 0px 1px 1px black;
+		top: 0;
+
+		&.sticky {
+    		position: fixed;
+			//left: 0; 
+    	}
+	
+		&.cannotCssSticky {
+
+		}
+
+		& > ul.nav.nav-tabs {
+			display: table-row;
+			background-color: $backgroundColor-NavArea-nav; //#2E2E2E;
+			color: 	$fontColor-NavArea-nav;	
+	    	letter-spacing: 1px;
+		    padding: 0; 
+
+			// Set the nav tab to have cursor pointer...
+			// ... if it isn't active.
+		    & > li:not(.active) {
+		    	cursor: pointer;
+		    }
+
+		    & > li {
+		    	float: none;
+			    display: table-cell;
+				text-align: center;	
+			    padding: 0; 
+			    padding-top: $NavArea-nav-item-padding-topbottom;
+			    padding-bottom: $NavArea-nav-item-padding-topbottom;
+
+
+			    & > a {
+			    	color: 	$fontColor-NavArea-nav-item;	
+					display: inline-block;
+					width:100%;
+			    	border: none;
+			    	border-left: 1px solid $borderColor-NavArea-nav-item;
+					border-radius: 0;			    	
+			    	padding: 0;
+			    	padding-top: 4px;
+			    }
+
+				// The first item in teh nav does not need a border left
+				&:nth-child(1) > a {
+					border: none;
+				}
+
+			    &.active > a,
+			    &:hover > a {
+			    	//background-color: $backgroundColor-NavArea-nav-item-active;	
+			    	color: 	$fontColor-NavArea-nav-item-active;
+			    	background-color: transparent;
+			    	//font-weight: bold;
+			    }
+			    &.active > a:after,
+			    &.hover > a:after {
+			    	content: " ";
+					display: block;
+					height: 3px;
+					background-color: #fb9a34;
+					width: 100%;
+					position: absolute;
+					// margin-left: -15px;
+					// margin-top: 7px;
+					bottom: (-1 * $NavArea-nav-item-padding-topbottom);
+			    }
+		    }
+		}
+	}
+}
+*/

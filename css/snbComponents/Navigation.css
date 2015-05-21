@@ -1,0 +1,14 @@
+/* line 1, ../../src/scss/snbComponents/Navigation.scss */
+.Navigation {
+  position: relative;
+  display: block;
+  border: 1px solid black; }
+  /* line 6, ../../src/scss/snbComponents/Navigation.scss */
+  .Navigation-logo {
+    display: inline-block;
+    width: 80px; }
+    /* line 9, ../../src/scss/snbComponents/Navigation.scss */
+    .Navigation-logo-img {
+      width: 100%; }
+
+/*# sourceMappingURL=Navigation.css.map */

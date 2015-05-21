@@ -1,0 +1,137 @@
+
+#burger {
+    border: none;
+    background: none;
+    appearance: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 50px;
+    width: 50px;
+    z-index: 444;
+    margin-right: 5px;
+}
+#burger:focus {
+    outline: 0;
+}
+#burger .bars {
+    width: 29px;
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -15px;
+    margin-top: -11px;
+    will-change: transform;
+    transition: -webkit-transform 0.4s 0.4s;
+    transition: transform 0.4s 0.4s;
+}
+#burger .bar {
+    width: 100%;
+    height: 4px;
+    background: #00adbb;
+    display: block;
+    position: absolute;
+    transition: -webkit-transform 0.4s 0.4s, margin 0.4s 0.4s, background 0.4s 0s;
+    transition: transform 0.4s 0.4s, margin 0.4s 0.4s, background 0.4s 0s;
+}
+#burger .bar2 {
+    -webkit-transform: translateY(9px);
+    -ms-transform: translateY(9px);
+    transform: translateY(9px);
+}
+#burger .bar3 {
+    -webkit-transform: translateY(18px);
+    -ms-transform: translateY(18px);
+    transform: translateY(18px);
+}
+#burger.active .bars, .mobile-menu-trigger:checked + .banner #burger .bars {
+    -webkit-transform: translateY(11px);
+    -ms-transform: translateY(11px);
+    transform: translateY(11px);
+}
+#burger.active .bar, .mobile-menu-trigger:checked + .banner #burger .bar {
+    -webkit-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    transform: translateY(50%);
+    background: #fff;
+}
+#burger.active .bar1, .mobile-menu-trigger:checked + .banner #burger .bar1 {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#burger.active .bar2, #burger.active .bar3, .mobile-menu-trigger:checked + .banner #burger .bar2, .mobile-menu-trigger:checked + .banner #burger .bar3 {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+/*
+#burger {
+    border: none;
+    background: 0 0;
+    appearance: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 70px;
+    width: 70px;
+    z-index: 444
+}
+#burger:focus {
+    outline: 0
+}
+#burger .bars {
+    width: 29px;
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -15px;
+    margin-top: -11px;
+    will-change: transform;
+    transition: -webkit-transform.4 s.4 s;
+    transition: transform.4 s.4 s
+}
+#burger .bar {
+    width: 100%;
+    height: 4px;
+    background: #00adbb;
+    display: block;
+    position: absolute;
+    transition: -webkit-transform .4s .4s, margin .4s .4s, background .4s 0s;
+    transition: transform .4s .4s, margin .4s .4s, background .4s 0s
+}
+#burger .bar2 {
+    -webkit-transform: translateY(9px);
+    -ms-transform: translateY(9px);
+    transform: translateY(9px)
+}
+#burger .bar3 {
+    -webkit-transform: translateY(18px);
+    -ms-transform: translateY(18px);
+    transform: translateY(18px)
+}
+#burger.active .bars, .mobile-menu-trigger:checked + .banner #burger .bars {
+    -webkit-transform: translateY(11px);
+    -ms-transform: translateY(11px);
+    transform: translateY(11px)
+}
+#burger.active .bar, .mobile-menu-trigger:checked + .banner #burger .bar {
+    -webkit-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    transform: translateY(50%);
+    background: #fff
+}
+#burger.active .bar1, .mobile-menu-trigger:checked + .banner #burger .bar1 {
+    -webkit-transform: rotate(45 deg);
+    -ms-transform: rotate(45 deg);
+    transform: rotate(45 deg)
+}
+#burger.active .bar2, #burger.active .bar3, .mobile-menu-trigger:checked + .banner #burger .bar2, .mobile-menu-trigger:checked + .banner #burger .bar3 {
+    -webkit-transform: rotate(-45 deg);
+    -ms-transform: rotate(-45 deg);
+    transform: rotate(-45 deg)
+}
+
+*/

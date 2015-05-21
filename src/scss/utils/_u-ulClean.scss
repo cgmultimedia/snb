@@ -1,0 +1,19 @@
+/**
+File: _u-ulClean.scss
+*/
+
+/* To be extended to clean ul lists */
+%u-ulClean {
+	display: inline;
+	width: auto;
+	height: auto;
+	padding: 0;
+	margin: 0;
+
+	list-style: none;
+}
+/*
+u-ulClean li {
+
+}
+*/

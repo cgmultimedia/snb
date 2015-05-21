@@ -1,0 +1,41 @@
+/**
+File: _u-extend-loaderCircle.scss
+Detail:
+	A pure css3 loader, similar to a gif loader.
+
+	You can extend .u-extend-loaderCircle to add the properties to other classes.
+*/
+.u-extend-loaderCircle {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid;
+  border-color: #cbcbcb;
+  border-radius: 50%;
+  box-sizing: content-box;
+}
+.u-extend-loaderCircle:after {
+  box-sizing: content-box;
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+
+  background-color: #212121;
+  border: 3px solid transparent;
+  margin-left:-3px;
+  margin-top:-3px;
+  box-shadow: 0px 0px 6px #212121;
+  @include transform(translate(0%, 130%));
+  @include animation(uExtendloadingCircle 1.5s linear infinite);
+}
+
+@include keyframes(uExtendloadingCircle) {
+	from {
+		@include transform(translate(0, 120%) rotate(0deg))
+	}
+	to {
+		@include transform(translate(0, 120%) rotate(360deg))
+	}
+} 

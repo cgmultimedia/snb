@@ -1,0 +1,240 @@
+// NOTE: the width of the card tile is defined in: _CardTile.scss
+// $(".Card--video").first().addClass("Card--isLoading");
+.Card {
+	// -webkit-transition       : all 0.4s ease-in-out; //cubic-bezier(0.5, -0.4, 0.5, 1.4);
+	// -moz-transition          : all 0.4s ease-in-out; //cubic-bezier(0.5, -0.4, 0.5, 1.4);
+	// -o-transition            : all 0.4s ease-in-out; //cubic-bezier(0.5, -0.4, 0.5, 1.4);
+	// transition               : all 0.4s ease-in-out; //cubic-bezier(0.5, -0.4, 0.5, 1.4);
+	@include transition (all 0.4s ease-in-out);
+	//transform-style          : preserve-3d;
+	// -webkit-transform        : rotateX(0deg);
+	// transform                : rotateX(0deg);
+	@include transform (rotateX(0deg));
+	// -webkit-transform-origin : 0 0;
+	// transform-origin         : 0 0 ; 
+
+	@include transform-origin(0 0);
+	@include transform-style(preserve-3d);
+
+	background-color         : white;
+
+	&--isLoading {
+		// -webkit-transform : rotateX(-30deg);
+		// transform         : rotateX(-30deg);
+		@include transform (rotateX(-40deg));
+
+		& .Card-container {
+			// -webkit-filter    : brightness(0.5) opacity(0.2);
+			// filter            : brightness(0.5) opacity(0.2);
+			@include filter(brightness(0.5) opacity(0.2));
+		}
+	}
+
+	&-container {
+		@include transition (all 0.4s ease-in-out);
+	  	border: 1px solid #dedede;
+	  	@include border-radius(6px); 
+	    overflow: hidden;
+	    background-color: white;
+	}
+
+	&-title {
+		height: 60px;
+		width: $width-Card-title;
+		font-weight: bold;
+		padding-bottom: 10px;
+
+		&-bubble {
+			font-size: 14px;
+			color:#06B;
+			height:49px;
+			float:left;
+			width:225px;
+		}
+
+		&-outter {
+			display: table;
+			height:40px;
+		}
+
+		&-inner {
+			display: table-cell;
+			vertical-align: bottom;
+			width: 100%;
+			line-height:14px;
+		}
+		  
+		&-element {
+			overflow: hidden;
+			width: 100%;
+			height: 43px;
+		}
+
+		&-element a {
+			color: #06B;
+			text-decoration: none;	
+		}
+
+		&-element a:hover {
+			text-decoration:underline;	
+		}
+
+		// &--box
+		&-typeBox {
+			width:60px;
+			height:60px;
+			float:left;
+			margin-right:15px;
+
+
+			// Images for hub_type_box 
+			&--Announcement {
+				background-image: url("../media/img/hub/60-news.png");
+			}
+
+			&--Show {
+				background-image: url("../media/img/hub/60-show.png");	
+			}
+
+			&--Picture {
+				background-image: url("../media/img/hub/60-photo.png");
+			}
+
+			&--Instagram,
+			&--InstagramWeekly,
+			&--InstagramWeeklyNew {
+				background-image: url("../media/img/hub/60-photo.png");
+			}
+
+			&--Video {
+				background-image: url("../media/img/hub/60-video.png");	
+			}
+
+			&--Store {
+				background-image: url("../media/img/hub/60-store.png");	
+			}
+
+			&--Press {
+				background-image: url("../media/img/hub/60-newspaper.jpeg");
+				background-position: center;
+				background-repeat: no-repeat;	
+			}
+
+			&--Blog {
+				background-image: url("../media/img/hub/60-blog.png");	
+			}
+		}
+
+		//.hub_entry_date {
+		&-date {
+			width:224px;
+			float:left;
+			font-size:10px;
+			color:#666;
+			text-transform:uppercase;
+		}
+	}
+
+	// Content within hub post 
+	&-content {
+		position:relative;
+		width: 100%; 
+		font-size:14px;
+		word-break: break-word;
+
+		// & p {
+		// 	padding:1px;
+		// 	margin:1px;
+		// }
+
+		// & p img,
+		// & * p img {
+		// 	-moz-box-shadow: 0px 0px 5px #CCC;
+		// 	-webkit-box-shadow: 0px 0px 5px #CCC;
+		// 	box-shadow: 0px 0px 5px #CCC;
+		// 	border:1px solid #AAA;	
+		// 	// width:100%;
+		// }
+
+		&-container{
+			position:relative;
+			width: 100%; //width: 320px;
+			//height: 180px;
+		}
+
+		// &-container img {
+		// 	//position: relative; //absolute;
+		// }
+	}
+
+	&--video {
+		&-thumb {
+			width: 100%;
+			//height: 180px;
+  			padding-bottom: 56.25%;
+
+			&-img {
+				width: 100%;
+				position: absolute;
+				cursor: pointer;
+   	// 			@include transition(all $transitionTime-Card ease);
+   	// 			transform : scale(1);
+   
+			 //    &:hover {
+				//    transform : scale(1.05);
+				// }
+			}
+
+			&-play {
+				position: absolute;
+				width:100%;
+				height:100%;
+				//background-image:url("../media/img/hub/video-play.png");
+				//background-image:url("../media/img/hub/playbutton-dark.png");
+				background-image:url("../media/img/hub/youtube-play.png");
+				background-repeat:no-repeat;
+				background-position:center center;
+				background-size: 60px;
+				opacity: 0.6;
+			}
+
+			// &-thumbnail {
+			// 	width: 100%;
+
+			// 	width:320px;
+			// 	height:180px;
+			// 	position:absolute;
+			// 	background-image:url("../media/img/hub/playbutton-dark.png");
+			// 	background-repeat:no-repeat;
+			// 	background-position:center center;
+			// 	filter:alpha(opacity=70);
+			// 	-moz-opacity:0.7;
+			// 	-khtml-opacity: 0.7;
+			// 	opacity: 0.7;	
+			// }
+
+			&-play:hover {
+				opacity: 1.0;
+			}
+		}
+	}
+
+	&--pic {
+		&-thumb {
+			position:relative;
+			width: 100%;
+			padding-bottom: 100%;
+
+			&-img {
+				width: 100%;
+				position:absolute;
+				// transform : scale(1);
+				// @include transition(all 300ms ease);
+
+				// &:hover {
+				// 	transform : scale(1.05);
+				// }
+			}
+		}
+	}
+}

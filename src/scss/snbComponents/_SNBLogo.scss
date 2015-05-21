@@ -1,0 +1,154 @@
+/**
+File: _Logo.scss
+*/
+
+// @-webkit-keyframes SNBLogoJiggle {
+// 	// 0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+// 	// 10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+// 	// 20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+// 	// 30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+// 	// 40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+// 	// 50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+// 	// 60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+// 	// 70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+// 	// 80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+// 	// 90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+// 	// 100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+// 	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+// 	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+// 	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+// 	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+// 	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+// 	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+// 	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+// 	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+// 	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+// 	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+// 	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+// }
+$SNBLogo-transition-time : 700ms;
+
+	// .SNBLogo-transition-bounce1 {
+	//     @include transition(all $SNBLogo-transition-time cubic-bezier(0.5, -0.5, 0.5, 1.5));
+	// }
+
+	// .SNBLogo-transition-bounce2 {
+	//     @include transition(all $SNBLogo-transition-time cubic-bezier(0,0.99,0.82,0.02));
+	// }
+
+	// .SNBLogo-transition-bounce2 {
+	//     @include transition(all $SNBLogo-transition-time cubic-bezier(0,0.99,0.82,0.02));
+	// }cubic-bezier(0,1.52,1,-0.51)
+
+// .SNBLogo-transition-bounce1 {
+//     @include transition(all $SNBLogo-transition-time cubic-bezier(.23,1.44,.36,.29));
+// }
+
+// .SNBLogo-transition-bounce2 {
+//     @include transition(all $SNBLogo-transition-time cubic-bezier(.41,1.57,.39,.32) ); //(0,-0.69,1,2));
+// }
+
+// .SNBLogo-transition-bounce3 {
+//     @include transition(all $SNBLogo-transition-time cubic-bezier(.24,.94,.38,1.23));
+// }
+
+.SNBLogo {
+	display: block;
+	width: 24em;
+	position: absolute;
+	top: 1em;
+	left: 1em;
+	fonts-size:1em;
+
+	z-index: index($zIndexElements--bodyElements, 'NavArea');
+
+	//@include transform( scale(1));
+	//@extend .u-extend-transition-all;//-inOutBounce; //.u-extend-transition-all--fast;
+	//@extend .SNBLogo-transition-bounce1;
+	//transition-timing-function: cubic-bezier(0.5, -0.5, 0.5, 1.5);
+	@extend .u-extend-transition-all--fast;
+	
+
+	&:hover,
+	&:focus {
+		//@include transform( scale(0.8));
+
+		//-webkit-animation-name: SNBLogoJiggle;
+		// -webkit-animation-name: rubberBand;
+		// -webkit-animation-duration: 500ms;
+		// -webkit-transform-origin:50% 50%;
+		// -webkit-animation-iteration-count: 1;
+		// -webkit-animation-timing-function: linear;
+
+		//@include animation(scale 1.0s ease-in, slide 2.0s ease);
+
+		// The above outputs the same CSS as using independent, granular mixins.
+		@include animation-name(rubberBand);
+		@include animation-duration(600ms);
+		//@include animation-origin(50% 50%);
+		@include animation-iteration-count(1);
+		@include animation-timing-function(linear);
+	}
+
+	&-img {
+		width: 100%;
+	}
+
+	@media (max-width: $switchWidthDesktopLarge) {
+		& {
+			font-size:0.9em;
+		}	    
+	}
+
+	@media (max-width: $switchWidthDesktop) {
+		& {
+			font-size:0.8em;
+		}	    
+	}
+
+	@media (max-width: $switchWidthiPad) {
+		& {
+			font-size:.7em;
+		}	    
+	}
+
+	@media (max-width: $switchWidthiPad2) {
+		& {
+			font-size:0.6em;
+		}	    
+	}	
+
+	@media (max-width: $switchWidthMobileBig) {
+		& {
+			position: fixed;
+			top: 1em;
+			left: 5em;
+			left:50%;
+			margin-left: -12em;
+			font-size: 0.2em;
+			z-index: index($zIndexElements--bodyElements, 'SNBLogo');
+		}	    
+	}
+
+	// &-link {
+
+	// 	@extend .SNBLogo-transition-bounce2;
+	// 	@include transform( scale(0.9));
+
+	// 	&:hover,
+	// 	&:focus {
+	// 		@include transform( scale(1.1));
+	// 	}
+	// }
+
+	// &-img {
+	// 	width: 100%;
+	// 	@extend .SNBLogo-transition-bounce3;
+	// 	@include transform( scale(1));
+
+	// 	&:hover,
+	// 	&:focus {
+	// 		@include transform( scale(0.9));
+	// 	}
+	// }
+}

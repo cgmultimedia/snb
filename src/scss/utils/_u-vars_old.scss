@@ -1,0 +1,395 @@
+/**
+Filename: _vars.scss
+Description:
+This contains variables which can be used globally throughout the .scss files.
+
+Note: placeholders (e.g. %fontColor-title { ...} ) are used for extending. So the compiled CSS will be DRY (Don't Repeat Yourself).
+*/
+/*
+
+// ======================================================================
+// 		Dimensions (widths / heights / padding / margins / top / bottom)
+// ======================================================================
+
+// ------------------------------------ 
+// Width & Height Layout dimension  
+// ------------------------------------
+$maxWrapperWidth   : 560px;
+$height-masthead   : 450px;
+$height-mastheadMobileDiff : 60px;
+
+$maxwidth-youTubeModalWindow : 1000px;
+
+// --------------------------------------------
+// Width & Height Used in multiple components
+// --------------------------------------------
+
+$heightWidth-albums-thumb  			 : 184px;
+$heightWidth-downloadSoundHound-logo : $heightWidth-albums-thumb;
+
+$width-BuyLink 						 : 89px;
+$width-BuyLink--small				 : 50px;
+
+// ------------------------------------------------------ 
+// Dimensions for switch from one device width to another 
+// ------------------------------------------------------ 
+$switchWidthColumns       : 641px; // Used to indicate when the 2 column switches to a 1 column. Esp in _Card.scss. 
+$switchWidthMobile        : 541px; // Used in _Card.scss, and potentially others 
+$switchWidthMobileSmaller : 361px; // Used in _Card.scss, and potentially others 
+
+// ------------------------------------------------------
+// Extra padding / margin
+// ------------------------------------------------------ 
+
+//$cardContent-topBottom-padding     : 5px;
+$padding-card-general                : 8px; //16px;
+$padding-card-topBottom              : 0; //$padding-card-general;
+$padding-card-side                   : 0px;
+$margin-card-top                     : 8px;
+$margin-card-side                    : 6px;
+
+// .Card-section padding on the sides
+$padding-card-section-side 			 : 12px;
+
+// InCardSwiper
+$padding-incardswiper-scrollbar-top  : 6px; // This is actually used within the swiperContainerAdjustment
+$padding-incardswiper-inbetweenTotal : 8px; // NOTE: this should never be more than 2*(13+$padding-incardswiper-scrollbar-top)
+
+// I'm not even 100% sure why this is the way it is, but it works (re : using the '$padding-incardswiper-inbetweenTotal' within the '$padding-incardswiper-swiperContainerAdjustment') 
+$padding-incardswiper-swiperContainerAdjustment : 13px + $padding-incardswiper-scrollbar-top - ($padding-incardswiper-inbetweenTotal/2);
+$padding-incardswiper-slideSides                : $padding-incardswiper-inbetweenTotal/2;
+$padding-incardswiper-videoLeft                 : $padding-incardswiper-slideSides;
+$padding-incardswiper-videoRight                : $padding-incardswiper-slideSides;
+$padding-incardswiper-containerSide             : $padding-card-general; //16px
+$padding-incardswiper-containerSideDiff         : $padding-incardswiper-containerSide - $padding-incardswiper-slideSides;
+
+$padding-incardswiper-containerLeft             : $padding-card-general; //16px; 
+
+// General card padding / margin
+$padding-cardTitle-bottom                                             : $padding-card-topBottom; 
+$padding-cardContent-side                                             : 6px;
+$marginOrPadding-spaceBeforeGreyLine                                  : $padding-card-general - $padding-cardContent-side; // Currently 16px - 6px = 10px
+$margin-cardContent-side                                              : $marginOrPadding-spaceBeforeGreyLine;
+$paddingAndMargin-cardContent-side                                    : $padding-cardContent-side + $marginOrPadding-spaceBeforeGreyLine;
+
+// PageHeader
+$marginTop-pageHeader                                                 : -150px;
+
+// YouTubeVideo - Super Bowl
+$paddingTop-YouTubeVideo-video										  : 5px;
+$paddingBottom-YouTubeVideo-video								   	  : 12px;
+
+// ArtistCard - Super Bowl
+$padding-ArtistCard-name-topBottom								      : $padding-card-topBottom;
+$padding-ArtistCard-name-side 										  : $padding-card-section-side;
+$paddingTop-ArtistCard-artistImage									  : 5px;
+$paddingBottom-ArtistCard-artistImage							   	  : 12px;
+
+// BuyLinks
+$marginLeft-BuyLinks-img                                              : $padding-card-general;
+
+// Tracks
+$margin-Tracks-left                                                   : $marginOrPadding-spaceBeforeGreyLine;
+$margin-Tracks-right                                                  : $margin-Tracks-left;
+
+// Biography card
+$padding-biography-textContainer                                      : $paddingAndMargin-cardContent-side;
+
+// Download Soundhound card
+$padding-card--downloadSoundHound-general                             : $padding-card-general ;
+// NOTE                                                               : Although this is a padding feature, it needs to be the same as margin-cardContent-side...
+// ... As it helps push the thin grey line to the right location. 
+$padding-card--downloadSoundHound-side                                : $marginOrPadding-spaceBeforeGreyLine; //$padding-cardContent-side; 
+$margin-card--downloadSoundHound-side                                 : $padding-cardContent-side; //$marginOrPadding-spaceBeforeGreyLine; 
+$padding-card--downloadSoundHound-downloadLinks-side 				  : $padding-cardContent-side;
+$marginLeft-DownloadSoundHound-downloadLinks-availHere--MobileSmaller : $marginOrPadding-spaceBeforeGreyLine;
+
+// Social Links
+$padding-card-socialLinks                                             : $marginOrPadding-spaceBeforeGreyLine ;
+
+// ======================================================================
+// 								  Fonts
+// ======================================================================
+
+// -------------------------------------------------------------------
+// Font Family 
+// Variables for which font family to use for specific elements.
+// ... This is used in conjuction with _u-fonts.scss
+// ... Whereby the the class name (e.g. .FontHelveticaNeueThin) will be extended
+// 
+// E.g. 
+// 		.myDiv {
+// 			@extend #{$fontFamily-PageHeaderTopTextTitle};
+// 		}
+// ------------------------------------------------------------------- 
+
+$fontFamily-body                                       : ".FontHelveticaNeueLight";
+
+$fontFamily-PageHeaderTopTextTitle                     : ".FontHelveticaNeueThin";
+$fontFamily-PageHeaderTopTextSubTitle                  : ".FontHelveticaNeueLight";
+$fontFamily-PageHeaderTopTextSubTitleEmphasis          : ".FontHelveticaNeueLight";
+
+$fontFamily-SocialLinks                                : ".FontHelveticaNeueLight";
+
+$fontFamily-Card-title                                 : ".FontHelveticaNeueThin";
+
+$fontFamily-DownloadSoundHound-title                   : $fontFamily-Card-title;
+$fontFamily-DownloadSoundHound-detail                  : $fontFamily-DownloadSoundHound-title;
+$fontFamily-DownloadSoundHound-downloadLinks-availHere : $fontFamily-DownloadSoundHound-title;
+
+// ----------- 
+// Fonts Size  
+// ----------- 
+$fontSize-title                        : 26px;
+$fontSize-subTitle                     : 15px;
+
+// Card
+$fontSize-Card-title                   : 21px;
+$fontSize-Card-subTitle                : 12px; 
+$fontSize-Card-text                    : 16px;
+$fontSize-Card-subText                 : 12px;
+
+// GenericSubSection
+$fontSize-GenericSubSection-title 	   : $fontSize-Card-text;
+$fontSize-GenericSubSection-extra      : $fontSize-Card-subText;
+
+// TrackSubSection
+$fontSize-TrackSubSection-title 	   : $fontSize-Card-text;
+$fontSize-TrackSubSection-extra   	   : $fontSize-Card-subText;
+
+// ArtistSubSection
+$fontSize-ArtistSubSection-title  	   : $fontSize-Card-text;
+$fontSize-ArtistSubSection-extra       : $fontSize-Card-subText;
+
+// PageHeader 
+$fontSize-PageHeader-title             : 21px;// 21.4px;
+$fontSize-PageHeader-subTitle          : 15px;
+
+// InCardSwiper
+$fontSize-InCardSwiper-text            : 15px;
+$fontSize-InCardSwiper-text-smaller    : 12px;
+
+// SocialLinks
+$fontSize-SocialLinks-link-text        : 15px;
+
+// DownloadSoundHound 
+$fontSize-DownloadSoundHound-title     : 21px;
+$fontSize-DownloadSoundHound-detail    : 16px; //20px;
+$fontSize-DownloadSoundHound-availHere : 16px;
+
+// Biography
+$fontSize-Biography-showMore-a : 16px;
+
+// Midomi
+$fontSize-Midomi : 16px;
+
+// ------------------------------------------------------------------
+// (Super Bowl 2015)
+$fontSize-CommercialCard-title : $fontSize-Card-title;
+$fontSize-CommercialCard-time  : $fontSize-Card-subTitle;
+
+$fontSize-PreshowMessage-title : 16px;
+$fontSize-PreshowMessage-text  : 14px;
+
+$fontSize-PostshowMessage-text  : 16px;
+
+// ======================================================================
+// 								 Colors
+// ======================================================================
+
+// ------ 
+// Colors 
+// ------ 
+$color-darkdeepgray         : #151515;
+$color-darkgrey             : #222222;
+$color-darkgrey2            : #2E2E2E;
+$color-darkgrey3            : #202020;
+$color-darkgrey4            : #333333;
+$color-darkgrey5            : #383838;
+$color-darkgrey-alphaZero   : rgba(38, 38, 38, 0);    // #222222
+$color-darkgrey-alpha85     : rgba(38, 38, 38, 0.85); // #222222 alpha 85%
+
+$color-grey                 : #999999;
+$color-lightgrey            : #cccccc;
+
+$color-brightgrey           : #e0e0e0;
+$color-verybrightgrey       : #f0f0f0;
+
+$color-borderUnderlineGrey  : #404040; 
+$color-borderUnderlineGrey2 : #d8d8d8;
+$color-borderUnderlineGrey3 : #989898;
+
+$color-white                : white;
+
+$color-orangeText			: #fb9a34;
+$color-orangeLink           : #F69E33;
+$color-orangeLinkHover      : #d5882a;
+
+
+// ----------- 
+// Font Colors 
+// ----------- 
+
+// Default 
+$fontColor-default                      : $color-grey;
+$fontColor-links                        : $color-lightgrey;
+$fontColor-title                        : $color-lightgrey;
+$fontColor-subTitle                     : $color-grey;
+
+// Card 
+$fontColor-Card-title                   : $color-lightgrey;
+$fontColor-Card-subTitle                : $color-grey;
+$fontColor-Card-text                	: $color-lightgrey;
+$fontColor-Card-subText                 : $color-grey;
+
+// GenericSubSection
+$fontColor-GenericSubSection-title 	    : $fontColor-Card-text;
+$fontColor-GenericSubSection-extra   	: $fontColor-Card-subText;
+
+// TrackSubSection
+$fontColor-TrackSubSection-title 	    : $fontColor-Card-text;
+$fontColor-TrackSubSection-extra   		: $fontColor-Card-subText;
+
+// ArtistSubSection
+$fontColor-ArtistSubSection-title 	    : $fontColor-Card-text;
+$fontColor-ArtistSubSection-extra   	: $fontColor-Card-subText;
+
+// Nav 
+$fontColor-Nav-link                     : $color-lightgrey;
+$fontColor-Nav-link-hover               : $color-brightgrey;
+
+// PageHeader 
+$fontColor-PageHeader-title             : $color-lightgrey;
+$fontColor-PageHeader-subTitle          : $color-grey;
+$fontColor-PageHeader-subTitle-emphasis : $color-lightgrey;
+
+// NavArea
+$fontColor-NavArea-nav 					: $color-lightgrey;
+$fontColor-NavArea-nav-item				: $color-lightgrey;
+$fontColor-NavArea-nav-item-active		: $color-brightgrey;
+
+
+// Card 
+$fontColor-Card-title                   : $color-lightgrey;
+$fontColor-Card-subTitle                : $color-grey;
+
+// Biography
+$fontColor-Biography-a                 : $color-orangeLink;
+$fontColor-Biography-a-hover           : $color-orangeLinkHover;
+
+$fontColor-Biography-showMore-a        : $color-lightgrey;
+$fontColor-Biography-showMore-a-hover  : $color-lightgrey;
+
+// Tracks (E.g. on Album & Artist page )
+$fontColor-Tracks-trackName             : $color-lightgrey;
+
+// Albums 
+$fontColor-Albums-albumName             : $color-lightgrey;
+$fontColor-Albums-albumYear             : $color-grey;
+
+// DownloadSoundHound 
+$fontColor-DownloadSoundHound-title     : $color-lightgrey;
+$fontColor-DownloadSoundHound-detail    : $color-grey;
+$fontColor-DownloadSoundHound-availHere : $color-grey;
+
+// InCardSwiper
+$fontColor-InCardSwiper-text            : $color-lightgrey;
+$fontColor-InCardSwiper-text-smaller    : $color-grey;
+
+// SocialLinks 
+$fontColor-SocialLinks                  : $color-grey;
+
+// Midomi 
+$fontColor-Midomi                       : $color-grey;
+
+// Footer 
+$fontColor-Footer                       : $color-grey;
+$fontColor-Footer-link                  : $color-grey;
+
+// ------------------------------------------------------------------
+// (Super Bowl 2015)
+$fontColor-CommercialCard-title : $color-lightgrey;
+$fontColor-CommercialCard-time  : $color-grey;
+
+$fontColor-PreshowMessage-title : $color-orangeText;
+
+// -------------------------- 
+// Background Colors 
+// -------------------------- 
+
+$backgroundColor-body	   			   : $color-darkdeepgray; //$color-backgroundBlack;
+
+$backgroundColor-mainContentCards	   : $color-darkdeepgray;
+
+$backgroundColor-Card                  : $color-darkgrey; //$color-darkgrey3; // $color-darkgrey-alpha85; // $color-darkgrey;
+$backgroundColor-Card-alphaZero        : $color-darkgrey-alphaZero; // Note this is the same as #222222 alpha zero. (where $color Darkgrey)
+$backgroundColor-CardCell              : $color-darkgrey4;
+
+// NavArea 
+$backgroundColor-NavArea-nav 		   : $color-darkgrey2;
+
+// GoogleAdBanner
+$backgroundColor-GoogleAdBanner        : $backgroundColor-body;
+
+$backgroundColor-Masthead              : $backgroundColor-body;
+$backgroundColor-Bokeh-gradientOverlay : $backgroundColor-body;
+
+$backgroundColor-CardCell-InCardSwiper : $backgroundColor-CardCell;
+$backgroundColor-CardCell-Album        : $backgroundColor-CardCell-InCardSwiper;
+
+
+$backgroundColor-CardYouTubeVideosIFrameContainer : $color-darkdeepgray;
+
+
+
+// -------------------------- 
+// Border Colors 
+// -------------------------- 
+
+$borderColor-NavArea-nav-item 					  : $color-borderUnderlineGrey;
+
+$borderColor-Card                                 : $color-borderUnderlineGrey2;
+$borderColor-Card-section 						  : $color-borderUnderlineGrey;
+
+$borderColor-CardBarLine 						  : $color-borderUnderlineGrey;
+ 
+$borderColor-CardTitle                            : $color-borderUnderlineGrey;
+$borderColor-CardAlbumDivideLine                  : $color-borderUnderlineGrey;
+$borderColor-TracksTableTr                        : $color-borderUnderlineGrey;
+
+$borderColor-GenericSubSection                    : $color-borderUnderlineGrey;
+
+$borderColor-TrackSubSection                      : $color-borderUnderlineGrey;
+
+$borderColor-Biography-ShowMoreLine               : $color-borderUnderlineGrey;
+
+$borderColor-DownloadSoundHound-textContainer     : $color-borderUnderlineGrey;
+
+
+// ----------------------------------
+// Box-Shadow Colors & border radius
+// ----------------------------------
+
+// box-shadow
+$boxShadowColor-InCardSwiper-tile                   : $color-darkdeepgray;
+
+// border-radius
+$borderRadius-swiperTiles                           : 5px; 
+$borderRadius-YourTubeVideos-video-clickContainer   : $borderRadius-swiperTiles;
+$borderRadius-Albums-album                          : $borderRadius-swiperTiles;
+
+// ======================================================================
+// 								 Timing
+// ======================================================================
+
+// ---------------- 
+// Transition Times 
+// ---------------- 
+$transitionTime-default            : 1s;
+$transitionTime-default--fast      : 500ms;
+
+*/
+
+
+
+

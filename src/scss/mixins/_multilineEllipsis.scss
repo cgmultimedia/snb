@@ -1,0 +1,66 @@
+// From: http://www.mobify.com/blog/multiline-ellipsis-in-pure-css/
+// Specifically example "09-readmore.html" from https://www.mobify.com/wp-content/uploads/2012/09/css-ellipses.zip
+
+@mixin multiline-ellipsis($height, $lineheight, $ellipsiswidth, $backgroundColor) {
+
+$ellipsiswidth: 3em !default;
+
+	.ellipsis {
+		overflow: hidden;
+		position: relative; //
+		height: $height;
+		line-height: $lineheight;
+		//margin: 20px;
+		//border: 5px solid #AAA; 
+	}
+
+	.ellipsis:before {
+		content:"";
+		float: left;
+		width: 5px; height: $height;
+	}
+
+	.ellipsis > *:first-child {
+		float: right;
+		width: 100%;
+		margin-left: -5px;
+	}
+
+	.ellipsis:after {
+		content: "\02026 Read More";
+
+		box-sizing: content-box;
+		-webkit-box-sizing: content-box;
+		-moz-box-sizing: content-box;
+
+		float: right; position: relative;
+		top: -25px; left: 100%; 
+		width: $ellipsiswidth; margin-left: -$ellipsiswidth;
+		padding-right: 5px;
+		
+		text-align: right;
+
+		background: $backgroundColor;
+		background: -webkit-gradient(linear, left top, right top,
+				from(rgba(255, 255, 255, 0)), to($backgroundColor), color-stop(50%, $backgroundColor));
+			background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), $backgroundColor 50%, $backgroundColor);			
+			background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), $backgroundColor 50%, $backgroundColor);
+			background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0), $backgroundColor 50%, $backgroundColor);
+			background: linear-gradient(to right, rgba(255, 255, 255, 0), $backgroundColor 50%, $backgroundColor)
+	}
+
+	// Added
+	.ellipsis a { position: absolute;
+		left: 0; top: 0;
+		width: 100%; height: 100%;
+		overflow: hidden; text-indent: -9999px;
+	}
+	.ellipsis i, .ellipsis:after {
+		font-style: normal;
+	}
+
+	.ellipsis i:before {
+		content: "Read More";
+	}
+
+}

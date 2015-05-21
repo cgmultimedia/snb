@@ -1,0 +1,26 @@
+$CardTileWidth  : 300px;// + 2px;
+$CardTileSpacer : 10px;
+$CardTileTotal  : $CardTileWidth + $CardTileSpacer;
+$extraSpace     : 10px;
+$maxWidth       : 2600px;
+$numIterations  : floor($maxWidth / ($CardTileTotal));
+
+.GridStatic {
+	display: block;
+	padding: 0;
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: $CardTileWidth + 2 * 10px;
+	padding-left: $CardTileSpacer;
+}
+
+@for $i from 1 through $numIterations {
+	$containerWidth : ($i * $CardTileWidth ) + ( $i * $CardTileSpacer ) ;
+
+	@media (min-width: $containerWidth + $extraSpace) {
+		.GridStatic { 
+			width: $containerWidth;
+		}
+	}
+}

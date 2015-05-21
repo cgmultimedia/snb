@@ -1,0 +1,145 @@
+/**
+File: _base-layout.scss
+*/
+//@import "utils/u-zindex";
+
+$l-main-top-extra : 30px; // This is needed to ensure the aperture scrim is placed appropriately.
+
+/* BASE CSS for Track, Artist, and Album pages
+-------------------------------------------------- */
+html {
+    // Make the scrollbar always visible.
+    // ... This is necessary for some of the aperture animation.
+    // ... Otherwise, the animation does weird things as the scrollbar appears/disappears
+    //overflow: -moz-scrollbars-vertical; 
+    //overflow-y: scroll;
+}
+
+body {
+    // font-family:'PFDinTextPro-Light';
+    // font-family: 'Helvetica Neue', 'Roboto', Helvetica, Helvetica, Arial, sans-serif;
+    // font-weight: 100;
+    //font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+
+    //font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    @extend #{$fontFamily-body};
+
+    // Tighter letter-spacing (a.k.a. kerning).
+    // ... This is especially necessary for the PageHeader-topText-subtitle...
+    // ... Otherwise the "Download on iTunes" button overlaps the text.
+    letter-spacing: 0px;
+
+    // ----------------------------------------------------------------------
+    // Helvetica Neue Regular Font Stack 
+    // font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:400; font-stretch:normal
+     
+    // Helvetica Neue Light Font Stack 
+    // font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:300; font-stretch:normal
+     
+    // Helvetica Neue Thin Font Stack
+    // font-family: "HelveticaNeueThin", "HelveticaNeue-Thin", "Helvetica Neue Thin", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Arial", sans-serif; font-weight:200; font-stretch:normal;
+    // ----------------------------------------------------------------------
+    
+    font-weight: 100;
+
+    background: white;
+    color: $fontColor-default;
+
+    // Set position to static, other wise there is an issue with jquery.smartbanner...
+    // ... Also, this is necessary because 'foundation' sets position: relative.
+    position: static; 
+
+    // Overwrite foundation's line-height
+    line-height: 1;
+
+    // In order for body to be later set to "overflow: hidden"...
+    // ... both "position: relative" and "height: 100%" will be required.
+    // HOWEVER: this is currently not needed.
+    //position: relative; 
+    //height: 100%;
+}
+
+html, body {
+    // Ensure on mobile devices the user can't scroll horizontally.
+    //overflow-x: hidden;
+
+    // Ensure on mobile devices there is a momentum scroll
+    //overflow-y: scroll; // has to be scroll, not auto
+    //-webkit-overflow-scrolling: touch;
+}
+
+.l-wrapper {
+    //max-width: $maxWrapperWidth;
+    margin: auto;
+    display: block;
+    position: relative;
+    background-color: white;
+    //box-shadow: 0px -2px 5px #888888;
+    z-index: index($zIndexElements--bodyElements, 'l-wrapper');
+}
+
+#main {
+    position: relative;
+}
+
+@media (max-width: $switchWidthMobileBig) {
+    // If the wrapper is on
+    .l-wrapper {
+        position: relative;
+        @include transition(transform 1s ease); //, -webkit-filter 1s ease;
+        @include transform(scale(1.0));
+        opacity: 1;
+        @include transform-origin(50% 0%);
+        background-color: white;
+    }
+    .l-wrapper.showFixedNavList {
+        //background-color: black;    
+    }
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    outline: none;
+    border:0px;
+    color: $fontColor-links;
+    text-decoration: underline;    
+}
+
+a:hover {
+    opacity: 0.95;
+}
+// Special class to help ensure transitions do not occur until after page load.
+// This is used in conjunction with having <body class="preload">...
+// ... And then removing that after the page load:
+// $("window").load(function() {
+//   $("body").removeClass("preload");
+// });
+// Modeled from: http://css-tricks.com/transitions-only-after-page-load/
+// .is-notLoaded * {
+//   -webkit-transition: none !important;
+//   -moz-transition: none !important;
+//   -ms-transition: none !important;
+//   -o-transition: none !important;
+//   transition: none !important;
+// }
+
+/* ------- Loading ------- */
+// #loading {
+//     min-height: 480px;
+//     height: 100%;
+//     width: 320px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     display: block;
+//     line-height: 1.4em;
+//     padding-top: 5px;
+// }
+
+// #loading div.spinner {
+//     text-align: center;
+//     padding-top: 30%;
+// }
+

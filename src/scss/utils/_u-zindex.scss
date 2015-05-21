@@ -1,0 +1,20 @@
+/** 
+File: _u-zindex.scss
+*/
+
+// Using zIndex management as suggested from: ...
+// ... http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
+// The first item in the list is the farthest back, the last item is the furthest forward.
+
+// E.g. $zIndexElements--test     : first, second, third; (last item is on top.)
+//  	Will make 'first' have 'z-index: 1', 'second' have 'z-index: 2', 'third' have 'z-index: 3'
+// 		Therefore, the last item in the list is highest (and is the top layer).
+
+$zIndexElements--bodyElements   			: l-pageWrapper, Masthead, l-wrapper, l-content, NavAreaMobileContainer, NavAreaMobileMobileBar, NavArea, SNBLogo, u-modal-overlay, u-modal-window, u-modal-card ;
+$zIndexElements--cardModal   				: contents, title, closeButton;
+$zIndexElements--pageWrapper				: Masthead, l-main,  Nav;
+//$zIndexElements--DownloadSoundHound 		: background, foreground;
+$zIndexElements--YouTubeVideos 				: cardTitle, closeButton, videoImg, videoPlay;
+$zIndexElements--YouTubeVideos-modalWindow  : iframeContainer, closeButton;
+//$zIndexElements--Masthead 					: backdrop, bokeh, image, apertureScrim;
+//$zIndexElements--Bokeh 						: canvas-color, canvas-initial, gradientOverlay;

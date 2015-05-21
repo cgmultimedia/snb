@@ -1,0 +1,102 @@
+// <div class="PressPage-content-cell">
+// 			<div class="PressPage-content-cell-title">
+// 				<?php echo $title; ?>
+// 			</div>
+// 			<img class="PressPage-content-cell-img" src="<?php echo $imgSrc; ?>"/>
+// 		</div>
+.PressPage {
+	&-content {
+		margin-left: auto;
+		margin-right: auto;
+		padding-bottom:10px;
+
+		& > a {
+			@include transition(all 300ms ease);
+			opacity: 0.9;
+			@include transform(scale(1));
+			text-decoration: none;
+
+			&:hover {
+				opacity: 1.0;
+				@include transform(scale(1.05));
+				text-decoration: underline;
+			}
+		}
+
+		&-cell {
+			float: left;
+			width: 24%;
+			padding: 0.5%;
+			text-align: center;
+			
+			&-title {
+				width: 100%;
+				padding-top: 10px;
+				padding-bottom: 10px;
+
+				font-family: $fontFamily-PressPage-cell; 
+				color: $fontColor-PressPage-cell;
+				font-size: 1.5em;
+			}
+
+			&-img {
+				width: 100%;
+			}
+
+			&-details {
+				word-wrap: break-word;
+			}
+		}
+
+
+		@media (max-width: $width-PressPage-content-1 - 1) {
+			& {
+			    width: 100%;
+
+			    // &-cell {
+			    // 	width: 50%;
+			    // }
+			}
+		}
+
+		@media (min-width: $width-PressPage-content-1) and (max-width: $width-PressPage-content-2 - 1) {
+			& {
+			    width: 100%; //$width-PressPage-content-2;
+
+			    // &-cell {
+			    // 	width: 25%;
+			    // }
+			}
+		}
+
+		@media (min-width: $width-PressPage-content-2) and (max-width: $width-PressPage-content-3 - 1) {
+			& {
+			    width: $width-PressPage-content-2;
+
+			    // &-cell {
+			    // 	width: 25%;
+			    // }
+			}
+		}
+
+		@media (min-width: $width-PressPage-content-3) { //and (max-width: $width-PressPage-content-4 - 1) {
+			& {
+			    width: $width-PressPage-content-3;
+
+			    // &-cell {
+			    // 	width: 25%;
+			    // }
+			}
+		}
+
+		// @media (min-width: $width-PressPage-content-4) {
+		// 	& {
+		// 	    width: $width-PressPage-content-3;
+
+		// 	    &-cell {
+		// 	    	width: 25%;
+		// 	    }
+		// 	}
+		// }
+	}
+}

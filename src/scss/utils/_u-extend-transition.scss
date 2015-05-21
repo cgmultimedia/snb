@@ -1,0 +1,113 @@
+/** 
+File: _u-global-extends.scss
+
+Details: 
+The purpose of this file is to make classes which can be extended in multiple other scss.
+This could save lines of code. 
+
+For example, adding a transition css property can involved multiple vendor prefixes.
+So instead of adding it for every element that would need it, if there is a global class which can be extened...
+... then it would save lines of code.
+
+E.g. The correct (or at least better in this particular situation) way: 
+
+// _u-extends.scss:
+// ----------------------------------
+.u-extend-transition-all {
+    @include transition(all $transitionTime-default ease-in-out);
+}
+
+// _DownloadSoundHound.scss
+// ----------------------------------
+.DownloadSoundHound-text-title {
+	...
+    @extend .u-extend-transition-all--fast;
+    ...
+}
+.DownloadSoundHound-text-detail {
+	...
+    @extend .u-extend-transition-all--fast;
+    ...
+}
+.DownloadSoundHound-text-logo {
+	...
+    @extend .u-extend-transition-all--fast;
+    ...
+}
+
+// Creates this in app.css:
+// ----------------------------------
+
+.u-extend-transition-all--fast,
+.DownloadSoundHound-text-title,
+.DownloadSoundHound-text-detail,
+.DownloadSoundHound-logo {
+	-moz-transition: all 500ms ease-in-out;
+	-o-transition: all 500ms ease-in-out;
+	-webkit-transition: all 500ms ease-in-out;
+	transition: all 500ms ease-in-out;
+}
+
+Instead of the WORSE way (in this particular situation) which creates much more code...
+... NOTE: this only applies if the extended code is more than 1 line.
+
+// _DownloadSoundHound.scss
+// ----------------------------------
+.DownloadSoundHound-text-title {
+	...
+    @include transition(all $transitionTime-default ease-in-out);
+    ...
+}
+.DownloadSoundHound-text-title {
+	...
+    @include transition(all $transitionTime-default ease-in-out);
+    ...
+}
+.DownloadSoundHound-text-title {
+	...
+    @include transition(all $transitionTime-default ease-in-out);
+    ...
+}
+
+// Creates this in app.css:
+// ----------------------------------
+
+.DownloadSoundHound-text-title {
+	...
+	-moz-transition: all 500ms ease-in-out;
+	-o-transition: all 500ms ease-in-out;
+	-webkit-transition: all 500ms ease-in-out;
+	transition: all 500ms ease-in-out;
+	...
+}
+
+.DownloadSoundHound-text-detail {
+	...
+	-moz-transition: all 500ms ease-in-out;
+	-o-transition: all 500ms ease-in-out;
+	-webkit-transition: all 500ms ease-in-out;
+	transition: all 500ms ease-in-out;
+	...
+}
+
+.DownloadSoundHound-logo {
+	...
+	-moz-transition: all 500ms ease-in-out;
+	-o-transition: all 500ms ease-in-out;
+	-webkit-transition: all 500ms ease-in-out;
+	transition: all 500ms ease-in-out;
+	...
+}
+
+*/
+
+.u-extend-transition-all {
+    @include transition(all $transitionTime-default ease-in-out);
+}
+
+.u-extend-transition-all--fast {
+    @include transition(all $transitionTime-default--fast ease-in-out);
+}
+
+
+

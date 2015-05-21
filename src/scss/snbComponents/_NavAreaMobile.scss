@@ -1,0 +1,245 @@
+/**
+File: _NavAreaMobile.scss
+*/
+
+$NavAreaMobile-li-marginPadding-right: 12px;//0.5em;
+$NavAreaMobile-li-marginPadding-left: 12px;//0.5em;
+$NavAreaMobile-mobileBarHeight: $NavAreaMobile-mobileBar-height;
+$NavAreaMobile-mobileBarNavExtraSpace: 10px;//0.5em;
+
+.NavAreaMobile {
+	display: none;
+
+	& a {
+		text-decoration: none;
+	}
+}
+
+@media (max-width: $switchWidthMobileBig) {
+	.NavAreaMobile {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: $NavAreaMobile-mobileBarHeight;
+		background-color: $backgroundColor-Nav;
+		font-family: $fontFamily-NavAreaMobile; 
+		font-size: 1.0em;
+
+		z-index: index($zIndexElements--bodyElements,'NavArea');
+
+		&-container {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $backgroundColor-Nav;
+
+			padding-bottom: 70px;
+
+			z-index: index($zIndexElements--bodyElements, 'NavAreaMobileContainer');
+
+			@include transform-origin(center top);
+			@include transform(translateY(-100%));
+			@include transition(all $transitionTime-default ease-in-out);
+			
+			.showFixedNavList & {
+				@include transform(translateY(0%));
+			}
+
+			&-nav {
+				font-size: 2.0em;
+				height:100%;
+				width: 100%;
+
+				& a,
+				& a:hover,
+				& a:active,
+				& a:visited {
+					color: $fontColor-Nav;
+				}
+
+				& ul {
+					display: table;
+					height: 100%;
+					width: 100%;
+
+					& li {
+						display: table-row;
+						width: 100%;
+						vertical-align: middle;
+						text-align: center;
+
+						& span {
+							display: table-cell;
+							text-align: center;
+							vertical-align: middle;
+
+
+						}
+
+					}
+				}
+
+				& .navExtraSpaceTop {
+					font-size:1px;
+					height: $NavAreaMobile-mobileBarHeight + $NavAreaMobile-mobileBarNavExtraSpace;
+				}
+				& .navExtraSpaceBottom {
+					font-size:1px;
+					height: $NavAreaMobile-mobileBarNavExtraSpace;
+				}
+			}
+		}
+
+		&-mobileBar {
+			display: block;
+			position: fixed;
+			top:0;
+			left: 0;
+			width: 100%;
+			right:0;
+			height: $NavAreaMobile-mobileBarHeight;
+
+			background-position: top center;
+			background-size: auto 2.5em;
+			background-repeat-y: no-repeat;
+			background-color: rgb(250, 236, 49);
+
+			//border-bottom: 1px solid $colorBorder-NavMobileBar;
+			// @include box-shadow(0px 0px 6px $color-boxShadow);
+
+			z-index: index($zIndexElements--bodyElements, 'NavAreaMobileMobileBar');
+
+			&::after {
+				content : "";
+				display: block;
+				position: absolute;
+				top: $NavAreaMobile-mobileBarHeight;
+				height: 6px;
+				background: transparent url(../media/img/general/short-bg-shadow.png) repeat-x 0 bottom;
+				width: 100%;
+			}
+
+			&-logo {
+
+			}
+			&-button {
+				&-holder {
+
+				}
+			}
+		}	    
+	}
+}
+
+// Headroom specific classes
+
+/**
+ * Note: I have omitted any vendor-prefixes for clarity.
+ * Adding them is left as an exercise for the reader.
+ */
+// .headroom {
+//     transition: transform 200ms linear;
+// }
+// .headroom--pinned {
+//     transform: translateY(0%);
+// }
+// .headroom--unpinned {
+//     transform: translateY(-100%);
+// }
+
+
+/*
+$NavAreaMobile-nav-item-padding-topbottom : 10px;
+.NavAreaMobile {
+	& nav {
+		// position: absolute;
+		display: table;
+	    width: 100%;
+	    position: -webkit-sticky;
+		position: -moz-sticky;
+		position: -o-sticky;
+		position: -ms-sticky;
+		position: sticky;
+
+		z-index: 999;
+		max-width: $maxWrapperWidth;
+		box-shadow: 0px 1px 1px black;
+		top: 0;
+
+		&.sticky {
+    		position: fixed;
+			//left: 0; 
+    	}
+	
+		&.cannotCssSticky {
+
+		}
+
+		& > ul.nav.nav-tabs {
+			display: table-row;
+			background-color: $backgroundColor-NavAreaMobile-nav; //#2E2E2E;
+			color: 	$fontColor-NavAreaMobile-nav;	
+	    	letter-spacing: 1px;
+		    padding: 0; 
+
+			// Set the nav tab to have cursor pointer...
+			// ... if it isn't active.
+		    & > li:not(.active) {
+		    	cursor: pointer;
+		    }
+
+		    & > li {
+		    	float: none;
+			    display: table-cell;
+				text-align: center;	
+			    padding: 0; 
+			    padding-top: $NavAreaMobile-nav-item-padding-topbottom;
+			    padding-bottom: $NavAreaMobile-nav-item-padding-topbottom;
+
+
+			    & > a {
+			    	color: 	$fontColor-NavAreaMobile-nav-item;	
+					display: inline-block;
+					width:100%;
+			    	border: none;
+			    	border-left: 1px solid $borderColor-NavAreaMobile-nav-item;
+					border-radius: 0;			    	
+			    	padding: 0;
+			    	padding-top: 4px;
+			    }
+
+				// The first item in teh nav does not need a border left
+				&:nth-child(1) > a {
+					border: none;
+				}
+
+			    &.active > a,
+			    &:hover > a {
+			    	//background-color: $backgroundColor-NavAreaMobile-nav-item-active;	
+			    	color: 	$fontColor-NavAreaMobile-nav-item-active;
+			    	background-color: transparent;
+			    	//font-weight: bold;
+			    }
+			    &.active > a:after,
+			    &.hover > a:after {
+			    	content: " ";
+					display: block;
+					height: 3px;
+					background-color: #fb9a34;
+					width: 100%;
+					position: absolute;
+					// margin-left: -15px;
+					// margin-top: 7px;
+					bottom: (-1 * $NavAreaMobile-nav-item-padding-topbottom);
+			    }
+		    }
+		}
+	}
+}
+*/

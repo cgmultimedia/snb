@@ -1,0 +1,18 @@
+/**
+File: _u-extend-overflowEllipsis.scss
+Detail:
+	A pure css3 loader, similar to a gif loader.
+
+	You can extend .u-extend-overflowEllipsis to add the properties to other classes.
+
+	E.g.
+
+	.myClass {
+		@extend .u-extend-overflowEllipsis;
+	}
+*/
+.u-extend-overflowEllipsis {
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

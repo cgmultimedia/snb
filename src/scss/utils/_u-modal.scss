@@ -1,0 +1,30 @@
+/**
+ File: _u-modal.scss
+ */
+
+.u-modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: index($zIndexElements--bodyElements, u-modal-overlay);
+	background-color: rgba(0,0,0,0.70);
+	cursor: pointer;
+}
+
+.u-modal-window {
+	display: none;
+	position: absolute;
+	top: 0; 
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	z-index: index($zIndexElements--bodyElements, u-modal-window);
+}
+
+.u-modal-window--fixed {
+	position: fixed;
+}

@@ -1,0 +1,76 @@
+.MastheadOverlays {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+
+	&-buyAlbum {
+		position: absolute;
+		display: block;
+		height: 13%;
+		width: 20%;
+		top: 55%;
+		left: 50%;
+		margin-left: -10%;
+		background-image: url(../media/img/masthead-temp/buy-album.png);
+		background-position: top center;
+		background-size: 100%;
+		background-repeat-y: no-repeat;
+	}
+
+	.u-isMobile &-buyAlbum{
+		top: 62%;
+	}
+
+	&-title {
+		position: absolute;
+		display: block;
+		text-align: center;
+		padding: 3%;
+		top: 70%;
+		left: 50%;
+		height: 15%;
+		width: 50%;
+		margin-left: -28%;
+		font-family: $fontFamily-defaultTitle; 
+		color: $fontColor-MastheadOverlays-title;
+		background-image: url(../media/img/masthead/titleBanner.png);
+		background-position: top center;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		font-size: 8vw;
+		
+		&--home {
+			// width: 44%;
+			// margin-left: -22%;
+		}
+	}
+	
+    @media (max-width: $switchWidthMobileBig) {
+    	// &-buyAlbum {
+    	// 	display: none;
+    	// }
+
+    	.u-isMobile &-title {
+		  	top: 70%;
+
+		  	//left: 50%;
+		  	font-size: 11vw;
+		  	text-align: center;
+		  	padding: 5%;
+		  	height:10%;
+			width: 70%;
+			margin-left: -40%;
+		}
+
+		&-title--home {
+			// width: 80%;
+			// margin-left: -40%;
+			//width: 70%;
+  			//margin-left: -40%;
+		}
+	}
+}

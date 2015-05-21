@@ -1,0 +1,11 @@
+
+.u-loading {
+	background: none;
+	background-image: url("../img/ic/ic_btn_preview_loading.png")!important;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	//@include animation(animateloadingCircle 1.5s linear infinite);
+	-webkit-animation: animateloadingCircle 1.5s linear infinite;
+	-moz-animation: animateloadingCircle 1.5s linear infinite;
+	animation: animateloadingCircle 1.5s linear infinite;
+}

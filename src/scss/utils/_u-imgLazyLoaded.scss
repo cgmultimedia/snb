@@ -1,0 +1,21 @@
+/**
+File: _u-deferedImage.scss
+*/
+
+// 
+.u-imgLazyLoaded {
+	//@extend .u-extend-transition-all--fast;
+	@include transition(opacity 1s ease);
+}
+
+.u-imgLazyLoaded--loading {
+	// NOTE: it has to be visibility hidden... or 'getBoundingClientRect()' just gets [0 0 0 0] results
+	//visibility: hidden; 
+	opacity: 0;
+	height: 0;
+	width: 0;
+}
+
+.u-imgLazyLoaded--loaded {
+	opacity: 1;
+}

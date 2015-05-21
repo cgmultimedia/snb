@@ -1,0 +1,27 @@
+/**
+File: _CloseButton.scss
+*/
+.CloseButton {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	text-indent: 51px;
+
+	background-image: url(../media/img/general/closeButtonHalf2.png);
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	cursor: pointer;
+
+	&--half {
+		height: 27px;
+	}
+	// &--inCard {
+	// 	display      : none;
+	// 	float        : right;
+	// 	margin-top   : -11px;
+	// 	margin-right : -11px;
+	// }
+}
