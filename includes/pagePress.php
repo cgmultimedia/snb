@@ -68,11 +68,15 @@
 ?>
 
     <div id="main" role="main">
-      <?php // NOTE: just by having Grid will make the masonry grid initialize ?>
+      <?php printPressContent(); ?>
+      <?php // NOTE: just by having Grid will make the masonry grid initialize 
+      /*
       <ul class="Grid">
-        <?php printPressContent(); ?>
+        < ? php printPressContent(); ? >
         <!-- End of grid blocks -->
       </ul>
+      */
+      ?>
     </div>
   </div>
 </div>

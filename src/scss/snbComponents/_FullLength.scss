@@ -1,0 +1,17 @@
+.FullLength {
+	width : 100%;
+	max-width : 1020px;
+	margin-left: auto;
+	margin-right : auto;
+
+	&-card {
+		//width : 100%;
+		padding : 10px;
+		padding-top: 30px;
+  		padding-bottom: 30px;
+
+		& {
+			border-top: 1px solid #DDD;
+		}
+	}
+}

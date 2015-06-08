@@ -7,7 +7,9 @@
       </div> -->
       <div class="Card-title-text">
         <div class="Card-title-text-container">
-          <?php echo $title ?>
+          <div class="Card-title-text-container-div">
+            <?php echo $title ?>
+          </div>
         </div>
       </div>
       <div class="Card-title-date">
@@ -19,21 +21,32 @@
     <?php
   }
 
+  function printCardDetailsForFullLength($type, $title, $date) {
+    ?>
+    <div class="FullLength-card-title">
+      <?php echo $title;?>
+    </div>
+    <div class="FullLength-card-date">
+      <?php echo $date;?>
+    </div>
+    <?php
+  }
+
 // <div id="hub_post_id_12167" class="hub_post">
   function printCardHeaderWithDetail($type, $title, $date) {
     // echo "<!-- ".$type."-".$title."-".$date."-->";
     // <div class='Card Card--video Card--isLoading'>
     ?>
-      <div class='Card Card--video'>
+      <div class='Card Card--<?php echo $type;?>'>
         <div class="Card-container">
           <?php printCardDetails($type, $title, $date); ?>
           <div class="Card-content">
     <?php
   }
 
-  function printCardHeader() {
+  function printCardHeader($type) {
     ?>
-      <div class='Card Card--video'>
+      <div class='Card Card--<?php echo $type;?>'>
         <div class="Card-container">
           <div class="Card-content">
     <?php
@@ -87,7 +100,7 @@
     $youtubeId = $cardData->alttext;
 
 
-    printCardHeader();
+    printCardHeader($type);
     // hub_video_thumbnail
     // <div class="Card--video-thumb-thumbnail cursor-pointer" href="#" data-v_code="vsRDsUOlhS8"></div>
     ?>
@@ -146,7 +159,7 @@
     $tempImgUrl    = $templateDir. "/media/img/general/1x1-white.gif";
 
     //printCardHeader($type, $title, $date);
-    printCardHeader();
+    printCardHeader($type);
     // hub_video_thumbnail
     // <div class="Card--video-thumb-thumbnail cursor-pointer" href="#" data-v_code="vsRDsUOlhS8"></div>
     // <img class="Card--picture-thumb-img" src="http://img.youtube.com/vi/< ? php echo $youtubeId; ? >/mqdefault.jpg" class="shadow_box_small">
@@ -178,16 +191,25 @@
   function printPressContent() {
     $data = json_decode(file_get_contents('http://splashnboots.com/SNBAPI/get/press.php'));
     $rows = $data->rows;
-?>
-<?php
+
+    echo "<div class='FullLength'>";
+
     for ($i=0; $i<count($rows); $i++) { 
       $name = $rows[$i]->name;
-      ?>
-      <li class="CardTile">
-        <?php printCardPress($rows[$i]); ?>
-      </li>
-      <?php
+      printCardPress($rows[$i]);
     }
+
+    echo "</div>"; // .FullLengthWrapper
+/*
+    for ($i=0; $i<count($rows); $i++) { 
+      $name = $rows[$i]->name;
+      ? >
+      <li class="CardTile">
+        < ? php printCardPress($rows[$i]); ? >
+      </li>
+    }
+      < ? php
+    */
   }
 
   function printCardPress($cardData) {
@@ -200,15 +222,20 @@
     $date      = $cardData->post_date;
     $content   = $cardData->post_content;
 
-    printCardHeader($type, $title, $date);
+    //printCardHeader($type);
+    //printCardHeader($type, $title, $date);
     // hub_video_thumbnail
     // <div class="Card--video-thumb-thumbnail cursor-pointer" href="#" data-v_code="vsRDsUOlhS8"></div>
+    // <div class="Card-content-container">
     ?>
-      <div class="Card-content-container">
-        <?php echo $content;?>
+      <div class="FullLength-card FullLength-card--<?php echo $type;?>">
+        <?php 
+          printCardDetailsForFullLength($type, $title, $date);
+          echo $content;
+        ?>
       </div>
     <?php 
-    printCardFooter();
+    //printCardFooter($type, $title, $date);
   }
 
   // ==============================
@@ -223,11 +250,7 @@
 <?php
     for ($i=0; $i<count($rows); $i++) { 
       $name = $rows[$i]->name;
-      ?>
-      <li class="CardTile">
-        <?php printCardPress($rows[$i]); ?>
-      </li>
-      <?php
+        printCardPress($rows[$i]);
     }
   }
 
@@ -239,7 +262,7 @@
     $date      = $cardData->post_date;
     $content   = do_shortcode( $cardData->post_content);
 
-    printCardHeader($type, $title, $date);
+    printCardHeader($type); //, $title, $date);
     // hub_video_thumbnail
     // <div class="Card--video-thumb-thumbnail cursor-pointer" href="#" data-v_code="vsRDsUOlhS8"></div>
     ?>
@@ -247,7 +270,7 @@
         <?php echo $content;?>
       </div>
     <?php 
-    printCardFooter();
+    printCardFooter($type, $title, $date);
   }
 
 ?>
