@@ -1,35 +1,55 @@
 <?php
+
+  function printCardDetails($type, $title, $date) {
+    ?>
+    <div class="Card-title">
+      <!-- <div class="Card-title-typeBox Card-title-typeBox--<?php echo $type?>">
+      </div> -->
+      <div class="Card-title-text">
+        <div class="Card-title-text-container">
+          <?php echo $title ?>
+        </div>
+      </div>
+      <div class="Card-title-date">
+        <div class="Card-title-date-container">
+          <?php echo $date ?>
+        </div>
+      </div>
+    </div>
+    <?php
+  }
+
 // <div id="hub_post_id_12167" class="hub_post">
-  function printCardHeader($type, $title, $date) {
-    echo "<!-- ".$type."-".$title."-".$date."-->";
+  function printCardHeaderWithDetail($type, $title, $date) {
+    // echo "<!-- ".$type."-".$title."-".$date."-->";
     // <div class='Card Card--video Card--isLoading'>
     ?>
       <div class='Card Card--video'>
         <div class="Card-container">
-          <div class="Card-title">
-            <div class="Card-title-typeBox Card-title-typeBox--<?php echo $type?>">
-            </div>
-            <div class="Card-title-bubble">
-              <div class="Card-title-outter">
-                <div class="Card-title-inner">
-                  <div class="Card-title-element">
-                    <?php echo $title ?>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="Card-title-date">
-              <?php echo $date ?>
-            </div>
-          </div>
+          <?php printCardDetails($type, $title, $date); ?>
           <div class="Card-content">
     <?php
   }
 
+  function printCardHeader() {
+    ?>
+      <div class='Card Card--video'>
+        <div class="Card-container">
+          <div class="Card-content">
+    <?php
+  }
+
+
+  function printCardFooterWithDetail($type, $title, $date) {
+    ?>
+          </div>
+          <?php printCardDetails($type, $title, $date); ?>
+        </div>
+      </div>
+    <?php
+  }
+
   function printCardFooter() {
-          // <div>
-          //   <hr>
-          // </div>
     ?>
           </div>
         </div>
@@ -67,7 +87,7 @@
     $youtubeId = $cardData->alttext;
 
 
-    printCardHeader($type, $title, $date);
+    printCardHeader();
     // hub_video_thumbnail
     // <div class="Card--video-thumb-thumbnail cursor-pointer" href="#" data-v_code="vsRDsUOlhS8"></div>
     ?>
@@ -78,7 +98,7 @@
         </div>
       </div>
     <?php 
-    printCardFooter();
+    printCardFooterWithDetail($type, $title, $date);
   }
   
   // ==============================
@@ -125,7 +145,8 @@
 
     $tempImgUrl    = $templateDir. "/media/img/general/1x1-white.gif";
 
-    printCardHeader($type, $title, $date);
+    //printCardHeader($type, $title, $date);
+    printCardHeader();
     // hub_video_thumbnail
     // <div class="Card--video-thumb-thumbnail cursor-pointer" href="#" data-v_code="vsRDsUOlhS8"></div>
     // <img class="Card--picture-thumb-img" src="http://img.youtube.com/vi/< ? php echo $youtubeId; ? >/mqdefault.jpg" class="shadow_box_small">
@@ -144,7 +165,8 @@
         </div>
       </div>
     <?php 
-    printCardFooter();
+    //printCardFooter();
+    printCardFooterWithDetail($type, $title, $date);
   }
 
 

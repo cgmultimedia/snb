@@ -1,5 +1,18 @@
 // NOTE: the width of the card tile is defined in: _CardTile.scss
 // $(".Card--video").first().addClass("Card--isLoading");
+
+$height-Card-title        : 90px;
+$height-Card-title-text   : 60px;
+$width-Card               : 300px;
+
+// height                 : 90px;
+// width                  : 280px;
+//$height-Card-title-date : $height-Card-title - $height-Card-title-text;
+
+$color-Card-title-text    : #06B;
+
+$padding-Card-title       : 10px;
+
 .Card {
 	// -webkit-transition       : all 0.4s ease-in-out; //cubic-bezier(0.5, -0.4, 0.5, 1.4);
 	// -moz-transition          : all 0.4s ease-in-out; //cubic-bezier(0.5, -0.4, 0.5, 1.4);
@@ -39,100 +52,125 @@
 	}
 
 	&-title {
-		height: 60px;
-		width: $width-Card-title;
+		display: table;
+		height: $height-Card-title;
+		width: $width-Card - $padding-Card-title * 2;
 		font-weight: bold;
-		padding-bottom: 10px;
+		padding: $padding-Card-title;
 
-		&-bubble {
+		&-text {
+			display: table-row;
 			font-size: 14px;
-			color:#06B;
-			height:49px;
-			float:left;
-			width:225px;
-		}
+			color: $color-Card-title-text;
+			height:$height-Card-title-text;
+			width:100%;
 
-		&-outter {
-			display: table;
-			height:40px;
-		}
-
-		&-inner {
-			display: table-cell;
-			vertical-align: bottom;
-			width: 100%;
-			line-height:14px;
-		}
-		  
-		&-element {
-			overflow: hidden;
-			width: 100%;
-			height: 43px;
-		}
-
-		&-element a {
-			color: #06B;
-			text-decoration: none;	
-		}
-
-		&-element a:hover {
-			text-decoration:underline;	
-		}
-
-		// &--box
-		&-typeBox {
-			width:60px;
-			height:60px;
-			float:left;
-			margin-right:15px;
-
-
-			// Images for hub_type_box 
-			&--Announcement {
-				background-image: url("../media/img/hub/60-news.png");
-			}
-
-			&--Show {
-				background-image: url("../media/img/hub/60-show.png");	
-			}
-
-			&--Picture {
-				background-image: url("../media/img/hub/60-photo.png");
-			}
-
-			&--Instagram,
-			&--InstagramWeekly,
-			&--InstagramWeeklyNew {
-				background-image: url("../media/img/hub/60-photo.png");
-			}
-
-			&--Video {
-				background-image: url("../media/img/hub/60-video.png");	
-			}
-
-			&--Store {
-				background-image: url("../media/img/hub/60-store.png");	
-			}
-
-			&--Press {
-				background-image: url("../media/img/hub/60-newspaper.jpeg");
-				background-position: center;
-				background-repeat: no-repeat;	
-			}
-
-			&--Blog {
-				background-image: url("../media/img/hub/60-blog.png");	
+			&-container {
+				display: table-cell;
+				vertical-align: middle;
 			}
 		}
 
-		//.hub_entry_date {
 		&-date {
-			width:224px;
-			float:left;
+			display: table-row;
+			width:100%;
+			//height: $height-Card-title-date;
 			font-size:10px;
 			color:#666;
 			text-transform:uppercase;
+			padding-top: $padding-Card-title;
+
+			&-container {
+				display:table-cell;
+				vertical-align: middle;
+			}
 		}
+
+		& a:hover {
+			text-decoration:underline;	
+		}
+
+
+		// &-bubble {
+		// 	font-size: 14px;
+		// 	color:#06B;
+		// 	height:49px;
+		// 	float:left;
+		// 	width:225px;
+		// }
+
+		// &-outter {
+		// 	display: table;
+		// 	height:40px;
+		// }
+
+		// &-inner {
+		// 	display: table-cell;
+		// 	vertical-align: bottom;
+		// 	width: 100%;
+		// 	line-height:14px;
+		// }
+		  
+		// &-element {
+		// 	overflow: hidden;
+		// 	width: 100%;
+		// 	height: 43px;
+		// }
+
+		// &-element a {
+		// 	color: #06B;
+		// 	text-decoration: none;	
+		// }
+
+		// &-element a:hover {
+		// 	text-decoration:underline;	
+		// }
+
+		// &--box
+		// &-typeBox {
+		// 	width:60px;
+		// 	height:60px;
+		// 	float:left;
+		// 	margin-right:15px;
+
+
+		// 	// Images for hub_type_box 
+		// 	&--Announcement {
+		// 		background-image: url("../media/img/hub/60-news.png");
+		// 	}
+
+		// 	&--Show {
+		// 		background-image: url("../media/img/hub/60-show.png");	
+		// 	}
+
+		// 	&--Picture {
+		// 		background-image: url("../media/img/hub/60-photo.png");
+		// 	}
+
+		// 	&--Instagram,
+		// 	&--InstagramWeekly,
+		// 	&--InstagramWeeklyNew {
+		// 		background-image: url("../media/img/hub/60-photo.png");
+		// 	}
+
+		// 	&--Video {
+		// 		background-image: url("../media/img/hub/60-video.png");	
+		// 	}
+
+		// 	&--Store {
+		// 		background-image: url("../media/img/hub/60-store.png");	
+		// 	}
+
+		// 	&--Press {
+		// 		background-image: url("../media/img/hub/60-newspaper.jpeg");
+		// 		background-position: center;
+		// 		background-repeat: no-repeat;	
+		// 	}
+
+		// 	&--Blog {
+		// 		background-image: url("../media/img/hub/60-blog.png");	
+		// 	}
+		// }
 	}
 
 	// Content within hub post 

@@ -2125,7 +2125,7 @@ File: _Logo.scss
   /* line 22, ../src/scss/snbComponents/_GridStatic.scss */
   .GridStatic {
     width: 2480px; } }
-/* line 3, ../src/scss/snbComponents/_Card.scss */
+/* line 16, ../src/scss/snbComponents/_Card.scss */
 .Card {
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -2147,18 +2147,18 @@ File: _Logo.scss
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
   background-color: white; }
-  /* line 21, ../src/scss/snbComponents/_Card.scss */
+  /* line 34, ../src/scss/snbComponents/_Card.scss */
   .Card--isLoading {
     -webkit-transform: rotateX(-40deg);
     -moz-transform: rotateX(-40deg);
     -ms-transform: rotateX(-40deg);
     -o-transform: rotateX(-40deg);
     transform: rotateX(-40deg); }
-    /* line 26, ../src/scss/snbComponents/_Card.scss */
+    /* line 39, ../src/scss/snbComponents/_Card.scss */
     .Card--isLoading .Card-container {
       -webkit-filter: brightness(0.5) opacity(0.2);
       filter: brightness(0.5) opacity(0.2); }
-  /* line 33, ../src/scss/snbComponents/_Card.scss */
+  /* line 46, ../src/scss/snbComponents/_Card.scss */
   .Card-container {
     -moz-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
@@ -2171,100 +2171,59 @@ File: _Logo.scss
     border-radius: 6px;
     overflow: hidden;
     background-color: white; }
-  /* line 41, ../src/scss/snbComponents/_Card.scss */
+  /* line 54, ../src/scss/snbComponents/_Card.scss */
   .Card-title {
-    height: 60px;
-    width: 300px;
+    display: table;
+    height: 80px;
+    width: 280px;
     font-weight: bold;
-    padding-bottom: 10px; }
-    /* line 47, ../src/scss/snbComponents/_Card.scss */
-    .Card-title-bubble {
+    padding: 10px; }
+    /* line 61, ../src/scss/snbComponents/_Card.scss */
+    .Card-title-text {
+      display: table-row;
       font-size: 14px;
       color: #06B;
-      height: 49px;
-      float: left;
-      width: 225px; }
-    /* line 55, ../src/scss/snbComponents/_Card.scss */
-    .Card-title-outter {
-      display: table;
-      height: 40px; }
-    /* line 60, ../src/scss/snbComponents/_Card.scss */
-    .Card-title-inner {
-      display: table-cell;
-      vertical-align: bottom;
-      width: 100%;
-      line-height: 14px; }
-    /* line 67, ../src/scss/snbComponents/_Card.scss */
-    .Card-title-element {
-      overflow: hidden;
-      width: 100%;
-      height: 43px; }
-    /* line 73, ../src/scss/snbComponents/_Card.scss */
-    .Card-title-element a {
-      color: #06B;
-      text-decoration: none; }
-    /* line 78, ../src/scss/snbComponents/_Card.scss */
-    .Card-title-element a:hover {
-      text-decoration: underline; }
-    /* line 83, ../src/scss/snbComponents/_Card.scss */
-    .Card-title-typeBox {
-      width: 60px;
       height: 60px;
-      float: left;
-      margin-right: 15px; }
-      /* line 91, ../src/scss/snbComponents/_Card.scss */
-      .Card-title-typeBox--Announcement {
-        background-image: url("../media/img/hub/60-news.png"); }
-      /* line 95, ../src/scss/snbComponents/_Card.scss */
-      .Card-title-typeBox--Show {
-        background-image: url("../media/img/hub/60-show.png"); }
-      /* line 99, ../src/scss/snbComponents/_Card.scss */
-      .Card-title-typeBox--Picture {
-        background-image: url("../media/img/hub/60-photo.png"); }
-      /* line 103, ../src/scss/snbComponents/_Card.scss */
-      .Card-title-typeBox--Instagram, .Card-title-typeBox--InstagramWeekly, .Card-title-typeBox--InstagramWeeklyNew {
-        background-image: url("../media/img/hub/60-photo.png"); }
-      /* line 109, ../src/scss/snbComponents/_Card.scss */
-      .Card-title-typeBox--Video {
-        background-image: url("../media/img/hub/60-video.png"); }
-      /* line 113, ../src/scss/snbComponents/_Card.scss */
-      .Card-title-typeBox--Store {
-        background-image: url("../media/img/hub/60-store.png"); }
-      /* line 117, ../src/scss/snbComponents/_Card.scss */
-      .Card-title-typeBox--Press {
-        background-image: url("../media/img/hub/60-newspaper.jpeg");
-        background-position: center;
-        background-repeat: no-repeat; }
-      /* line 123, ../src/scss/snbComponents/_Card.scss */
-      .Card-title-typeBox--Blog {
-        background-image: url("../media/img/hub/60-blog.png"); }
-    /* line 129, ../src/scss/snbComponents/_Card.scss */
+      width: 100%; }
+      /* line 68, ../src/scss/snbComponents/_Card.scss */
+      .Card-title-text-container {
+        display: table-cell;
+        vertical-align: middle; }
+    /* line 74, ../src/scss/snbComponents/_Card.scss */
     .Card-title-date {
-      width: 224px;
-      float: left;
+      display: table-row;
+      width: 100%;
       font-size: 10px;
       color: #666;
-      text-transform: uppercase; }
-  /* line 139, ../src/scss/snbComponents/_Card.scss */
+      text-transform: uppercase;
+      padding-top: 10px; }
+      /* line 83, ../src/scss/snbComponents/_Card.scss */
+      .Card-title-date-container {
+        display: table-cell;
+        vertical-align: middle; }
+    /* line 89, ../src/scss/snbComponents/_Card.scss */
+    .Card-title a:hover {
+      text-decoration: underline; }
+  /* line 177, ../src/scss/snbComponents/_Card.scss */
   .Card-content {
     position: relative;
     width: 100%;
     font-size: 14px;
     word-break: break-word; }
-    /* line 159, ../src/scss/snbComponents/_Card.scss */
+    /* line 197, ../src/scss/snbComponents/_Card.scss */
     .Card-content-container {
       position: relative;
       width: 100%; }
-  /* line 171, ../src/scss/snbComponents/_Card.scss */
+  /* line 209, ../src/scss/snbComponents/_Card.scss */
   .Card--video-thumb {
     width: 100%;
     padding-bottom: 56.25%; }
-    /* line 176, ../src/scss/snbComponents/_Card.scss */
+    /* line 214, ../src/scss/snbComponents/_Card.scss */
     .Card--video-thumb-img {
       width: 100%;
       position: absolute;
       cursor: pointer; }
-    /* line 188, ../src/scss/snbComponents/_Card.scss */
+    /* line 226, ../src/scss/snbComponents/_Card.scss */
     .Card--video-thumb-play {
       position: absolute;
       width: 100%;
@@ -2274,15 +2233,15 @@ File: _Logo.scss
       background-position: center center;
       background-size: 60px;
       opacity: 0.6; }
-    /* line 216, ../src/scss/snbComponents/_Card.scss */
+    /* line 254, ../src/scss/snbComponents/_Card.scss */
     .Card--video-thumb-play:hover {
       opacity: 1.0; }
-  /* line 223, ../src/scss/snbComponents/_Card.scss */
+  /* line 261, ../src/scss/snbComponents/_Card.scss */
   .Card--pic-thumb {
     position: relative;
     width: 100%;
     padding-bottom: 100%; }
-    /* line 228, ../src/scss/snbComponents/_Card.scss */
+    /* line 266, ../src/scss/snbComponents/_Card.scss */
     .Card--pic-thumb-img {
       width: 100%;
       position: absolute; }
