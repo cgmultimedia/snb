@@ -2287,20 +2287,21 @@ File: _Logo.scss
   /* line 13, ../src/scss/snbComponents/_CardTile.scss */
   .CardTile.inactive {
     visibility: hidden;
-    opacity: 0; }
-  /* line 17, ../src/scss/snbComponents/_CardTile.scss */
+    opacity: 0;
+    display: none !important; }
+  /* line 18, ../src/scss/snbComponents/_CardTile.scss */
   .CardTile--static {
     display: block;
     float: left;
     margin-right: 10px; }
-  /* line 23, ../src/scss/snbComponents/_CardTile.scss */
+  /* line 24, ../src/scss/snbComponents/_CardTile.scss */
   .CardTile--displayNone {
     display: none; }
-  /* line 28, ../src/scss/snbComponents/_CardTile.scss */
+  /* line 29, ../src/scss/snbComponents/_CardTile.scss */
   .CardTile--videos, .CardTile--pictures {
     cursor: pointer;
     transform: scale(1); }
-    /* line 34, ../src/scss/snbComponents/_CardTile.scss */
+    /* line 35, ../src/scss/snbComponents/_CardTile.scss */
     .CardTile--videos:hover, .CardTile--pictures:hover {
       transform: scale(1.05); }
 

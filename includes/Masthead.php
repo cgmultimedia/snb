@@ -31,8 +31,9 @@
 		</div>
 	<?php } ?>
 	<div class="MastheadOverlays">
-		<div class="MastheadOverlays-buyAlbum">
+		<!-- <div class="MastheadOverlays-buyAlbum">
 		</div>
+		-->
 		<div class="MastheadOverlays-title MastheadOverlays-title--home">
 			<?php echo $titleBanner;?>
 		</div>

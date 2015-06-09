@@ -13,6 +13,7 @@ $cardSpacerWidth : $padding-CardTile;
 	&.inactive {
 		visibility: hidden;
 		opacity: 0;
+		display: none!important;
 	}
 	&--static {
 		display: block;
