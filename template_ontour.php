@@ -20,22 +20,12 @@ Template Name: Template - On Tour
 	get_header(); 
 
 
-	//========== PAGE CONTENT =========== 
-	//include('includes/pagePress.php');
-	?>
-	<div style="text-align: center; width: 100%; font-size: 24px">
-	<br/>
-	<br/>
-	
-		In progress...
-		<br/>
-		<br/>
-		<br/>
-	</div>
-	<?php
+	//========== PAGE CONTENT ===========
+	include('includes/pageTour.php');
+
 
 	//========== FOOTER SECTION ==========
-	
+
 
 	// ---------- CUSTOM FOOTER ----------
 	function customPageFooter() { 

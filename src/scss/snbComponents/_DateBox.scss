@@ -1,0 +1,52 @@
+/* ADDED BY ADAM */
+
+.DateBox {
+	width:34px;
+	border:solid 1px;
+	border-color:#888888;
+
+	&-month {
+		font-size:14px;
+		font-weight: bold;
+		background-color: #FCF401;
+		color: #006EB5;	
+		padding-top:0px;
+		padding-bottom:0px;
+		padding-left:1px;
+		padding-right:0px;
+		text-align:center;
+	}
+
+	&-day {
+		font-size:16px;
+		/*background-color:#FFFFFF;
+		*/
+		color:#000000;
+		padding-top:0px;
+		padding-bottom:0px;
+		text-align:center;
+	}
+
+	&-year {
+		width:34px;
+		font-size:12px;
+		/* background-color:#FFFFFF;
+		*/
+		color:#000000;
+		padding-top:0px;
+		padding-bottom:0px;
+		text-align:center;
+		padding-left:1px;
+		padding-right:1px;
+	}
+}
+
+.dtstart, .dtTO, .dtend {
+	float : left;
+}
+
+.dtTO {
+	margin-left: 3px;
+	margin-right: 3px;
+	margin-top: 8px;
+}

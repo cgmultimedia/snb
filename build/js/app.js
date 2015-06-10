@@ -104,7 +104,20 @@ $(document).ready(function() {
 
 	        // Call the layout function.
 	        // http://www.wookmark.com/jquery-plugin
+
+	        // If a 'default' exists use its value.
+	        
 	        handler.wookmark(options);
+
+	        // Filter initial value
+	        var $activeFilter = $("#filters .active");
+        	if ($activeFilter.length > 0) {
+        		var filterVal = $activeFilter.data("filter")
+        		if (filterVal != "all") {
+        			//options.possibleFilters = [filterVal];
+        			handler.wookmarkInstance.filter([filterVal], 'or');
+        		}
+        	}
 
 	        // When a filter is clicked, toggle it's active state and refresh.
 	        function onClickFilter(e) {

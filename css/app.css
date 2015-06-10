@@ -2988,6 +2988,63 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
     .FullLength-card {
       border-top: 1px solid #DDD; }
 
+/* ADDED BY ADAM */
+/* line 3, ../src/scss/snbComponents/_DateBox.scss */
+.DateBox {
+  width: 34px;
+  border: solid 1px;
+  border-color: #888888; }
+  /* line 8, ../src/scss/snbComponents/_DateBox.scss */
+  .DateBox-month {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #FCF401;
+    color: #006EB5;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 1px;
+    padding-right: 0px;
+    text-align: center; }
+  /* line 20, ../src/scss/snbComponents/_DateBox.scss */
+  .DateBox-day {
+    font-size: 16px;
+    /*background-color:#FFFFFF;
+    */
+    color: #000000;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: center; }
+  /* line 30, ../src/scss/snbComponents/_DateBox.scss */
+  .DateBox-year {
+    width: 34px;
+    font-size: 12px;
+    /* background-color:#FFFFFF;
+    */
+    color: #000000;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: center;
+    padding-left: 1px;
+    padding-right: 1px; }
+
+/* line 44, ../src/scss/snbComponents/_DateBox.scss */
+.dtstart, .dtTO, .dtend {
+  float: left; }
+
+/* line 48, ../src/scss/snbComponents/_DateBox.scss */
+.dtTO {
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 8px; }
+
+/* line 2, ../src/scss/snbComponents/_gigpress.scss */
+.gigpress-cancelled, .gigpress-soldout {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1px;
+  color: #D33;
+  border: none; }
+
 @-webkit-keyframes rockFrame {
   0% {
     transform: rotate(5deg); }

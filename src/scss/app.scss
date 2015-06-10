@@ -49,6 +49,11 @@ File: app.scss
 
 @import 'snbComponents/FullLength';
 
+// Tour related
+@import 'snbComponents/DateBox';
+@import 'snbComponents/CardTour';
+@import 'snbComponents/gigpress';
+
 // Page specific
 @import 'snbComponents/AboutPage';
 @import 'snbComponents/PressPage';
