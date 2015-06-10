@@ -2973,20 +2973,28 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
       width: 70%;
       margin-left: -40%; } }
 
-/* line 1, ../src/scss/snbComponents/_FullLength.scss */
+/* line 2, ../src/scss/snbComponents/_FullLength.scss */
 .FullLength {
   width: 100%;
   max-width: 1020px;
   margin-left: auto;
   margin-right: auto; }
-  /* line 7, ../src/scss/snbComponents/_FullLength.scss */
+  /* line 8, ../src/scss/snbComponents/_FullLength.scss */
   .FullLength-card {
     padding: 10px;
     padding-top: 30px;
     padding-bottom: 30px; }
-    /* line 13, ../src/scss/snbComponents/_FullLength.scss */
-    .FullLength-card {
+    /* line 14, ../src/scss/snbComponents/_FullLength.scss */
+    .FullLength-card + .FullLength-card {
       border-top: 1px solid #DDD; }
+    /* line 18, ../src/scss/snbComponents/_FullLength.scss */
+    .FullLength-card-title {
+      font-size: 20px;
+      color: #428ada;
+      padding-bottom: 10px; }
+    /* line 24, ../src/scss/snbComponents/_FullLength.scss */
+    .FullLength-card-date {
+      padding-bottom: 20px; }
 
 /* ADDED BY ADAM */
 /* line 3, ../src/scss/snbComponents/_DateBox.scss */

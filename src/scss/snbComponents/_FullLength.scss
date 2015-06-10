@@ -1,3 +1,4 @@
+
 .FullLength {
 	width : 100%;
 	max-width : 1020px;
@@ -10,8 +11,18 @@
 		padding-top: 30px;
   		padding-bottom: 30px;
 
-		& {
+		& + & {
 			border-top: 1px solid #DDD;
+		}
+
+		&-title {
+			font-size: 20px;
+			color: $color-blueSNB;
+			padding-bottom:10px;
+		}
+
+		&-date {
+			padding-bottom:20px;
 		}
 	}
 }

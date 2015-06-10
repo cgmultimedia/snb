@@ -24,10 +24,10 @@
   function printCardDetailsForFullLength($type, $title, $date) {
     ?>
     <div class="FullLength-card-title">
-      <?php echo $title;?>
+      <b><?php echo $title;?></b>
     </div>
     <div class="FullLength-card-date">
-      <<?php echo $date;?>
+      <i><?php echo $date;?></i>
     </div>
     <?php
   }
@@ -487,12 +487,15 @@
   function printNewsContent() {
     $data = json_decode(file_get_contents('http://splashnboots.com/SNBAPI/get/news.php'));
     $rows = $data->rows;
-?>
-<?php
+
+    echo "<div class='FullLength'>";
+
     for ($i=0; $i<count($rows); $i++) { 
       $name = $rows[$i]->name;
         printCardPress($rows[$i]);
     }
+
+    echo "</div>";
   }
 
   function printCardNews($cardData) {
@@ -508,7 +511,7 @@
     // <div class="Card--video-thumb-thumbnail cursor-pointer" href="#" data-v_code="vsRDsUOlhS8"></div>
     ?>
       <div class="Card-content-container">
-        <?php echo $content;?>
+        <?php echo do_shortcode($content);?>
       </div>
     <?php 
     printCardFooter($type, $title, $date);
