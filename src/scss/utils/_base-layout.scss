@@ -22,7 +22,10 @@ body {
     //font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 
     //font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-    @extend #{$fontFamily-body};
+    //@extend #{$fontFamily-body};
+    font-family: $fontFamily-defaultBody; 
+    font-weight:400; 
+    font-stretch:normal;
 
     // Tighter letter-spacing (a.k.a. kerning).
     // ... This is especially necessary for the PageHeader-topText-subtitle...

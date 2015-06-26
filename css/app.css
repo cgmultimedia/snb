@@ -1048,12 +1048,6 @@ Also, I've commented out .eot and .svg files (since most browsers support .woff)
 ALSO: See below for details on using @extend 
 
 */
-/* line 15, ../src/scss/utils/_u-fonts.scss */
-.FontDefaultFont, body {
-  font-family: "Roboto Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-  font-weight: 400;
-  font-stretch: normal; }
-
 /* line 2, ../src/scss/utils/u-loading.scss */
 .u-loading {
   background: none;
@@ -1156,6 +1150,9 @@ File: _base-layout.scss
 -------------------------------------------------- */
 /* line 18, ../src/scss/utils/_base-layout.scss */
 body {
+  font-family: "Quicksand", "Roboto Condensed", "Roboto", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", "TeXGyreHerosRegular", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font-weight: 400;
+  font-stretch: normal;
   letter-spacing: 0px;
   font-weight: 100;
   background: white;
@@ -1163,7 +1160,7 @@ body {
   position: static;
   line-height: 1; }
 
-/* line 71, ../src/scss/utils/_base-layout.scss */
+/* line 74, ../src/scss/utils/_base-layout.scss */
 .l-wrapper {
   margin: auto;
   display: block;
@@ -1171,12 +1168,12 @@ body {
   background-color: white;
   z-index: 3; }
 
-/* line 81, ../src/scss/utils/_base-layout.scss */
+/* line 84, ../src/scss/utils/_base-layout.scss */
 #main {
   position: relative; }
 
 @media (max-width: 621px) {
-  /* line 87, ../src/scss/utils/_base-layout.scss */
+  /* line 90, ../src/scss/utils/_base-layout.scss */
   .l-wrapper {
     position: relative;
     -webkit-transition: -webkit-transform 1s ease;
@@ -1194,7 +1191,7 @@ body {
     -o-transform-origin: 50% 0%;
     transform-origin: 50% 0%;
     background-color: white; } }
-/* line 100, ../src/scss/utils/_base-layout.scss */
+/* line 103, ../src/scss/utils/_base-layout.scss */
 a,
 a:link,
 a:visited,
@@ -1205,7 +1202,7 @@ a:active {
   color: #428ada;
   text-decoration: underline; }
 
-/* line 111, ../src/scss/utils/_base-layout.scss */
+/* line 114, ../src/scss/utils/_base-layout.scss */
 a:hover {
   opacity: 0.95; }
 
@@ -2183,8 +2180,11 @@ File: _Logo.scss
       height: 50px; }
     /* line 71, ../src/scss/snbComponents/_Card.scss */
     .Card--Instagram .Card-title {
-      height: 90px; }
-    /* line 75, ../src/scss/snbComponents/_Card.scss */
+      height: 0px; }
+      /* line 74, ../src/scss/snbComponents/_Card.scss */
+      .Card--Instagram .Card-title-date-container {
+        padding: 0; }
+    /* line 79, ../src/scss/snbComponents/_Card.scss */
     .Card-title-text {
       display: table-row;
       font-size: 14px;
@@ -2192,64 +2192,65 @@ File: _Logo.scss
       height: 70px;
       width: 100%;
       line-height: 15px; }
-      /* line 83, ../src/scss/snbComponents/_Card.scss */
+      /* line 87, ../src/scss/snbComponents/_Card.scss */
       .Card--Video .Card-title-text {
         height: 30px; }
-      /* line 87, ../src/scss/snbComponents/_Card.scss */
-      .Card--Instagram .Card-title-text {
-        height: 70px; }
       /* line 91, ../src/scss/snbComponents/_Card.scss */
+      .Card--Instagram .Card-title-text {
+        display: none;
+        height: -20px; }
+      /* line 96, ../src/scss/snbComponents/_Card.scss */
       .Card-title-text-container {
         display: table-cell;
         vertical-align: middle; }
-        /* line 95, ../src/scss/snbComponents/_Card.scss */
+        /* line 100, ../src/scss/snbComponents/_Card.scss */
         .Card-title-text-container-div {
           width: 100%;
           overflow: hidden;
           max-height: 70px; }
-          /* line 101, ../src/scss/snbComponents/_Card.scss */
+          /* line 106, ../src/scss/snbComponents/_Card.scss */
           .Card--Video .Card-title-text-container-div {
             max-height: 30px; }
-          /* line 102, ../src/scss/snbComponents/_Card.scss */
+          /* line 107, ../src/scss/snbComponents/_Card.scss */
           .Card--Instagram .Card-title-text-container-div {
-            max-height: 70px; }
-    /* line 107, ../src/scss/snbComponents/_Card.scss */
+            max-height: -20px; }
+    /* line 112, ../src/scss/snbComponents/_Card.scss */
     .Card-title-date {
       display: table-row;
       width: 100%;
       font-size: 10px;
       color: #666;
       text-transform: uppercase; }
-      /* line 115, ../src/scss/snbComponents/_Card.scss */
+      /* line 120, ../src/scss/snbComponents/_Card.scss */
       .Card-title-date-container {
         display: table-cell;
         vertical-align: middle;
         padding-top: 10px; }
-    /* line 122, ../src/scss/snbComponents/_Card.scss */
+    /* line 127, ../src/scss/snbComponents/_Card.scss */
     .Card-title a:hover {
       text-decoration: underline; }
-  /* line 128, ../src/scss/snbComponents/_Card.scss */
+  /* line 133, ../src/scss/snbComponents/_Card.scss */
   .Card-content {
     position: relative;
     width: 100%;
     font-size: 14px;
     word-break: break-word; }
-    /* line 148, ../src/scss/snbComponents/_Card.scss */
+    /* line 153, ../src/scss/snbComponents/_Card.scss */
     .Card-content-container {
       position: relative;
       width: 100%; }
-  /* line 160, ../src/scss/snbComponents/_Card.scss */
+  /* line 165, ../src/scss/snbComponents/_Card.scss */
   .Card--video-thumb {
     width: 100%;
     padding-bottom: 56.25%;
     overflow: hidden;
     position: relative; }
-    /* line 167, ../src/scss/snbComponents/_Card.scss */
+    /* line 172, ../src/scss/snbComponents/_Card.scss */
     .Card--video-thumb-img {
       width: 100%;
       position: absolute;
       cursor: pointer; }
-    /* line 179, ../src/scss/snbComponents/_Card.scss */
+    /* line 184, ../src/scss/snbComponents/_Card.scss */
     .Card--video-thumb-play {
       position: absolute;
       width: 100%;
@@ -2259,15 +2260,15 @@ File: _Logo.scss
       background-position: center center;
       background-size: 60px;
       opacity: 0.6; }
-    /* line 207, ../src/scss/snbComponents/_Card.scss */
+    /* line 212, ../src/scss/snbComponents/_Card.scss */
     .Card--video-thumb-play:hover {
       opacity: 1.0; }
-  /* line 214, ../src/scss/snbComponents/_Card.scss */
+  /* line 219, ../src/scss/snbComponents/_Card.scss */
   .Card--pic-thumb {
     position: relative;
     width: 100%;
     padding-bottom: 100%; }
-    /* line 219, ../src/scss/snbComponents/_Card.scss */
+    /* line 224, ../src/scss/snbComponents/_Card.scss */
     .Card--pic-thumb-img {
       width: 100%;
       position: absolute; }
@@ -2972,6 +2973,14 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
       height: 10%;
       width: 70%;
       margin-left: -40%; } }
+
+/* line 2, ../src/scss/snbComponents/Footer.scss */
+.Footer-copyright {
+  text-align: center;
+  width: 100%;
+  padding: 30px;
+  padding-left: 10px;
+  padding-right: 10px; }
 
 /* line 2, ../src/scss/snbComponents/_FullLength.scss */
 .FullLength {
@@ -3733,6 +3742,44 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
     /* line 83, ../src/scss/snbComponents/_PressPage.scss */
     .PressPage-content {
       width: 920px; } }
+
+/* line 5, ../src/scss/snbComponents/_PicturesPage.scss */
+.PicturesPage-backdrop {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  min-width: 100%;
+  min-height: 100%;
+  background: #FFFFFF;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.80;
+  z-index: 1000; }
+/* line 20, ../src/scss/snbComponents/_PicturesPage.scss */
+.PicturesPage-modal {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 1001; }
+
+/* line 1, ../src/scss/snbComponents/_ContactPage.scss */
+.ContactPage {
+  width: 100%; }
+  /* line 4, ../src/scss/snbComponents/_ContactPage.scss */
+  .ContactPage-sideImg {
+    width: 30%;
+    float: left; }
+    /* line 8, ../src/scss/snbComponents/_ContactPage.scss */
+    .ContactPage-sideImg-img {
+      max-width: 100%; }
+  /* line 12, ../src/scss/snbComponents/_ContactPage.scss */
+  .ContactPage-details {
+    width: 70%;
+    float: left; }
 
 /* Vendor Customized Overwrites */
 /**

@@ -10,11 +10,14 @@ Note: placeholders (e.g. %fontColor-title { ...} ) are used for extending. So th
 // 								  Fonts
 // ======================================================================
 
-$fontFamily-body                                   : ".FontDefaultFont";
+//$fontFamily-body                                   : ".FontDefaultFont";
 $fontFamily-LoveYaLikeASister                      : 'Love Ya Like A Sister', cursive;
 $fontFamily-ComingSoon                             : 'Coming Soon', cursive;
+$fontFamily-Quicksand 							   : 'Quicksand', "Roboto Condensed", "Roboto", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+//$fontFamily-Muli 							   	   : 'Muli', "Roboto Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
 $fontFamily-defaultTitle                           : $fontFamily-LoveYaLikeASister;
 $fontFamily-defaultSubTitle                        : $fontFamily-ComingSoon;
+$fontFamily-defaultBody                            : $fontFamily-Quicksand;
 
 $fontFamily-NavAreaMobile                          : $fontFamily-defaultTitle;
 $fontFamily-NavArea-container                      : $fontFamily-defaultTitle;

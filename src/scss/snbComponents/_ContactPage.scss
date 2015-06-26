@@ -1,0 +1,16 @@
+.ContactPage {
+	width : 100%;
+	
+	&-sideImg {
+		width: 30%;
+		float: left;
+
+		&-img {
+			max-width: 100%;
+		}
+	}
+	&-details {
+		width: 70%;
+		float: left;
+	}
+}

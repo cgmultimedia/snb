@@ -12,7 +12,11 @@ ALSO: See below for details on using @extend
 
 */
 
-.FontDefaultFont{font-family: "Roboto Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; font-weight:400; font-stretch:normal;}
+// .FontDefaultFont{
+// 	font-family: $fontFamily-defaultBody; //"Roboto Condensed", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+// 	font-weight:400; 
+// 	font-stretch:normal;
+// }
 
 // .FontHelveticaNeueUltraBlack{font-family: "Roboto Condensed", "HelveticaNeueBlack", "HelveticaNeue-Black", "Helvetica Neue Black", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosBold', "Arial Black", sans-serif; font-weight:800; font-stretch:normal;}
  

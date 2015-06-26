@@ -21,18 +21,8 @@ Template Name: Template - Contact
 
 
 	//========== PAGE CONTENT =========== 
-	//include('includes/pagePress.php');
-	?>
-	<div style="text-align: center; width: 100%; font-size: 24px">
-	<br/>
-	<br/>
-	
-		In progress...
-		<br/>
-		<br/>
-		<br/>
-	</div>
-	<?php
+	include('includes/pageContact.php');
+
 
 	//========== FOOTER SECTION ==========
 	

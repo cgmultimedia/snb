@@ -24,10 +24,10 @@
 		<div class="Masthead-video">
 			<div class="Masthead-video-aspectRatioPusher">
 			</div>
-				<video class="Masthead-video-video" width="100%" autoplay="true" loop="true"
+				<!-- <video class="Masthead-video-video" width="100%" autoplay="true" loop="true"
 					poster="<?php echo $templateDir;?>/media/img/general/1x1-white.gif" >
 					<source src="<?php echo $templateDir;?>/media/videos/out2.mp4" type="video/mp4">
-				</video>
+				</video> -->
 		</div>
 	<?php } ?>
 	<div class="MastheadOverlays">

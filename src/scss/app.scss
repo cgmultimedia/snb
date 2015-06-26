@@ -1,6 +1,6 @@
 /**
 File: app.scss
-*/
+*/ 
 
 // Import bourbon
 @import "bourbon";
@@ -46,6 +46,7 @@ File: app.scss
 @import 'snbComponents/HomeHub';
 @import 'snbComponents/Masthead';
 @import 'snbComponents/MastheadOverlays';
+@import 'snbComponents/Footer';
 
 @import 'snbComponents/FullLength';
 
@@ -57,7 +58,8 @@ File: app.scss
 // Page specific
 @import 'snbComponents/AboutPage';
 @import 'snbComponents/PressPage';
-
+@import 'snbComponents/PicturesPage';
+@import 'snbComponents/ContactPage';
 
 /* Vendor Customized Overwrites */
 @import 'vendorOverwrites/idangerous.swiper.custom.scss';

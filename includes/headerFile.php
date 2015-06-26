@@ -30,11 +30,15 @@ if(!$isMobile && !$isTablet) {
     
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'> -->
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="<?php echo $templateDir;?>/css/app.css"/>
+    <?php // http://www.idangero.us/swiper/get-started/#.VX-J8lVVhHw ?>
+    <link rel="stylesheet" href="<?php echo $templateDir;?>/css/vendor/Swiper-dist/css/swiper.min.css"/>
 
 <?php /*
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">

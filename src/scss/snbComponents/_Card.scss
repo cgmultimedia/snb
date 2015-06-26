@@ -12,7 +12,7 @@ $height-Card-title-text           : $height-Card-title - $height-Card-title-date
 $height-Card--Video-title         : 50px;
 $height-Card--Video-title-text    : $height-Card--Video-title - $height-Card-title-date--andPadding;
 
-$height-Card--Instagram-title      : 90px;
+$height-Card--Instagram-title      : 0px; //100px;
 $height-Card--Instagram-title-text : $height-Card--Instagram-title - $height-Card-title-date--andPadding;
 
 // height                 : 90px;
@@ -70,6 +70,10 @@ $padding-Card-title       : 10px;
 
 		.Card--Instagram & {
 			height: $height-Card--Instagram-title;
+
+			&-date-container {
+				padding:0;
+			}
 		}
 
 		&-text {
@@ -85,6 +89,7 @@ $padding-Card-title       : 10px;
 			}
 
 			.Card--Instagram & {
+				display: none;
 				height: $height-Card--Instagram-title-text;
 			}
 
