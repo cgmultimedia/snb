@@ -291,12 +291,38 @@ function youTubeVideoScrimFadeOut() {
             var $imgLoader = $this.find(".ImgLoader")
             if ($imgLoader.length > 0) {
                 var imgSrc = $imgLoader.data("img");
+
+
+                var swiperDiv = '<!-- Swiper --> \ 
+                    <div class="swiper-container"> \
+                        <div class="swiper-wrapper"> \
+                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/1"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/2"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/3"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/4"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/5"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/6"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/7"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/8"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/9"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/10"/></div> \
+                        </div> \
+                        <!-- Add Pagination --> \
+                        <div class="swiper-pagination"></div> \
+                    </div>';
                 
-                var j ="<div class='PicturesPage-modal-content'> \
-                            <div class='PicturesPage-modal-content-img PicturesPage-modal-content-img--center'> \
-                                <img src='"+imgSrc+"'/> \
-                            </div> 
-                        </div>";
+                // var j ="<div class='PicturesPage-modal-content'> \
+                //             <div class='PicturesPage-modal-content-img PicturesPage-modal-content-img--center'> \
+                //                 <!--<img src='"+imgSrc+"'/>  --> \
+                //                 " + swiperDiv + " \
+                //             </div> 
+                //         </div>";
+
+                // var j ="<div class='PicturesPage-modal-content'> \
+                //                 " + swiperDiv + " \
+                //         </div>";
+
+                 var j =swiperDiv;
 
                 // tempImg.src = imgSrc;
 
@@ -308,26 +334,53 @@ function youTubeVideoScrimFadeOut() {
                 resizeModal();
                 $(window).resize(resizeModal);
 
+                // var swiper = new Swiper('.swiper-container', {
+                //     pagination: '.swiper-pagination',
+                //     paginationClickable: true
+                // });
+
+                // var swiper = new Swiper('.swiper-container', {
+                //     //pagination: '.swiper-pagination',
+                //     effect: 'coverflow',
+                //     grabCursor: true,
+                //     centeredSlides: true,
+                //     slidesPerView: 'auto',
+                //     coverflow: {
+                //         rotate: 50,
+                //         stretch: 0,
+                //         depth: 100,
+                //         modifier: 1,
+                //         slideShadows : true
+                //     }
+                // });
+
+                var swiper;
+
                 // Fade in or animate them in.
                 $pb.fadeIn(function() {
                     $pm.fadeIn(function() {
-                        console.log("fade2");
-                    });
+                        console.log("swiper");
+                        swiper = new Swiper('.swiper-container', {
+                            // pagination: '.swiper-pagination',
+                            // paginationClickable: true
+                        });
+                    }); 
                 });
-
-                
             }
         }
 
-        function closeModal($this) {
-
+        function closeModal() {
+            console.log(0);
         }
 
         $(document).on("click", ".CardTile--pictures", function() {
             var $this = $(this);
             openModal($this);
-            
-            console.log("Goodbye!");
+            console.log(1);
+        });
+
+        $(document).on("click", ".PicturesPage-backdrop", function() {
+            closeModal();
         });
     });
 })(jQuery);

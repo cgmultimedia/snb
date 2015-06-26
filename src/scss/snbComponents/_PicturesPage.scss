@@ -26,5 +26,45 @@ $zIndex-Pictures-modal    : $zIndex-Pictures-backdrop + 1;
         min-height: 100%;
         
         z-index: $zIndex-Pictures-modal;
+
+        // & .swiper {
+        //     &-container {
+        //         width: 100%;
+        //         padding-top: 50px;
+        //         padding-bottom: 50px;
+        //     }
+            
+        //     &-slide {
+        //         background-position: center;
+        //         background-size: cover;
+        //         width: 300px;
+        //         height: 300px;
+        //     }
+        // }
+
+        & .swiper-container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        & .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
     }
 }

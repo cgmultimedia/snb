@@ -24,7 +24,7 @@
 
     <div id="main" role="main">
       <?php // NOTE: just by having Grid will make the masonry grid initialize ?>
-      <ul class="Grid">
+      <ul class="Grid clearfix">
         <!--
           These are our grid items. Notice how each one has classes assigned that
           are used for filtering. The classes match the "data-filter" properties above.

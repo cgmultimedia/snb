@@ -2982,6 +2982,29 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
   padding-left: 10px;
   padding-right: 10px; }
 
+/* line 2, ../src/scss/snbComponents/_Swiper.scss */
+.Swiper-container {
+  width: 100%;
+  height: 100%; }
+/* line 6, ../src/scss/snbComponents/_Swiper.scss */
+.Swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center; }
+
 /* line 2, ../src/scss/snbComponents/_FullLength.scss */
 .FullLength {
   width: 100%;
@@ -3765,6 +3788,29 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
   min-width: 100%;
   min-height: 100%;
   z-index: 1001; }
+  /* line 45, ../src/scss/snbComponents/_PicturesPage.scss */
+  .PicturesPage-modal .swiper-container {
+    width: 100%;
+    height: 100%;
+    position: absolute; }
+  /* line 50, ../src/scss/snbComponents/_PicturesPage.scss */
+  .PicturesPage-modal .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center; }
 
 /* line 1, ../src/scss/snbComponents/_ContactPage.scss */
 .ContactPage {

@@ -2,9 +2,8 @@
   include_once("cardFunctions.php");
 ?>
 
-<div class="HomeHub">
+<div class="PicturePage">
 	<div id="container">
-
     <!--
       These are our filter options. The "data-filter" classes are used to identify which
       grid items to show.
@@ -24,7 +23,7 @@
 
     <div id="main" role="main">
       <?php //<ul class="GridStatic" id="tiles"> ?>
-      <ul class="GridStatic">
+      <ul class="GridStatic clearfix">
         <?php printPicturesContent(); ?>
         <!-- End of grid blocks -->
       </ul>

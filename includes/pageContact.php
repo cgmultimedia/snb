@@ -24,7 +24,7 @@
 
     <div id="main" role="main">
       <div class="FullLength">
-        <div class="ContactPage clearfix"">
+        <div class="ContactPage clearfix">
           <div class="ContactPage-sideImg">
             <img class="ContactPage-sideImg-img" src="<?php echo $templateDir;?>/media/img/contact/iphone-5S-splash-n-boots.jpg"/>
           </div>
