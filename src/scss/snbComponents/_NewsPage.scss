@@ -1,0 +1,11 @@
+.NewsPage {
+	background-color: $AboutPage-background-yellow;
+	background-image : url("../media/img/general/background-yellow-repeat.jpg");
+	background-size: 100%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+	&-initialHide {
+		display: none;
+	}
+}

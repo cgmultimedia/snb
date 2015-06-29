@@ -22,6 +22,8 @@
     <br/>
 
     <div id="main" role="main">
+      See: <a href="http://localhost:8888/web%20dev/5-splashnboots/2015/2015-02-10%20new%20site/splashnboots/wp-content/themes/snb/test.html">http://localhost:8888/web%20dev/5-splashnboots/2015/2015-02-10%20new%20site/splashnboots/wp-content/themes/snb/test.html</a><br/>
+      and: <a href="http://www.idangero.us/swiper/api/#.VY1KTFVVhHw">swiper api</a>
       <?php //<ul class="GridStatic" id="tiles"> ?>
       <ul class="GridStatic clearfix">
         <?php printPicturesContent(); ?>

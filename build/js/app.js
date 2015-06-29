@@ -293,23 +293,40 @@ function youTubeVideoScrimFadeOut() {
                 var imgSrc = $imgLoader.data("img");
 
 
-                var swiperDiv = '<!-- Swiper --> \ 
-                    <div class="swiper-container"> \
-                        <div class="swiper-wrapper"> \
-                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/1"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/2"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/3"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/4"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/5"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/6"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/7"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/8"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/9"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slider-img" src="http://lorempixel.com/600/600/nature/10"/></div> \
-                        </div> \
-                        <!-- Add Pagination --> \
-                        <div class="swiper-pagination"></div> \
-                    </div>';
+                // var swiperDiv = '<!-- Swiper --> \ 
+                //     <div class="swiper-container"> \
+                //         <div class="swiper-wrapper"> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/1"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/2"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/3"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/4"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/5"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/6"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/7"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/8"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/9"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/10"/></div> \
+                //         </div> \
+                //         <!-- Add Pagination --> \
+                //         <div class="swiper-pagination"></div> \
+                //     </div>';
+
+                var swiperDiv = '<div class="swiper-container"> \
+                    <div class="swiper-wrapper"> \
+                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/1)"></div> \
+                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/2)"></div> \
+                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/3)"></div> \
+                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/4)"></div> \
+                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/5)"></div> \
+                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/6)"></div> \
+                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/7)"></div> \
+                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/8)"></div> \
+                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/9)"></div> \
+                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/10)"></div> \
+                    </div> \
+                    <!-- Add Pagination --> \
+                    <div class="swiper-pagination"></div> \
+                </div>';
                 
                 // var j ="<div class='PicturesPage-modal-content'> \
                 //             <div class='PicturesPage-modal-content-img PicturesPage-modal-content-img--center'> \
@@ -363,6 +380,19 @@ function youTubeVideoScrimFadeOut() {
                         swiper = new Swiper('.swiper-container', {
                             // pagination: '.swiper-pagination',
                             // paginationClickable: true
+
+                            pagination: '.swiper-pagination',
+                            effect: 'coverflow',
+                            grabCursor: true,
+                            centeredSlides: true,
+                            slidesPerView: 'auto',
+                            coverflow: {
+                                rotate: 50,
+                                stretch: 0,
+                                depth: 100,
+                                modifier: 1,
+                                slideShadows : true
+                            }
                         });
                     }); 
                 });

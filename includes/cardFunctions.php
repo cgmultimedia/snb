@@ -22,12 +22,13 @@
   }
 
   function printCardDetailsForFullLength($type, $title, $date) {
+    $newDate = date("F j, Y g:i A", strtotime($date));
     ?>
     <div class="FullLength-card-title">
-      <b><?php echo $title;?></b>
+      <?php echo $title;?>
     </div>
     <div class="FullLength-card-date">
-      <i><?php echo $date;?></i>
+      Posted: <?php echo $newDate;?>
     </div>
     <?php
   }
@@ -492,29 +493,27 @@
 
     for ($i=0; $i<count($rows); $i++) { 
       $name = $rows[$i]->name;
-        printCardPress($rows[$i]);
+        //printCardNews($rows[$i]);
+      printCardNews($rows[$i]);
     }
 
     echo "</div>";
   }
 
   function printCardNews($cardData) {
-    global $wp_query; 
-    $posts = $wp_query->posts;
     $type      = 'News'; 
     $title     = stripslashes($cardData->post_title);
     $date      = $cardData->post_date;
-    $content   = do_shortcode( $cardData->post_content);
+    $content   = $cardData->post_content;
 
-    printCardHeader($type); //, $title, $date);
-    // hub_video_thumbnail
-    // <div class="Card--video-thumb-thumbnail cursor-pointer" href="#" data-v_code="vsRDsUOlhS8"></div>
     ?>
-      <div class="Card-content-container">
-        <?php echo do_shortcode($content);?>
+      <div class="FullLength-card FullLength-card--<?php echo $type;?>">
+        <?php 
+          printCardDetailsForFullLength($type, $title, $date);
+          echo $content;
+        ?>
       </div>
     <?php 
-    printCardFooter($type, $title, $date);
   }
 
 ?>

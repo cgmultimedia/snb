@@ -7,8 +7,8 @@ $zIndex-Pictures-modal    : $zIndex-Pictures-backdrop + 1;
         position: fixed;
         top: 0px;
         left: 0px;
-        min-width: 100%;
-        min-height: 100%;
+        width: 100%;
+        height: 100%;
 
         background: #FFFFFF;
         opacity: 0.8;
@@ -22,8 +22,8 @@ $zIndex-Pictures-modal    : $zIndex-Pictures-backdrop + 1;
         position: fixed;
         top: 0px;
         left: 0px;
-        min-width: 100%;
-        min-height: 100%;
+        width: 100%;
+        height: 100%;
         
         z-index: $zIndex-Pictures-modal;
 
@@ -42,29 +42,51 @@ $zIndex-Pictures-modal    : $zIndex-Pictures-backdrop + 1;
         //     }
         // }
 
+        // // Full page style
+        // & .swiper-container {
+        //     width: 100%;
+        //     height: 100%;
+        //     position: absolute;
+        // }
+        // & .swiper-slide {
+        //     text-align: center;
+        //     font-size: 18px;
+        //     //background: #fff;
+        //     /* Center slide text vertically */
+        //     display: -webkit-box;
+        //     display: -ms-flexbox;
+        //     display: -webkit-flex;
+        //     display: flex;
+        //     -webkit-box-pack: center;
+        //     -ms-flex-pack: center;
+        //     -webkit-justify-content: center;
+        //     justify-content: center;
+        //     -webkit-box-align: center;
+        //     -ms-flex-align: center;
+        //     -webkit-align-items: center;
+        //     align-items: center;
+        // }
+
+        // Small rotatable.
         & .swiper-container {
             width: 100%;
-            height: 100%;
-            position: absolute;
+            padding-top: 50px;
+            padding-bottom: 50px;
         }
         & .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background: #fff;
-            /* Center slide text vertically */
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            -webkit-justify-content: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            -webkit-align-items: center;
-            align-items: center;
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+
+            &-img {
+                width: 100%;
+            }
         }
 
     }
 }
+
+// .swiper-slider-img {
+//     width: 100% !important;
+// }
