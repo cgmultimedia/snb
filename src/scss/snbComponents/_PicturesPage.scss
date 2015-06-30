@@ -79,22 +79,151 @@ $zIndex-Pictures-modal    : $zIndex-Pictures-backdrop + 1;
             width: 640px;
             //height: 640px;
 
-            &-img {
-                width: 100%;
-            }
 
-            @media (max-width : 640px) {
-                & {
-                    //width: 100%;
-                    //border: blue 5px solid;
+            
+            
+
+            // &-container {
+            //     position: relative;
+            //     top: 0;
+            //     left: 0;
+            //     right: 0px;
+            //     background: blue;
+                
+            //     &-photoRoot {
+            //         background-color: #A86C6C;
+            //         padding-right: 335px;  
+                    
+            //         &-img {
+            //             background-color: #FF0000;
+            //             display: block;
+            //             width: 100%;
+
+            //             &::before {
+            //                 content: ' ';
+            //                 display: block;
+            //                 padding-bottom: 100%;
+            //             }
+            //         }
+            //     }
+            // }
+
+            &-container {
+                background-color: #A86C6C;
+                padding-right: 335px;  
+                
+                &-photoRoot {
+                    position: relative;
+                    background-color: #FF0000;
+                    display: block;
+                    width: 100%;
+
+                    &::before {
+                        content: ' ';
+                        display: block;
+                        padding-bottom: 100%;
+                    }
+
+                    &-img {
+                        left: 0;
+                        position: absolute;
+                        top: 0;
+                        width: 100%;
+                    }
                 }
             }
 
-            @media (min-width : 640px) {
-                & {
-                    //border: red 5px solid;
-                }
-            }
+            // &-container {
+            //     background-color: #fff;
+            //     padding-right: 323px;
+
+            //     -webkit-box-align: stretch;
+            //     -webkit-align-items: stretch;
+            //     -ms-flex-align: stretch;
+            //     align-items: stretch;
+            //     border: 0 solid #000;
+            //     box-sizing: border-box;
+            //     display: -webkit-box;
+            //     display: -webkit-flex;
+            //     display: -ms-flexbox;
+            //     display: flex;
+            //     -webkit-box-orient: vertical;
+            //     -webkit-box-direction: normal;
+            //     -webkit-flex-direction: column;
+            //     -ms-flex-direction: column;
+            //     flex-direction: column;
+            //     -webkit-flex-shrink: 0;
+            //     -ms-flex-negative: 0;
+            //     flex-shrink: 0;
+            //     margin: 0;
+            //     padding: 0;
+            //     position: relative;
+            // }
+
+            // &-photoRoot {
+            //     background-color: #edeeee;
+            //     display: block;
+            //     width: 100%;
+
+            //     -webkit-box-align: stretch;
+            //     -webkit-align-items: stretch;
+            //     -ms-flex-align: stretch;
+            //     align-items: stretch;
+            //     border: 0 solid #000;
+            //     box-sizing: border-box;
+            //     display: -webkit-box;
+            //     display: -webkit-flex;
+            //     display: -ms-flexbox;
+            //     display: flex;
+            //     -webkit-box-orient: vertical;
+            //     -webkit-box-direction: normal;
+            //     -webkit-flex-direction: column;
+            //     -ms-flex-direction: column;
+            //     flex-direction: column;
+            //     -webkit-flex-shrink: 0;
+            //     -ms-flex-negative: 0;
+            //     flex-shrink: 0;
+            //     margin: 0;
+            //     padding: 0;
+            //     position: relative;
+
+            //     &::before {
+            //         content: '';
+            //         display: block;
+            //         padding-bottom: 100%;
+            //     }
+
+            //     &-img {
+            //         left: 0;
+            //         position: absolute;
+            //         top: 0;
+            //         width: 100%;
+
+            //         margin: 0;
+            //         padding: 0;
+            //         border: 0;
+            //         font-size: 100%;
+            //         font: inherit;
+            //         vertical-align: baseline;
+            //     }
+            // }
+
+            // &-img {
+            //     width: 100%;
+            // }
+
+            // @media (max-width : 640px) {
+            //     & {
+            //         //width: 100%;
+            //         //border: blue 5px solid;
+            //     }
+            // }
+
+            // @media (min-width : 640px) {
+            //     & {
+            //         //border: red 5px solid;
+            //     }
+            // }
         }
 
     }

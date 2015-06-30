@@ -18,16 +18,26 @@
 
             // 468
             if (swiper !== undefined && swiper.onResize) {
-                var maxImgSize = 640,
-                    switchVal1 = maxImgSize;
+
+                var padding = 40,
+                    maxWidth = 640+335; // 640 image max width, 335 the padding-right (as defined in _PicturePages.scss)
+                    maxTotalWidth = maxWidth + 2 * padding,
+                    maxWidthWhenNoPadding = 480;
+                    //switchVal1 = maxImgSize;
                     //switchVal2 = 640,
 
-                var ww = $(window).width()
-                if (ww>maxImgSize) {
+                var ww = $(window).width();
+                if (ww>maxTotalWidth) {
                     swiper.params.slidesPerView = 'auto'; //5;
-                    $(".swiper-slide").width(640);
+                    $(".swiper-slide").width(maxWidth);
+                    console.log("in");
+                } else if (ww>maxWidthWhenNoPadding) {
+                    var winWidthMinusPadding = ww - 2 * padding;
+                    $(".swiper-slide").width(winWidthMinusPadding);
+                    console.log("in2");
                 } else {
                     $(".swiper-slide").width(ww);
+                    console.log("in4");
                 }
 
                 //if (ww>switchVal2 && ww<=1000) swiper.params.slidesPerView = 3;
@@ -60,23 +70,52 @@
                 var imgSrc = $imgLoader.data("img");
 
 
+                // var swiperDiv = '<!-- Swiper --> \ 
+                //     <div class="swiper-container"> \
+                //         <div class="swiper-wrapper"> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/1"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/2"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/3"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/4"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/5"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/6"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/7"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/8"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/9"/></div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/10"/></div> \
+                //         </div> \
+                //         <!-- Add Pagination --> \
+                //         <div class="swiper-pagination"></div> \
+                //     </div>';
+
+
+// <div style="position: relative;   top: 0;   left: 0;   right: 0px;background: blue;"> \
+//                         <div style="background-color: #A86C6C;   padding-right: 335px;"> \
+//                             <div style="background-color: #FF0000;   display: block;   width: 100%;"> \
+//                                 <div style="display: block;   padding-bottom: 100%;"> \
+//                                     before: content: ;   \
+//                                 </div> \
+//                             </div> \
+//                         </div> \
+//                     </div> \
                 var swiperDiv = '<!-- Swiper --> \ 
+                    
                     <div class="swiper-container"> \
                         <div class="swiper-wrapper"> \
-                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/1"/></div> \
+                            <div class="swiper-slide"> \
+                                <div class="swiper-slide-container"> \
+                                    <div class="swiper-slide-container-photoRoot"> \
+                                        <img class="swiper-slide-container-photoRoot-img" src="http://lorempixel.com/600/600/nature/1"/> \
+                                    </div> \
+                                </div> \
+                            </div> \
                             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/2"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/3"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/4"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/5"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/6"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/7"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/8"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/9"/></div> \
-                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/10"/></div> \
                         </div> \
                         <!-- Add Pagination --> \
                         <div class="swiper-pagination"></div> \
                     </div>';
+
+                    // <img class="swiper-slide-photoRoot-img" src="http://lorempixel.com/600/600/nature/1"/> \
 
                 // var swiperDiv = '<div class="swiper-container"> \
                 //     <div class="swiper-wrapper"> \
@@ -152,8 +191,8 @@
                             effect: 'coverflow',
                             grabCursor: true,
                             centeredSlides: true,
-                            //slidesPerView: 'auto',
-                            slidesPerView: 5,
+                            slidesPerView: 'auto',
+                            //slidesPerView: 5,
                             //width: "600px",
                             coverflow: {
                                 rotate: 50,
