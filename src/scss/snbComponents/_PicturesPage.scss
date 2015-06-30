@@ -76,11 +76,24 @@ $zIndex-Pictures-modal    : $zIndex-Pictures-backdrop + 1;
         & .swiper-slide {
             background-position: center;
             background-size: cover;
-            width: 300px;
-            height: 300px;
+            width: 640px;
+            //height: 640px;
 
             &-img {
                 width: 100%;
+            }
+
+            @media (max-width : 640px) {
+                & {
+                    //width: 100%;
+                    //border: blue 5px solid;
+                }
+            }
+
+            @media (min-width : 640px) {
+                & {
+                    //border: red 5px solid;
+                }
             }
         }
 

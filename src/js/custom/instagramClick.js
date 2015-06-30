@@ -1,7 +1,9 @@
 (function($) {
     $(document).ready(function() {
 
-        function resizeModal($this) {
+        var swiper;
+
+        function resizeModal() {
             // Add image to popup card
             var $w = $(window),
                 wh = $w.height(),
@@ -12,6 +14,28 @@
                 console.log("width");
             } else {
                 console.log("h");
+            }
+
+            // 468
+            if (swiper !== undefined && swiper.onResize) {
+                var maxImgSize = 640,
+                    switchVal1 = maxImgSize;
+                    //switchVal2 = 640,
+
+                var ww = $(window).width()
+                if (ww>maxImgSize) {
+                    swiper.params.slidesPerView = 'auto'; //5;
+                    $(".swiper-slide").width(640);
+                } else {
+                    $(".swiper-slide").width(ww);
+                }
+
+                //if (ww>switchVal2 && ww<=1000) swiper.params.slidesPerView = 3;
+                //if (ww<=switchVal2) swiper.params.slidesPerView = 1;
+
+                //swiper.reInit()
+                swiper.onResize();
+                console.log("resize");
             }
         }
 
@@ -36,40 +60,40 @@
                 var imgSrc = $imgLoader.data("img");
 
 
-                // var swiperDiv = '<!-- Swiper --> \ 
-                //     <div class="swiper-container"> \
-                //         <div class="swiper-wrapper"> \
-                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/1"/></div> \
-                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/2"/></div> \
-                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/3"/></div> \
-                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/4"/></div> \
-                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/5"/></div> \
-                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/6"/></div> \
-                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/7"/></div> \
-                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/8"/></div> \
-                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/9"/></div> \
-                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/10"/></div> \
-                //         </div> \
-                //         <!-- Add Pagination --> \
-                //         <div class="swiper-pagination"></div> \
-                //     </div>';
+                var swiperDiv = '<!-- Swiper --> \ 
+                    <div class="swiper-container"> \
+                        <div class="swiper-wrapper"> \
+                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/1"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/2"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/3"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/4"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/5"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/6"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/7"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/8"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/9"/></div> \
+                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/10"/></div> \
+                        </div> \
+                        <!-- Add Pagination --> \
+                        <div class="swiper-pagination"></div> \
+                    </div>';
 
-                var swiperDiv = '<div class="swiper-container"> \
-                    <div class="swiper-wrapper"> \
-                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/1)"></div> \
-                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/2)"></div> \
-                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/3)"></div> \
-                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/4)"></div> \
-                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/5)"></div> \
-                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/6)"></div> \
-                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/7)"></div> \
-                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/8)"></div> \
-                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/9)"></div> \
-                        <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/10)"></div> \
-                    </div> \
-                    <!-- Add Pagination --> \
-                    <div class="swiper-pagination"></div> \
-                </div>';
+                // var swiperDiv = '<div class="swiper-container"> \
+                //     <div class="swiper-wrapper"> \
+                //         <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/1)"></div> \
+                //         <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/2)"></div> \
+                //         <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/3)"></div> \
+                //         <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/4)"></div> \
+                //         <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/5)"></div> \
+                //         <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/6)"></div> \
+                //         <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/7)"></div> \
+                //         <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/8)"></div> \
+                //         <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/9)"></div> \
+                //         <div class="swiper-slide" style="background-image:url(http://lorempixel.com/600/600/nature/10)"></div> \
+                //     </div> \
+                //     <!-- Add Pagination --> \
+                //     <div class="swiper-pagination"></div> \
+                // </div>';
                 
                 // var j ="<div class='PicturesPage-modal-content'> \
                 //             <div class='PicturesPage-modal-content-img PicturesPage-modal-content-img--center'> \
@@ -114,7 +138,7 @@
                 //     }
                 // });
 
-                var swiper;
+                //var swiper;
 
                 // Fade in or animate them in.
                 $pb.fadeIn(function() {
@@ -128,7 +152,9 @@
                             effect: 'coverflow',
                             grabCursor: true,
                             centeredSlides: true,
-                            slidesPerView: 'auto',
+                            //slidesPerView: 'auto',
+                            slidesPerView: 5,
+                            //width: "600px",
                             coverflow: {
                                 rotate: 50,
                                 stretch: 0,
@@ -137,6 +163,9 @@
                                 slideShadows : true
                             }
                         });
+                        resizeModal();
+
+                        window.ss = swiper;
                     }); 
                 });
             }

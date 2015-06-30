@@ -3807,8 +3807,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
   .PicturesPage-modal .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 300px;
-    height: 300px; }
+    width: 640px; }
     /* line 82, ../src/scss/snbComponents/_PicturesPage.scss */
     .PicturesPage-modal .swiper-slide-img {
       width: 100%; }
