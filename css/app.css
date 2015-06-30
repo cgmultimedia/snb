@@ -3776,7 +3776,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
     .PressPage-content {
       width: 920px; } }
 
-/* line 5, ../src/scss/snbComponents/_PicturesPage.scss */
+/* line 8, ../src/scss/snbComponents/_PicturesPage.scss */
 .PicturesPage-backdrop {
   display: none;
   position: fixed;
@@ -3789,7 +3789,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
   filter: alpha(opacity=80);
   -moz-opacity: 0.80;
   z-index: 1000; }
-/* line 20, ../src/scss/snbComponents/_PicturesPage.scss */
+/* line 23, ../src/scss/snbComponents/_PicturesPage.scss */
 .PicturesPage-modal {
   display: none;
   position: fixed;
@@ -3798,37 +3798,48 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
   width: 100%;
   height: 100%;
   z-index: 1001; }
-  /* line 71, ../src/scss/snbComponents/_PicturesPage.scss */
+  /* line 75, ../src/scss/snbComponents/_PicturesPage.scss */
+  .PicturesPage-modal .swiper-wrapper {
+    height: auto; }
+  /* line 79, ../src/scss/snbComponents/_PicturesPage.scss */
   .PicturesPage-modal .swiper-container {
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px; }
-  /* line 76, ../src/scss/snbComponents/_PicturesPage.scss */
+    width: 100%; }
+  /* line 84, ../src/scss/snbComponents/_PicturesPage.scss */
   .PicturesPage-modal .swiper-slide {
     background-position: center;
     background-size: cover;
     width: 640px; }
-    /* line 111, ../src/scss/snbComponents/_PicturesPage.scss */
+    /* line 115, ../src/scss/snbComponents/_PicturesPage.scss */
     .PicturesPage-modal .swiper-slide-container {
+      position: relative;
       background-color: #A86C6C;
       padding-right: 335px; }
-      /* line 115, ../src/scss/snbComponents/_PicturesPage.scss */
+      /* line 120, ../src/scss/snbComponents/_PicturesPage.scss */
       .PicturesPage-modal .swiper-slide-container-photoRoot {
         position: relative;
         background-color: #FF0000;
         display: block;
         width: 100%; }
-        /* line 121, ../src/scss/snbComponents/_PicturesPage.scss */
+        /* line 126, ../src/scss/snbComponents/_PicturesPage.scss */
         .PicturesPage-modal .swiper-slide-container-photoRoot::before {
           content: ' ';
           display: block;
           padding-bottom: 100%; }
-        /* line 127, ../src/scss/snbComponents/_PicturesPage.scss */
+        /* line 132, ../src/scss/snbComponents/_PicturesPage.scss */
         .PicturesPage-modal .swiper-slide-container-photoRoot-img {
           left: 0;
           position: absolute;
           top: 0;
           width: 100%; }
+      /* line 140, ../src/scss/snbComponents/_PicturesPage.scss */
+      .PicturesPage-modal .swiper-slide-container-text {
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        width: 285px;
+        bottom: 25px;
+        background-color: green;
+        overflow: auto; }
 
 /* line 1, ../src/scss/snbComponents/_ContactPage.scss */
 .ContactPage {

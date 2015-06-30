@@ -1,5 +1,8 @@
 $zIndex-Pictures-backdrop : 1000;
 $zIndex-Pictures-modal    : $zIndex-Pictures-backdrop + 1;
+//$imagePaddingWidth : 335px;
+$swiper-slide-container-padding: 335px;
+$swiper-slide-container-text-padding: 25px;
 
 .PicturesPage {
     &-backdrop {
@@ -68,20 +71,21 @@ $zIndex-Pictures-modal    : $zIndex-Pictures-backdrop + 1;
         // }
 
         // Small rotatable.
+
+        & .swiper-wrapper {
+            height: auto;
+        }
+
         & .swiper-container {
             width: 100%;
-            padding-top: 50px;
-            padding-bottom: 50px;
+            // padding-top: 50px;
+            // padding-bottom: 50px;
         }
         & .swiper-slide {
             background-position: center;
             background-size: cover;
             width: 640px;
             //height: 640px;
-
-
-            
-            
 
             // &-container {
             //     position: relative;
@@ -109,8 +113,9 @@ $zIndex-Pictures-modal    : $zIndex-Pictures-backdrop + 1;
             // }
 
             &-container {
+                position: relative;
                 background-color: #A86C6C;
-                padding-right: 335px;  
+                padding-right: $swiper-slide-container-padding;  
                 
                 &-photoRoot {
                     position: relative;
@@ -130,6 +135,33 @@ $zIndex-Pictures-modal    : $zIndex-Pictures-backdrop + 1;
                         top: 0;
                         width: 100%;
                     }
+                }
+
+                &-text {
+                    position: absolute;
+                    right:  $swiper-slide-container-text-padding;
+                    top:    $swiper-slide-container-text-padding;
+                    width:  $swiper-slide-container-padding - 2 * $swiper-slide-container-text-padding;
+                    bottom: $swiper-slide-container-text-padding;
+                    background-color: green;
+                    overflow: auto;
+                    // position: absolute;
+                    // right: 0;
+                    // top: 20px;
+                    // width: 325px;
+
+                    // margin-left: -24px;
+                    // margin-right: -24px;
+                    // padding-left: 24px;
+                    // padding-right: 24px;
+                    
+                    // overflow: auto;
+                    // padding-bottom: 20px;
+                    
+                    // -webkit-box-flex: 1;
+                    // -webkit-flex-grow: 1;
+                    // -ms-flex-positive: 1;
+                    // flex-grow: 1;
                 }
             }
 

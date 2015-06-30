@@ -260,42 +260,85 @@ function youTubeVideoScrimFadeOut() {
 
         var swiper;
 
+        function getCard(imgSrc, text) {
+            return '<div class="swiper-slide"> \
+                        <div class="swiper-slide-container"> \
+                            <div class="swiper-slide-container-photoRoot"> \
+                                <img class="swiper-slide-container-photoRoot-img" src="'+imgSrc+'"/> \
+                            </div> \
+                            <div class="swiper-slide-container-text"> \
+                                '+text+' \
+                            </div> \
+                        </div> \
+                    </div>';
+        }
+
         function resizeModal() {
             // Add image to popup card
-            var $w = $(window),
-                wh = $w.height(),
-                ww = $w.width();
-                wr = wh / ww;
+            // var $w = $(window),
+            //     wh = $w.height(),
+            //     ww = $w.width();
+            //     wr = wh / ww;
 
-            if (wr > 1) {
-                console.log("width");
-            } else {
-                console.log("h");
-            }
+            // if (wr > 1) {
+            //     console.log("width");
+            // } else {
+            //     console.log("h");
+            // }
 
             // 468
             if (swiper !== undefined && swiper.onResize) {
 
                 var padding = 40,
-                    maxWidth = 640+335; // 640 image max width, 335 the padding-right (as defined in _PicturePages.scss)
+                    maxImgWidth = 640,
+                    maxWidth = maxImgWidth+335, // 640 image max width, 335 the padding-right (as defined in _PicturePages.scss)
                     maxTotalWidth = maxWidth + 2 * padding,
-                    maxWidthWhenNoPadding = 480;
+                    maxWidthWhenNoPadding = 480,
+                    switchToFullTopBottomStyle = 735,
+                    minSwiperWrapperTop = 40;
                     //switchVal1 = maxImgSize;
                     //switchVal2 = 640,
 
-                var ww = $(window).width();
+                var ww = $(window).width(),
+                    wh = $(window).height(),
+                    newSwiperSlideWidth,
+                    newSwiperWrapperTop;
+
+                // ----------------------------------------
                 if (ww>maxTotalWidth) {
-                    swiper.params.slidesPerView = 'auto'; //5;
-                    $(".swiper-slide").width(maxWidth);
-                    console.log("in");
+                    swiper.params.slidesPerView = 'auto';
+                    newSwiperSlideWidth = maxWidth;
+
                 } else if (ww>maxWidthWhenNoPadding) {
                     var winWidthMinusPadding = ww - 2 * padding;
-                    $(".swiper-slide").width(winWidthMinusPadding);
-                    console.log("in2");
+                    newSwiperSlideWidth = winWidthMinusPadding;
                 } else {
-                    $(".swiper-slide").width(ww);
-                    console.log("in4");
+                    newSwiperSlideWidth = ww;
                 }
+
+                // Set the new swiper-slide width.
+                $(".swiper-slide").width(newSwiperSlideWidth);
+
+                // ----------------------------------------
+                // Set the top for .swiper-wrapper...
+                // ... note if it's less than ____, set it to its min val
+                
+                if (ww>switchToFullTopBottomStyle) {
+                    // Calc top for .swiper-wrapper
+                    // ... Use maxImgWidth because that's what's used to determine height.
+                    newSwiperWrapperTop = (wh - $(".swiper-wrapper").height()) / 2;
+                } else {
+                    // Otherwise just set value to default min top value.
+                    newSwiperWrapperTop = minSwiperWrapperTop;
+                }
+
+                // Ensure the top value is at least the min value.
+                if (newSwiperWrapperTop < minSwiperWrapperTop) {
+                    newSwiperWrapperTop = minSwiperWrapperTop;
+                }
+
+                // Set the new swiper-slide width.
+                $(".swiper-wrapper").first().css({ 'top': newSwiperWrapperTop});
 
                 //if (ww>switchVal2 && ww<=1000) swiper.params.slidesPerView = 3;
                 //if (ww<=switchVal2) swiper.params.slidesPerView = 1;
@@ -355,22 +398,36 @@ function youTubeVideoScrimFadeOut() {
 //                             </div> \
 //                         </div> \
 //                     </div> \
+
+                var longText = "Lots of long text for saying things perhaps for the saying of things.";
+
                 var swiperDiv = '<!-- Swiper --> \ 
-                    
                     <div class="swiper-container"> \
                         <div class="swiper-wrapper"> \
-                            <div class="swiper-slide"> \
-                                <div class="swiper-slide-container"> \
-                                    <div class="swiper-slide-container-photoRoot"> \
-                                        <img class="swiper-slide-container-photoRoot-img" src="http://lorempixel.com/600/600/nature/1"/> \
-                                    </div> \
-                                </div> \
-                            </div> \
-                            <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/2"/></div> \
+                            '+getCard("http://lorempixel.com/600/600/nature/1/",longText) +'\
+                            '+getCard("http://lorempixel.com/600/600/nature/1/",longText) +'\
                         </div> \
                         <!-- Add Pagination --> \
                         <div class="swiper-pagination"></div> \
                     </div>';
+
+
+                // var swiperDiv = '<!-- Swiper --> \ 
+                    
+                //     <div class="swiper-container"> \
+                //         <div class="swiper-wrapper"> \
+                //             <div class="swiper-slide"> \
+                //                 <div class="swiper-slide-container"> \
+                //                     <div class="swiper-slide-container-photoRoot"> \
+                //                         <img class="swiper-slide-container-photoRoot-img" src="http://lorempixel.com/600/600/nature/1"/> \
+                //                     </div> \
+                //                 </div> \
+                //             </div> \
+                //             <div class="swiper-slide"><img class="swiper-slide-img" src="http://lorempixel.com/600/600/nature/2"/></div> \
+                //         </div> \
+                //         <!-- Add Pagination --> \
+                //         <div class="swiper-pagination"></div> \
+                //     </div>';
 
                     // <img class="swiper-slide-photoRoot-img" src="http://lorempixel.com/600/600/nature/1"/> \
 
@@ -402,7 +459,7 @@ function youTubeVideoScrimFadeOut() {
                 //                 " + swiperDiv + " \
                 //         </div>";
 
-                 var j =swiperDiv;
+                var j =swiperDiv;
 
                 // tempImg.src = imgSrc;
 
@@ -444,7 +501,7 @@ function youTubeVideoScrimFadeOut() {
                             // pagination: '.swiper-pagination',
                             // paginationClickable: true
 
-                            pagination: '.swiper-pagination',
+                            //pagination: '.swiper-pagination',
                             effect: 'coverflow',
                             grabCursor: true,
                             centeredSlides: true,
