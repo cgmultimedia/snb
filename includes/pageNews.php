@@ -8,8 +8,7 @@
 	    <div id="main" role="main">
 	    	<div class='FullLength'>
 				<?php //printNewsContent(); ?>
-				<?php 
-
+				<?php
 					$cat = "";
 
 					$announcementId = get_cat_ID('announcement');
@@ -49,15 +48,23 @@
 									$cats[] = array( 'name' => $cat->name, 'slug' => $cat->slug );
 								}
 
-								// Hide if 
-								if ($i>10) { ?><div class='NewsPage-initialHide'><?php } 
-									printCardNews($post);
-									// the_title();
-									// echo "<p></p>";
 
-									// print_r($cats);
 
-								if ($i>10) { ?></div><?php } 
+								// Show if less than 10 items.
+								if ($i<10) { 
+									$hideOrShowClassName = "NewsPage-item NewsPage-item--initial"; //"NewsPage-initialHide"
+								} else {
+									$hideOrShowClassName = "NewsPage-item NewsPage-item--displayNone"; //"NewsPage-initialHide"
+								} 
+									
+								?><div class='<?php echo $hideOrShowClassName; ?>'><?php 
+								printCardNews($post, ($i<10));
+								// the_title();
+								// echo "<p></p>";
+
+								// print_r($cats);
+
+								?></div><?php
 							}
 						}
 						wp_reset_postdata();

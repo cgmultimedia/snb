@@ -35,7 +35,7 @@ Template Name: Template - News
 
 		// <!-- Include the imagesLoaded plug-in -->
   		//<script src="< ? php echo $rootDir; ? >/js/vendor/jquery.imagesloaded.js" type="text/javascript"></script>
-  		// ? ><script src="< ? php echo $templateDir; ? >/js/pagePictures.js" type="text/javascript"></script>< ? php
+  		?><script src="<?php echo $templateDir; ?>/js/pageNews.js" type="text/javascript"></script><?php
 	}
 	
 	//---------- FOOTER FILE----------

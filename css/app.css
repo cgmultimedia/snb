@@ -3835,8 +3835,8 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
   background-size: 100%;
   padding-top: 30px;
   padding-bottom: 30px; }
-  /* line 8, ../src/scss/snbComponents/_NewsPage.scss */
-  .NewsPage-initialHide {
+  /* line 14, ../src/scss/snbComponents/_NewsPage.scss */
+  .NewsPage-item--displayNone {
     display: none; }
 
 /* Vendor Customized Overwrites */

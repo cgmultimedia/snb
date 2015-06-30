@@ -56,6 +56,15 @@
             ?>
           </div> <!-- /.Contact-details -->
         </div> <!-- /.Contact -->
+        <div class="ContactPage-facebookFeed">
+          Shared details:
+          <?php // Facebook feed from: https://developers.facebook.com/docs/plugins/page-plugin ?>
+          <div class="fb-page" data-href="https://www.facebook.com/splashnboots" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/splashnboots"><a href="https://www.facebook.com/splashnboots">Splash&#039;N Boots</a></blockquote></div></div>
+        </div>
+        <div class="ContactPage-twitter">
+          <a class="twitter-timeline" href="https://twitter.com/Splashnboots" data-widget-id="347391550436823040">Tweets by @Splashnboots</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
       </div> <!-- /.FullLength -->
     </div>
   </div>

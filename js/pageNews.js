@@ -1,57 +1,65 @@
 // Encapsulate the pagePicture.js functions an vars.
 (function() { 
 	var itemBatchNum = 15,
-		LastVisibleCardTile,
 		CanLoadNextBatch = true,
-		classMain = "CardTile",
-		classInitial = "CardTile--initial",
-		classNoShow = "CardTile--displayNone"
+		classMain = "NewsPage-item",
+		classInitial = "NewsPage-item--initial",
+		classNoShow = "NewsPage-item--displayNone",
+		LastVisibleItem;// = $("."+classNoShow).first();//CardTile--displayNone"
 
-	function preloadImgUrl(url, callback) {
-		var img = new Image;
-		img.onload = callback();
-		img.src = url;
-	}
+	// function preloadImgUrl(url, callback) {
+	// 	var img = new Image;
+	// 	img.onload = callback();
+	// 	img.src = url;
+	// }
 
-	$.fn.initCardTilePic = function() {
-		$self = $(this);
+	// $.fn.initCardTilePic = function() {
+	// 	$self = $(this);
 
-		// Fade in the initial card
-		$self.fadeIn();
+	// 	// Fade in the initial card
+	// 	$self.fadeIn();
 
-		if ($self.hasClass(classMain)) {
-			$self.find(".ImgLoader").each(function(index) {
-				var $ImgLoader = $(this);
-				var imgUrl = $ImgLoader.data("img");
+	// 	if ($self.hasClass(classMain)) {
+	// 		$self.find(".ImgLoader").each(function(index) {
+	// 			var $ImgLoader = $(this);
+	// 			var imgUrl = $ImgLoader.data("img");
 
-				if (imgUrl) {
-					preloadImgUrl(imgUrl, function() {
-						$ImgLoader.css('visibility','visible').hide().attr("src",imgUrl).fadeIn('slow');
-					});
-				}
-			});
-		}
-	};
+	// 			if (imgUrl) {
+	// 				preloadImgUrl(imgUrl, function() {
+	// 					$ImgLoader.css('visibility','visible').hide().attr("src",imgUrl).fadeIn('slow');
+	// 				});
+	// 			}
+	// 		});
+	// 	}
+	// };
+
+	// Initialize the Last Visible Item 
+	//LastVisibleItem = $("."+classNoShow).first();//CardTile--displayNone"
 
 	// The scrollHandler for the Picture Page
 	var picGridScrollHandler = function() {
-	    // NOTE: 'LastVisibleCardTile' is a global value.
+	    // NOTE: 'LastVisibleItem' is a global value.
 	    // Which is set by $("...").reinitScrollShowPicBatch()
-	    if (LastVisibleCardTile) {
-	    	var boundRect = LastVisibleCardTile.getBoundingClientRect();
+	    if (LastVisibleItem) {
+	    	var boundRect = LastVisibleItem.getBoundingClientRect();
 
 	    	// If the last visible cardtile is visible on the page...
 	    	// ... then load int he next batch/
 	    	if (boundRect && boundRect.bottom <= window.innerHeight +100) {
-	    		showNextPicBatch();
+	    		showNextItemBatch();
 	    	}
+
+	    	// console.log("handle2:"+boundRect.bottom+ " <= "+(window.innerHeight +100));
+
 	    }
 	}
 
 	// For for 15  div.CardTile--display, show it...
 	// And then load it's 
-	function showNextPicBatch() {
+	function showNextItemBatch() {
+		console.log("showNextItemBatch");
 		if (CanLoadNextBatch === true) {
+			console.log("can show");
 			// Set the global value of 'CanLoadNextBatch' to false..
 			CanLoadNextBatch = false;
 			var className = classNoShow;
@@ -62,7 +70,7 @@
 				$(window).off("scroll", picGridScrollHandler);
 			} else {
 				$picBatch.each(function(i) {
-					$(this).removeClass(className).initCardTilePic();
+					$(this).removeClass(className); //.initCardTilePic();
 				});
 
 				// Use the last image CardTile as the point for loading next batch.
@@ -75,6 +83,8 @@
 				CanLoadNextBatch = true;
 				picGridScrollHandler();
 			}, 1000);
+		} else {
+			console.log("no show");
 		}
 	}
 
@@ -86,13 +96,13 @@
 	//     $(window).off("scroll", scrollHandler);
 	// });
 
-	// Initialize the Picture Grid.
-	function initPicGrid() {
+	// Initialize Scroll event
+	function initScrollEvent() {
 		var className = classInitial;
 		$picBatch = $("."+className);
 
 		$picBatch.each(function(i) {
-			$(this).removeClass(className).initCardTilePic();
+			$(this).removeClass(className); //.initCardTilePic();
 		});
 
 		$(window).scroll(picGridScrollHandler);
@@ -104,10 +114,10 @@
 	// Taking the last .CardTile that has been displayed...
 	// Set it as the scroll 
 	$.fn.reinitScrollShowPicBatch = function() {
-		LastVisibleCardTile = $(this)[0];
+		LastVisibleItem = $(this)[0];
 		// var boundRed = $(this).getBoundingClientRect();
 		// window.scroll
 	};
 
-	initPicGrid();
+	initScrollEvent();
 })();
