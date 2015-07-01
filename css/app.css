@@ -2974,7 +2974,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
       width: 70%;
       margin-left: -40%; } }
 
-/* line 2, ../src/scss/snbComponents/Footer.scss */
+/* line 2, ../src/scss/snbComponents/_Footer.scss */
 .Footer-copyright {
   text-align: center;
   width: 100%;
@@ -2982,15 +2982,56 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
   padding-left: 10px;
   padding-right: 10px; }
 
+/* line 3, ../src/scss/snbComponents/_Loading.scss */
+.Loading {
+  display: block;
+  width: 110px;
+  height: 110px;
+  background-image: url("../media/img/general/loading-120.gif");
+  background-color: white;
+  background-position: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  margin-top: -55px;
+  left: 50%;
+  margin-left: -55px; }
+
 /* line 2, ../src/scss/snbComponents/_Modal.scss */
 .Modal-closeButton {
   display: block;
   position: absolute;
-  top: 5px;
-  right: 5px;
-  background-color: yellow;
-  width: 30px;
-  height: 30px; }
+  top: 2px;
+  right: 2px;
+  background-color: #F9EB30;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 50%; }
+  /* line 12, ../src/scss/snbComponents/_Modal.scss */
+  .Modal-closeButton::before, .Modal-closeButton::after {
+    content: ' ';
+    display: block;
+    border-radius: 2px;
+    width: 25px;
+    height: 3px;
+    background: #428ada;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -13px;
+    margin-top: -2px; }
+  /* line 45, ../src/scss/snbComponents/_Modal.scss */
+  .Modal-closeButton::before {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+  /* line 51, ../src/scss/snbComponents/_Modal.scss */
+  .Modal-closeButton::after {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
 
 /* line 2, ../src/scss/snbComponents/_Swiper.scss */
 .Swiper-container {
@@ -3808,42 +3849,52 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
   width: 100%;
   height: 100%;
   z-index: 1001; }
-  /* line 82, ../src/scss/snbComponents/_PicturesPage.scss */
+  /* line 42, ../src/scss/snbComponents/_PicturesPage.scss */
+  .PicturesPage-modal .Loading {
+    z-index: 1; }
+  /* line 46, ../src/scss/snbComponents/_PicturesPage.scss */
+  .PicturesPage-modal .swiper-container {
+    z-index: 2; }
+  /* line 50, ../src/scss/snbComponents/_PicturesPage.scss */
+  .PicturesPage-modal .Modal-closeButton {
+    z-index: 3; }
+  /* line 56, ../src/scss/snbComponents/_PicturesPage.scss */
   .PicturesPage-modal .swiper-wrapper {
     height: auto; }
-  /* line 86, ../src/scss/snbComponents/_PicturesPage.scss */
+  /* line 60, ../src/scss/snbComponents/_PicturesPage.scss */
   .PicturesPage-modal .swiper-container {
     width: 100%;
     height: 100%;
-    overflow: auto; }
-  /* line 93, ../src/scss/snbComponents/_PicturesPage.scss */
+    overflow: auto;
+    visibility: hidden; }
+  /* line 68, ../src/scss/snbComponents/_PicturesPage.scss */
   .PicturesPage-modal .swiper-slide {
     background-position: center;
     background-size: cover;
     width: 640px; }
-    /* line 98, ../src/scss/snbComponents/_PicturesPage.scss */
+    /* line 73, ../src/scss/snbComponents/_PicturesPage.scss */
     .PicturesPage-modal .swiper-slide-container {
       position: relative;
       background-color: white;
       padding-right: 335px; }
-      /* line 103, ../src/scss/snbComponents/_PicturesPage.scss */
+      /* line 78, ../src/scss/snbComponents/_PicturesPage.scss */
       .PicturesPage-modal .swiper-slide-container-photoRoot {
         position: relative;
         background-color: #BBB;
         display: block;
         width: 100%; }
-        /* line 109, ../src/scss/snbComponents/_PicturesPage.scss */
+        /* line 84, ../src/scss/snbComponents/_PicturesPage.scss */
         .PicturesPage-modal .swiper-slide-container-photoRoot::before {
           content: ' ';
           display: block;
           padding-bottom: 100%; }
-        /* line 115, ../src/scss/snbComponents/_PicturesPage.scss */
+        /* line 90, ../src/scss/snbComponents/_PicturesPage.scss */
         .PicturesPage-modal .swiper-slide-container-photoRoot-img {
           left: 0;
           position: absolute;
           top: 0;
           width: 100%; }
-      /* line 123, ../src/scss/snbComponents/_PicturesPage.scss */
+      /* line 98, ../src/scss/snbComponents/_PicturesPage.scss */
       .PicturesPage-modal .swiper-slide-container-text {
         position: absolute;
         right: 25px;
@@ -3853,20 +3904,20 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         background-color: white;
         overflow: auto; }
       @media (max-width: 735px) {
-        /* line 134, ../src/scss/snbComponents/_PicturesPage.scss */
+        /* line 109, ../src/scss/snbComponents/_PicturesPage.scss */
         .PicturesPage-modal .swiper-slide-container {
           padding-right: 0; }
-          /* line 139, ../src/scss/snbComponents/_PicturesPage.scss */
+          /* line 114, ../src/scss/snbComponents/_PicturesPage.scss */
           .PicturesPage-modal .swiper-slide-container-photoRoot::before {
             display: none; }
-          /* line 143, ../src/scss/snbComponents/_PicturesPage.scss */
+          /* line 118, ../src/scss/snbComponents/_PicturesPage.scss */
           .PicturesPage-modal .swiper-slide-container-photoRoot-img {
             position: relative; }
-          /* line 148, ../src/scss/snbComponents/_PicturesPage.scss */
+          /* line 123, ../src/scss/snbComponents/_PicturesPage.scss */
           .PicturesPage-modal .swiper-slide-container-text {
             position: static;
             width: 100%; }
-            /* line 152, ../src/scss/snbComponents/_PicturesPage.scss */
+            /* line 127, ../src/scss/snbComponents/_PicturesPage.scss */
             .PicturesPage-modal .swiper-slide-container-text-value {
               padding: 25px; } }
 

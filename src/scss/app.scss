@@ -48,13 +48,11 @@ File: app.scss
 @import 'snbComponents/MastheadOverlays';
 @import 'snbComponents/Footer';
 
+// Utils 
+@import 'snbComponents/Loading';
 @import 'snbComponents/Modal';
-
 @import 'snbComponents/Swiper';
-
 @import 'snbComponents/FullLength';
-
-
 
 // Tour related
 @import 'snbComponents/DateBox';

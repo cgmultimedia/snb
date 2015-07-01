@@ -1,11 +1,57 @@
 .Modal {
 	&-closeButton {
-		display: block;
-		position: absolute; 
-		top:5px;
-		right: 5px;
-		background-color: yellow;
-		width: 30px;
-		height:30px;
+			display: block;
+			position: absolute;
+			top: 2px;
+			right: 2px;
+			background-color: $color-yellowSNB;
+			width: 35px;
+			height: 35px;
+			cursor: pointer;
+			border-radius: 50%;
+		&::before,
+		&::after {
+			// content: ' ';
+			// display: block;
+			// background: $color-blueSNB;
+			// border-radius: 2px;
+			// width: 30px;
+			// height: 4px;
+			// //background: #00adbb;
+			// display: block;
+			// position: absolute;
+			// transition: -webkit-transform 0.4s;
+			// transition: transform 0.4s;
+			// top: 50%;
+			// left: 50%;
+			// margin-left: -15px;
+			// margin-top: -3px;
+
+			content: ' ';
+			display: block;
+			//background: #428ada;
+			border-radius: 2px;
+			width: 25px;
+			height: 3px;
+			background: $color-blueSNB;
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -13px;
+			margin-top: -2px;			
+		}
+
+		&::before {
+			-webkit-transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+
+		&::after {
+			-webkit-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
 	}
 }

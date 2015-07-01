@@ -1,0 +1,16 @@
+$width: 110px;
+
+.Loading {
+	display: block;
+	width: $width;
+	height: $width;
+	background-image: url("../media/img/general/loading-120.gif");
+	background-color: white;
+	background-position: center;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	margin-top: $width / -2;
+	left: 50%;
+	margin-left: $width / -2;
+}

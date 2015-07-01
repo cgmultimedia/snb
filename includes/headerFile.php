@@ -50,7 +50,14 @@ if(!$isMobile && !$isTablet) {
     <?php if (function_exists('customPageHeader')) {
       customPageHeader();
     } ?>
-
+    
+    <!-- Preload images -->
+    <script>
+        (function() {
+            var img = new Image();
+            img.src = "<?php echo $templateDir; ?>/media/img/general/loading-120.gif";
+        })();
+    </script>
   </head>
   <body class="<?php echo $bodyClass;?>">
     <?php // FACEBOOK SDK - for: https://developers.facebook.com/docs/plugins/page-plugin ?>
