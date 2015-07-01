@@ -4,6 +4,11 @@ $zIndex-Pictures-modal    : $zIndex-Pictures-backdrop + 1;
 $swiper-slide-container-padding: 335px;
 $swiper-slide-container-text-padding: 25px;
 
+// NOTE: this has to be the same as the value within 'instagramClick.js' ...
+// ... switchToFullTopBottomStyle = 735,
+$switchToFullTopBottomStyle : 735px; 
+
+
 .PicturesPage {
     &-backdrop {
         display: none;
@@ -13,7 +18,8 @@ $swiper-slide-container-text-padding: 25px;
         width: 100%;
         height: 100%;
 
-        background: #FFFFFF;
+        //background: #FFFFFF;
+        background-color: rgba(50,50,50,.7);
         opacity: 0.8;
         filter: alpha(opacity=80);
         -moz-opacity: 0.80;
@@ -27,6 +33,7 @@ $swiper-slide-container-text-padding: 25px;
         left: 0px;
         width: 100%;
         height: 100%;
+        //overflow: auto;
         
         z-index: $zIndex-Pictures-modal;
 
@@ -78,6 +85,8 @@ $swiper-slide-container-text-padding: 25px;
 
         & .swiper-container {
             width: 100%;
+            height: 100%;
+            overflow: auto;
             // padding-top: 50px;
             // padding-bottom: 50px;
         }
@@ -85,41 +94,15 @@ $swiper-slide-container-text-padding: 25px;
             background-position: center;
             background-size: cover;
             width: 640px;
-            //height: 640px;
-
-            // &-container {
-            //     position: relative;
-            //     top: 0;
-            //     left: 0;
-            //     right: 0px;
-            //     background: blue;
-                
-            //     &-photoRoot {
-            //         background-color: #A86C6C;
-            //         padding-right: 335px;  
-                    
-            //         &-img {
-            //             background-color: #FF0000;
-            //             display: block;
-            //             width: 100%;
-
-            //             &::before {
-            //                 content: ' ';
-            //                 display: block;
-            //                 padding-bottom: 100%;
-            //             }
-            //         }
-            //     }
-            // }
 
             &-container {
                 position: relative;
-                background-color: #A86C6C;
+                background-color: white; //#A86C6C;
                 padding-right: $swiper-slide-container-padding;  
                 
                 &-photoRoot {
                     position: relative;
-                    background-color: #FF0000;
+                    background-color: #BBB; //#FF0000; 
                     display: block;
                     width: 100%;
 
@@ -143,124 +126,38 @@ $swiper-slide-container-text-padding: 25px;
                     top:    $swiper-slide-container-text-padding;
                     width:  $swiper-slide-container-padding - 2 * $swiper-slide-container-text-padding;
                     bottom: $swiper-slide-container-text-padding;
-                    background-color: green;
+                    background-color: white;
                     overflow: auto;
-                    // position: absolute;
-                    // right: 0;
-                    // top: 20px;
-                    // width: 325px;
+                }
 
-                    // margin-left: -24px;
-                    // margin-right: -24px;
-                    // padding-left: 24px;
-                    // padding-right: 24px;
-                    
-                    // overflow: auto;
-                    // padding-bottom: 20px;
-                    
-                    // -webkit-box-flex: 1;
-                    // -webkit-flex-grow: 1;
-                    // -ms-flex-positive: 1;
-                    // flex-grow: 1;
+                @media (max-width: 735px) {
+                    & {
+                        padding-right: 0;
+                        
+                        &-photoRoot {
+
+                            &::before {
+                                display: none;
+                            }
+
+                            &-img {
+                                position: relative;
+                            }
+                        }
+
+                        &-text {
+                            position: static;
+                            width: 100%;
+
+                            &-value {
+                                padding: 25px;    
+                            }
+                        }
+
+                    }
                 }
             }
-
-            // &-container {
-            //     background-color: #fff;
-            //     padding-right: 323px;
-
-            //     -webkit-box-align: stretch;
-            //     -webkit-align-items: stretch;
-            //     -ms-flex-align: stretch;
-            //     align-items: stretch;
-            //     border: 0 solid #000;
-            //     box-sizing: border-box;
-            //     display: -webkit-box;
-            //     display: -webkit-flex;
-            //     display: -ms-flexbox;
-            //     display: flex;
-            //     -webkit-box-orient: vertical;
-            //     -webkit-box-direction: normal;
-            //     -webkit-flex-direction: column;
-            //     -ms-flex-direction: column;
-            //     flex-direction: column;
-            //     -webkit-flex-shrink: 0;
-            //     -ms-flex-negative: 0;
-            //     flex-shrink: 0;
-            //     margin: 0;
-            //     padding: 0;
-            //     position: relative;
-            // }
-
-            // &-photoRoot {
-            //     background-color: #edeeee;
-            //     display: block;
-            //     width: 100%;
-
-            //     -webkit-box-align: stretch;
-            //     -webkit-align-items: stretch;
-            //     -ms-flex-align: stretch;
-            //     align-items: stretch;
-            //     border: 0 solid #000;
-            //     box-sizing: border-box;
-            //     display: -webkit-box;
-            //     display: -webkit-flex;
-            //     display: -ms-flexbox;
-            //     display: flex;
-            //     -webkit-box-orient: vertical;
-            //     -webkit-box-direction: normal;
-            //     -webkit-flex-direction: column;
-            //     -ms-flex-direction: column;
-            //     flex-direction: column;
-            //     -webkit-flex-shrink: 0;
-            //     -ms-flex-negative: 0;
-            //     flex-shrink: 0;
-            //     margin: 0;
-            //     padding: 0;
-            //     position: relative;
-
-            //     &::before {
-            //         content: '';
-            //         display: block;
-            //         padding-bottom: 100%;
-            //     }
-
-            //     &-img {
-            //         left: 0;
-            //         position: absolute;
-            //         top: 0;
-            //         width: 100%;
-
-            //         margin: 0;
-            //         padding: 0;
-            //         border: 0;
-            //         font-size: 100%;
-            //         font: inherit;
-            //         vertical-align: baseline;
-            //     }
-            // }
-
-            // &-img {
-            //     width: 100%;
-            // }
-
-            // @media (max-width : 640px) {
-            //     & {
-            //         //width: 100%;
-            //         //border: blue 5px solid;
-            //     }
-            // }
-
-            // @media (min-width : 640px) {
-            //     & {
-            //         //border: red 5px solid;
-            //     }
-            // }
         }
-
     }
 }
 
-// .swiper-slider-img {
-//     width: 100% !important;
-// }

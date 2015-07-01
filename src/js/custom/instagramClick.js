@@ -10,7 +10,9 @@
                                 <img class="swiper-slide-container-photoRoot-img" src="'+imgSrc+'"/> \
                             </div> \
                             <div class="swiper-slide-container-text"> \
+                                <div class="swiper-slide-container-text-value"> \
                                 '+text+' \
+                                </div> \
                             </div> \
                         </div> \
                     </div>';
@@ -37,6 +39,8 @@
                     maxWidth = maxImgWidth+335, // 640 image max width, 335 the padding-right (as defined in _PicturePages.scss)
                     maxTotalWidth = maxWidth + 2 * padding,
                     maxWidthWhenNoPadding = 480,
+                    // NOTE: this has to be the same as the value within '_PicturePage.scss' ...
+                    // ... $switchToFullTopBottomStyle : 735px,
                     switchToFullTopBottomStyle = 735,
                     minSwiperWrapperTop = 40;
                     //switchVal1 = maxImgSize;
@@ -142,16 +146,32 @@
 //                         </div> \
 //                     </div> \
 
-                var longText = "Lots of long text for saying things perhaps for the saying of things.";
+                var longText = "Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things";
 
                 var swiperDiv = '<!-- Swiper --> \ 
                     <div class="swiper-container"> \
                         <div class="swiper-wrapper"> \
                             '+getCard("http://lorempixel.com/600/600/nature/1/",longText) +'\
                             '+getCard("http://lorempixel.com/600/600/nature/1/",longText) +'\
+                            '+getCard("http://lorempixel.com/600/600/nature/1/",longText) +'\
+                            '+getCard("http://lorempixel.com/600/600/nature/1/",longText) +'\
                         </div> \
                         <!-- Add Pagination --> \
                         <div class="swiper-pagination"></div> \
+                        <!-- Add Arrows --> \
+                        <div class="swiper-button-next"></div> \
+                        <div class="swiper-button-prev"></div> \
                     </div>';
 
 
@@ -202,13 +222,11 @@
                 //                 " + swiperDiv + " \
                 //         </div>";
 
-                var j =swiperDiv;
+                var closeButton = $("<div class='Modal-closeButton'></div>");
 
-                // tempImg.src = imgSrc;
+                var modalContent = swiperDiv+closeButton;
 
-                //$(tempImg).addClass("PicturesPage-modal-img");
-
-                $pm.html(j);
+                $pm.html(modalContent);
 
                 // Resize the modal
                 resizeModal();
@@ -257,7 +275,10 @@
                                 depth: 100,
                                 modifier: 1,
                                 slideShadows : true
-                            }
+                            },
+                            nextButton: '.swiper-button-next',
+                            prevButton: '.swiper-button-prev',
+                            keyboardControl : true
                         });
                         resizeModal();
 
