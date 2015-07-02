@@ -255,15 +255,128 @@ function youTubeVideoScrimFadeOut() {
     });
 }
  /*******************************/ 
+/*jshint strict: false */
+/*jshint multistr: true */
+/*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */ 
+/*global console */
 (function($) {
     $(document).ready(function() {
 
-        var swiper;
-        var $allPictureCards = $(".CardTile--pictures");
+        // Global vars within scope.
+        var swiper,
+            $allPictureCards = $(".CardTile--pictures"),
+            numCards = $allPictureCards.length,
+            initCardIndex = 0, // Initial Card Index
+            initSwiperIndex = 0, // The initial index for the swiper.
+            swiperToCardIndexDiff = 0,
+            numCardBufs = 3; // 3 cards on either side of main (selected) index.
 
         window.aa = $allPictureCards;
 
-        function getCard(imgSrc, text, date) {
+        // Returns the min and max card index values.
+        function setInitGlobalVars($card) {
+            try {
+                setInitCardIndex($card.index());
+                var minCardIndex = Math.max(initCardIndex - numCardBufs,0); // Ensure smallest possible val is 0
+                var maxCardIndex = Math.min(initCardIndex + numCardBufs,numCards - 1); // Ensure smallest possible val is 0
+                
+                // Set the initial value for the swiper's index to be the appropriate value.
+                setInitSwiperIndex(initCardIndex - minCardIndex);
+
+                setSwiperToCardIndexDiff(initSwiperIndex - initCardIndex);
+
+                return {min : minCardIndex, max: maxCardIndex};
+            } catch(e) {
+                console.log("Err in setInitGlobalVars:" + e);
+                return {min : 0, max: 0};
+            }
+        }
+
+        function setInitCardIndex(index) {
+            initCardIndex = index;
+        }
+
+        function setInitSwiperIndex(index) {
+            initSwiperIndex = index;
+        }
+
+        function setSwiperToCardIndexDiff(diffVal) {
+            swiperToCardIndexDiff = diffVal;
+        }
+
+        function updateSlides() {
+            //swiper
+            var actIdx = swiper.activeIndex;
+
+        }
+
+        function onNextSlide() {
+
+            // swiper.appendSlide('<div class="swiper-slide">Slide ' + (++appendNumber) + '</div>');
+
+        }
+
+        function onPrevSlide() {
+
+        }
+
+        function getCardDivByIndex(idx) {
+            try {
+                var $card = $allPictureCards.eq(idx);
+                var imgSrc = $card.find(".Card-img").data("img");
+                var title = $card.find(".Card-title").html();
+                var date = $card.find(".Card-date").html();
+
+                return getCard(imgSrc,title,date);
+            } catch(e) {
+                return "";
+            }
+        }
+
+        // This initialized the modal and all global variables...
+        // ... for the initially clicked card.
+        function getInitImgDataFromClickedCard($thisCard) {
+            try {
+                var minMax = setInitGlobalVars($thisCard); // Should return, e.g. {min : 0; max 7}
+
+                var returnedCardDivs = "";
+                for (var i = minMax.min; i<=minMax.max;i++) {
+                    returnedCardDivs += getCardDivByIndex(i);
+                }
+                return returnedCardDivs;
+            } catch(e) {
+                console.log("getInitImgDataFromClickedCard error: "+e);
+            }
+        }
+
+
+        function getInitImgData() {
+            //var least card
+
+            var longText = "Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things. \
+                Lots of long text for saying things perhaps for the saying of things";
+
+            var date = "Jan 2, 2015";
+
+            var imgSrc = "http://lorempixel.com/600/600/nature/1/";
+
+            return getCard(imgSrc,longText,date) +'\
+                    '+getCard(imgSrc,longText,date) +'\
+                    '+getCard(imgSrc,longText,date) +'\
+                    '+getCard(imgSrc,longText,date);
+        } 
+
+        function getCard(imgSrc, title, date) {
             return '<div class="swiper-slide"> \
                         <div class="swiper-slide-container"> \
                             <div class="swiper-slide-container-photoRoot"> \
@@ -274,7 +387,7 @@ function youTubeVideoScrimFadeOut() {
                                     <div class="swiper-slide-container-text-value-date"> \
                                     '+date+' \
                                     </div> \
-                                '+text+' \
+                                '+title+' \
                                 </div> \
                             </div> \
                         </div> \
@@ -287,19 +400,6 @@ function youTubeVideoScrimFadeOut() {
         }
 
         function resizeModal() {
-            // Add image to popup card
-            // var $w = $(window),
-            //     wh = $w.height(),
-            //     ww = $w.width();
-            //     wr = wh / ww;
-
-            // if (wr > 1) {
-            //     console.log("width");
-            // } else {
-            //     console.log("h");
-            // }
-
-            // 468
             if (swiper !== undefined && swiper.onResize) {
 
                 var padding = 40,
@@ -311,8 +411,6 @@ function youTubeVideoScrimFadeOut() {
                     // ... $switchToFullTopBottomStyle : 735px,
                     switchToFullTopBottomStyle = 735,
                     minSwiperWrapperTop = 40;
-                    //switchVal1 = maxImgSize;
-                    //switchVal2 = 640,
 
                 var ww = $(window).width(),
                     wh = $(window).height(),
@@ -364,6 +462,7 @@ function youTubeVideoScrimFadeOut() {
         }
 
         function openModal($this) {
+
             var $pb = $(".PicturesPage-backdrop").eq(0);
 
             if ($pb.length <= 0) {
@@ -378,34 +477,20 @@ function youTubeVideoScrimFadeOut() {
                 $("body").append($pm);
             }
 
-            // Get img src
-            var $imgLoader = $this.find(".ImgLoader")
+            // Get img, title, date of selected image and images around it.
+            var imgs = [];
+
+            imgData = getInitImgDataFromClickedCard($this);
+
+            var $imgLoader = $this.find(".Card-img");
             if ($imgLoader.length > 0) {
                 var imgSrc = $imgLoader.data("img");
 
-
-                var longText = "Lots of long text for saying things perhaps for the saying of things. \
-                Lots of long text for saying things perhaps for the saying of things. \
-                Lots of long text for saying things perhaps for the saying of things. \
-                Lots of long text for saying things perhaps for the saying of things. \
-                Lots of long text for saying things perhaps for the saying of things. \
-                Lots of long text for saying things perhaps for the saying of things. \
-                Lots of long text for saying things perhaps for the saying of things. \
-                Lots of long text for saying things perhaps for the saying of things. \
-                Lots of long text for saying things perhaps for the saying of things. \
-                Lots of long text for saying things perhaps for the saying of things. \
-                Lots of long text for saying things perhaps for the saying of things. \
-                Lots of long text for saying things perhaps for the saying of things";
-
-                var date = "Jan 2, 2015";
-
+            
                 var swiperDiv = '<!-- Swiper --> \ 
                     <div class="swiper-container"> \
                         <div class="swiper-wrapper"> \
-                            '+getCard("http://lorempixel.com/600/600/nature/1/",longText,date) +'\
-                            '+getCard("http://lorempixel.com/600/600/nature/1/",longText,date) +'\
-                            '+getCard("http://lorempixel.com/600/600/nature/1/",longText,date) +'\
-                            '+getCard("http://lorempixel.com/600/600/nature/1/",longText,date) +'\
+                            '+imgData+' \
                         </div> \
                         <!-- Add Pagination --> \
                         <div class="swiper-pagination"></div> \
@@ -443,6 +528,7 @@ function youTubeVideoScrimFadeOut() {
                             grabCursor: true,
                             centeredSlides: true,
                             slidesPerView: 'auto',
+                            initialSlide : initSwiperIndex,
                             //slidesPerView: 5,
                             //width: "600px",
                             coverflow: {
@@ -458,7 +544,28 @@ function youTubeVideoScrimFadeOut() {
                             onInit : function() {
                                 $(".PicturesPage-modal .swiper-container").eq(0).hide().css({"visibility" : "visible"}).fadeIn();
                                 $(".PicturesPage-modal .Loading").fadeOut();
-                            }
+                            },
+                            onSlideChangeStart : function(swiper) {
+                                console.log("onSlideChangeStart");
+                            },
+                            onSlideChangeEnd : function(swiper) {
+                                console.log("onSlideChangeEnd");
+                            },
+                            onTransitionStart : function(swiper) {
+                                console.log("onTransitionStart");
+                            },
+                            onTransitionEnd : function(swiper) {
+                                console.log("onTransitionEnd");
+                            },
+                            onTouchStart : function(swiper) {
+                                console.log("onTouchStart");
+                            },
+                            // onTouchMove : function(swiper) {
+                            //     console.log("onTouchMove");
+                            // },
+                            // onSliderMove : function(swiper) {
+                            //     console.log("onSliderMove");
+                            // }
                         });
                         resizeModal();
 

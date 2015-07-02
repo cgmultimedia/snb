@@ -19,10 +19,10 @@ $switchToFullTopBottomStyle : 735px;
         height: 100%;
 
         //background: #FFFFFF;
-        background-color: rgba(50,50,50,.7);
-        opacity: 0.8;
-        filter: alpha(opacity=80);
-        -moz-opacity: 0.80;
+        background-color: rgba(60, 60, 70, 0.7); //rgba(50,50,50,.7);
+        // opacity: 0.8;
+        // filter: alpha(opacity=80);
+        // -moz-opacity: 0.80;
         z-index: $zIndex-Pictures-backdrop;
     }
 

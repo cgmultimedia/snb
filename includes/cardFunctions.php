@@ -3,9 +3,9 @@
   function printCardDetails($type, $title, $date) {
 
     if ($type=="Instagram") { ?>
-      <div class="Card-title">
-        <div class="Card-title-text"><?php echo $title ?></div>
-        <div class="Card-title-date"><?php echo $date ?></div>
+      <div class="Card-text">
+        <div class="Card-title"><?php echo $title ?></div>
+        <div class="Card-date"><?php echo $date ?></div>
       </div>
     <?php } else { ?>
       <div class="Card-title">
@@ -412,6 +412,8 @@
     //$type          = 'pic'; //
     $title         = stripslashes($cardData->post_title);
     $date          = $cardData->post_date;
+    //$newDate       = date("F j, Y g:i A", strtotime($date));
+    $newDate       = date("F j, Y", strtotime($date));
     $img           = $cardData->post_content;
     // "<img class =\"insta-image\" width=\"640\" height=\"640\" src=\"http://splashnboots.com/childrensmusic/wp-content/uploads/2015/04/11085091_549057275237308_1115789286_n.jpg\" />"
     $strposStart   = strpos($img, "src=\"");
@@ -453,7 +455,7 @@
     ?>
     <div class="Card-img ImgLoader" data-img="<?php echo $imgUrl;?>"></div>
     <?php 
-    printCardFooterWithDetail($type, $title, $date);  
+    printCardFooterWithDetail($type, $title, $newDate);  
   }
 
 

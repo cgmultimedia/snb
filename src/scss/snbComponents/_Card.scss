@@ -249,9 +249,13 @@ $padding-Card-title       : 10px;
 			}
 		}
 		& .Card-text {
+			padding: 15px;
+		}
+		& .Card-title {
 			display: none;
 		}
 		& .Card-date {
+
 			//display: none;
 		}
 	}
