@@ -2,8 +2,11 @@
     $(document).ready(function() {
 
         var swiper;
+        var $allPictureCards = $(".CardTile--pictures");
 
-        function getCard(imgSrc, text) {
+        window.aa = $allPictureCards;
+
+        function getCard(imgSrc, text, date) {
             return '<div class="swiper-slide"> \
                         <div class="swiper-slide-container"> \
                             <div class="swiper-slide-container-photoRoot"> \
@@ -11,6 +14,9 @@
                             </div> \
                             <div class="swiper-slide-container-text"> \
                                 <div class="swiper-slide-container-text-value"> \
+                                    <div class="swiper-slide-container-text-value-date"> \
+                                    '+date+' \
+                                    </div> \
                                 '+text+' \
                                 </div> \
                             </div> \
@@ -97,7 +103,6 @@
 
                 //swiper.reInit()
                 swiper.onResize();
-                console.log("resize");
             }
         }
 
@@ -135,13 +140,15 @@
                 Lots of long text for saying things perhaps for the saying of things. \
                 Lots of long text for saying things perhaps for the saying of things";
 
+                var date = "Jan 2, 2015";
+
                 var swiperDiv = '<!-- Swiper --> \ 
                     <div class="swiper-container"> \
                         <div class="swiper-wrapper"> \
-                            '+getCard("http://lorempixel.com/600/600/nature/1/",longText) +'\
-                            '+getCard("http://lorempixel.com/600/600/nature/1/",longText) +'\
-                            '+getCard("http://lorempixel.com/600/600/nature/1/",longText) +'\
-                            '+getCard("http://lorempixel.com/600/600/nature/1/",longText) +'\
+                            '+getCard("http://lorempixel.com/600/600/nature/1/",longText,date) +'\
+                            '+getCard("http://lorempixel.com/600/600/nature/1/",longText,date) +'\
+                            '+getCard("http://lorempixel.com/600/600/nature/1/",longText,date) +'\
+                            '+getCard("http://lorempixel.com/600/600/nature/1/",longText,date) +'\
                         </div> \
                         <!-- Add Pagination --> \
                         <div class="swiper-pagination"></div> \
@@ -170,7 +177,6 @@
                 // Fade in or animate them in.
                 $pb.fadeIn(function() {
                     $pm.fadeIn(function() {
-                        console.log("swiper");
                         swiper = new Swiper('.swiper-container', {
                             // pagination: '.swiper-pagination',
                             // paginationClickable: true
@@ -207,6 +213,7 @@
 
         $(document).on("click", ".CardTile--pictures", function() {
             var $this = $(this);
+            window.$t = $this;
             openModal($this);
         });
 

@@ -1,19 +1,42 @@
 <?php
 
   function printCardDetails($type, $title, $date) {
+
+    if ($type=="Instagram") { ?>
+      <div class="Card-title">
+        <div class="Card-title-text"><?php echo $title ?></div>
+        <div class="Card-title-date"><?php echo $date ?></div>
+      </div>
+    <?php } else { ?>
+      <div class="Card-title">
+        <div class="Card-title-text">
+          <div class="Card-title-text-container">
+            <div class="Card-title-text-container-value">
+              <?php echo $title ?>
+            </div>
+          </div>
+        </div>
+        <div class="Card-title-date">
+          <div class="Card-title-date-value">
+            <?php echo $date ?>
+          </div>
+        </div>
+      </div>
+    <?php }
+  }
+
+  function printPicturesCardDetails($type, $title, $date) {
     ?>
     <div class="Card-title">
-      <!-- <div class="Card-title-typeBox Card-title-typeBox--<?php echo $type?>">
-      </div> -->
       <div class="Card-title-text">
         <div class="Card-title-text-container">
-          <div class="Card-title-text-container-div">
+          <div class="Card-title-text-container-value">
             <?php echo $title ?>
           </div>
         </div>
       </div>
       <div class="Card-title-date">
-        <div class="Card-title-date-container">
+        <div class="Card-title-date-value">
           <?php echo $date ?>
         </div>
       </div>
@@ -33,10 +56,7 @@
     <?php
   }
 
-// <div id="hub_post_id_12167" class="hub_post">
   function printCardHeaderWithDetail($type, $title, $date) {
-    // echo "<!-- ".$type."-".$title."-".$date."-->";
-    // <div class='Card Card--video Card--isLoading'>
     ?>
       <div class='Card Card--<?php echo $type;?>'>
         <div class="Card-container">
@@ -368,9 +388,9 @@
     for ($i=0; $i<count($rows); $i++) { 
       //$name = $rows[$i]->name;
       //<li class="CardTile" data-filter-class='["< ? php echo $name; ? > "]'>
-      $class = "CardTile CardTile--static CardTile--pictures"; 
+      $class = "CardTile CardTile--pictures"; 
       if ($i >= $groupingNum) {
-        $class = $class . " CardTile--displayNone";
+        $class = $class . " CardTile--DN"; //displayNone";
       } else {
         $class = $class . " CardTile--initial";
       }
@@ -389,6 +409,7 @@
     // $date  = 'Thursday, January 8th, 2015';
     
     $type          = 'Instagram'; //'Picture'; 
+    //$type          = 'pic'; //
     $title         = stripslashes($cardData->post_title);
     $date          = $cardData->post_date;
     $img           = $cardData->post_content;
@@ -398,7 +419,7 @@
     $strposEnd     = strpos($imgAlt, "\"");
     $imgUrl        = substr($imgAlt,0, $strposEnd);
 
-    $tempImgUrl    = $templateDir. "/media/img/general/1x1-white.gif";
+    $tempImgUrl    = $templateDir. "/media/img/general/1x1.gif"; // 1x1 transparent gif.
 
     //printCardHeader($type, $title, $date);
     printCardHeader($type);
@@ -407,21 +428,32 @@
     // <img class="Card--picture-thumb-img" src="http://img.youtube.com/vi/< ? php echo $youtubeId; ? >/mqdefault.jpg" class="shadow_box_small">
     // onclick="function() { console.log('clicked') }"
     // style="display: none"
+
+    // <!-- <? php echo $img; ? > -->
+    // <!-- <? php echo $imgUrl;? > -->
+    // <!-- <? php echo $strposStart; ? > -->
+    // <!-- <? php echo $imgAlt; ? > -->
+    // <!-- <? php echo $strposEnd; ? > -->
+    // <!-- <? php echo $imgUrl; ? > -->
+    // echo $type;
+    // echo $title;
+    // echo $date;
+    // echo $imgUrl;
+    
+/*
     ?>
       <div class="Card-content-container">
         <div class="Card--pic-thumb" >
           <img class="Card--pic-thumb-img ImgLoader ImgLoader--canCheck" src="<?php echo $tempImgUrl;?>" data-img="<?php echo $imgUrl;?>"/>
-          <!-- <?php echo $img;?> -->
-          <!-- <?php echo $imgUrl;?> -->
-          <!-- <?php echo $strposStart; ?> -->
-          <!-- <?php echo $imgAlt; ?> -->
-          <!-- <?php echo $strposEnd; ?> -->
-          <!-- <?php echo $imgUrl; ?> -->
         </div>
       </div>
     <?php 
-    //printCardFooter();
-    printCardFooterWithDetail($type, $title, $date);
+    */
+    // <img class="Card-img ImgLoader" src="<?php echo $tempImgUrl;? >" data-img="<?php echo $imgUrl;? >"/>
+    ?>
+    <div class="Card-img ImgLoader" data-img="<?php echo $imgUrl;?>"></div>
+    <?php 
+    printCardFooterWithDetail($type, $title, $date);  
   }
 
 

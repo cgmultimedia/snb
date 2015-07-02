@@ -15,13 +15,15 @@ $cardSpacerWidth : $padding-CardTile;
 		opacity: 0;
 		display: none!important;
 	}
-	&--static {
+	&--static,
+	&--pictures { // NOTE: make the pictures CardTile static
 		display: block;
 		float: left;
 		margin-right: $cardSpacerWidth;
 	}
 
-	&--displayNone {
+	&--displayNone,
+	&--DN {
 		display: none;
 	}
 

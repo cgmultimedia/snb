@@ -5,11 +5,11 @@
 		CanLoadNextBatch = true,
 		classMain = "CardTile",
 		classInitial = "CardTile--initial",
-		classNoShow = "CardTile--displayNone"
+		classNoShow = "CardTile--DN"; // CardTile--displayNone
 
 	function preloadImgUrl(url, callback) {
 		var img = new Image;
-		img.onload = callback();
+		img.onload = callback(img);
 		img.src = url;
 	}
 
@@ -23,10 +23,12 @@
 			$self.find(".ImgLoader").each(function(index) {
 				var $ImgLoader = $(this);
 				var imgUrl = $ImgLoader.data("img");
+				var newImg = new Image();
 
 				if (imgUrl) {
-					preloadImgUrl(imgUrl, function() {
-						$ImgLoader.css('visibility','visible').hide().attr("src",imgUrl).fadeIn('slow');
+					preloadImgUrl(imgUrl, function(img) {
+						//$ImgLoader.css('visibility','visible').hide().append(img)attr("src",imgUrl).removeClass("ImgLoader").fadeIn('slow');
+						$ImgLoader.css('visibility','visible').hide().removeClass("ImgLoader").append(img).fadeIn('slow');
 					});
 				}
 			});

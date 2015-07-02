@@ -2181,10 +2181,7 @@ File: _Logo.scss
     /* line 71, ../src/scss/snbComponents/_Card.scss */
     .Card--Instagram .Card-title {
       height: 0px; }
-      /* line 74, ../src/scss/snbComponents/_Card.scss */
-      .Card--Instagram .Card-title-date-container {
-        padding: 0; }
-    /* line 79, ../src/scss/snbComponents/_Card.scss */
+    /* line 75, ../src/scss/snbComponents/_Card.scss */
     .Card-title-text {
       display: table-row;
       font-size: 14px;
@@ -2192,65 +2189,65 @@ File: _Logo.scss
       height: 70px;
       width: 100%;
       line-height: 15px; }
-      /* line 87, ../src/scss/snbComponents/_Card.scss */
+      /* line 83, ../src/scss/snbComponents/_Card.scss */
       .Card--Video .Card-title-text {
         height: 30px; }
-      /* line 91, ../src/scss/snbComponents/_Card.scss */
+      /* line 87, ../src/scss/snbComponents/_Card.scss */
       .Card--Instagram .Card-title-text {
         display: none;
         height: -20px; }
-      /* line 96, ../src/scss/snbComponents/_Card.scss */
+      /* line 92, ../src/scss/snbComponents/_Card.scss */
       .Card-title-text-container {
         display: table-cell;
         vertical-align: middle; }
-        /* line 100, ../src/scss/snbComponents/_Card.scss */
-        .Card-title-text-container-div {
+        /* line 96, ../src/scss/snbComponents/_Card.scss */
+        .Card-title-text-container-value {
           width: 100%;
           overflow: hidden;
           max-height: 70px; }
-          /* line 106, ../src/scss/snbComponents/_Card.scss */
-          .Card--Video .Card-title-text-container-div {
+          /* line 102, ../src/scss/snbComponents/_Card.scss */
+          .Card--Video .Card-title-text-container-value {
             max-height: 30px; }
-          /* line 107, ../src/scss/snbComponents/_Card.scss */
-          .Card--Instagram .Card-title-text-container-div {
+          /* line 103, ../src/scss/snbComponents/_Card.scss */
+          .Card--Instagram .Card-title-text-container-value {
             max-height: -20px; }
-    /* line 112, ../src/scss/snbComponents/_Card.scss */
+    /* line 108, ../src/scss/snbComponents/_Card.scss */
     .Card-title-date {
       display: table-row;
       width: 100%;
       font-size: 10px;
       color: #666;
       text-transform: uppercase; }
-      /* line 120, ../src/scss/snbComponents/_Card.scss */
-      .Card-title-date-container {
+      /* line 116, ../src/scss/snbComponents/_Card.scss */
+      .Card-title-date-value {
         display: table-cell;
         vertical-align: middle;
         padding-top: 10px; }
-    /* line 127, ../src/scss/snbComponents/_Card.scss */
+    /* line 123, ../src/scss/snbComponents/_Card.scss */
     .Card-title a:hover {
       text-decoration: underline; }
-  /* line 133, ../src/scss/snbComponents/_Card.scss */
+  /* line 129, ../src/scss/snbComponents/_Card.scss */
   .Card-content {
     position: relative;
     width: 100%;
     font-size: 14px;
     word-break: break-word; }
-    /* line 153, ../src/scss/snbComponents/_Card.scss */
+    /* line 149, ../src/scss/snbComponents/_Card.scss */
     .Card-content-container {
       position: relative;
       width: 100%; }
-  /* line 165, ../src/scss/snbComponents/_Card.scss */
+  /* line 161, ../src/scss/snbComponents/_Card.scss */
   .Card--video-thumb {
     width: 100%;
     padding-bottom: 56.25%;
     overflow: hidden;
     position: relative; }
-    /* line 172, ../src/scss/snbComponents/_Card.scss */
+    /* line 168, ../src/scss/snbComponents/_Card.scss */
     .Card--video-thumb-img {
       width: 100%;
       position: absolute;
       cursor: pointer; }
-    /* line 184, ../src/scss/snbComponents/_Card.scss */
+    /* line 180, ../src/scss/snbComponents/_Card.scss */
     .Card--video-thumb-play {
       position: absolute;
       width: 100%;
@@ -2260,18 +2257,26 @@ File: _Logo.scss
       background-position: center center;
       background-size: 60px;
       opacity: 0.6; }
-    /* line 212, ../src/scss/snbComponents/_Card.scss */
+    /* line 208, ../src/scss/snbComponents/_Card.scss */
     .Card--video-thumb-play:hover {
       opacity: 1.0; }
-  /* line 219, ../src/scss/snbComponents/_Card.scss */
-  .Card--pic-thumb {
+  /* line 236, ../src/scss/snbComponents/_Card.scss */
+  .Card--Instagram .Card-img {
     position: relative;
-    width: 100%;
-    padding-bottom: 100%; }
-    /* line 224, ../src/scss/snbComponents/_Card.scss */
-    .Card--pic-thumb-img {
-      width: 100%;
-      position: absolute; }
+    width: 300px;
+    height: 300px; }
+    /* line 241, ../src/scss/snbComponents/_Card.scss */
+    .Card--Instagram .Card-img.ImgLoader {
+      background-color: white;
+      background-image: url("../media/img/general/loading-120.gif");
+      background-repeat: no-repeat;
+      background-position: center; }
+    /* line 247, ../src/scss/snbComponents/_Card.scss */
+    .Card--Instagram .Card-img img {
+      width: 100%; }
+  /* line 251, ../src/scss/snbComponents/_Card.scss */
+  .Card--Instagram .Card-text {
+    display: none; }
 
 /* line 4, ../src/scss/snbComponents/_CardTile.scss */
 .CardTile {
@@ -2291,18 +2296,18 @@ File: _Logo.scss
     opacity: 0;
     display: none !important; }
   /* line 18, ../src/scss/snbComponents/_CardTile.scss */
-  .CardTile--static {
+  .CardTile--static, .CardTile--pictures {
     display: block;
     float: left;
     margin-right: 10px; }
-  /* line 24, ../src/scss/snbComponents/_CardTile.scss */
-  .CardTile--displayNone {
+  /* line 25, ../src/scss/snbComponents/_CardTile.scss */
+  .CardTile--displayNone, .CardTile--DN {
     display: none; }
-  /* line 29, ../src/scss/snbComponents/_CardTile.scss */
+  /* line 31, ../src/scss/snbComponents/_CardTile.scss */
   .CardTile--videos, .CardTile--pictures {
     cursor: pointer;
     transform: scale(1); }
-    /* line 35, ../src/scss/snbComponents/_CardTile.scss */
+    /* line 37, ../src/scss/snbComponents/_CardTile.scss */
     .CardTile--videos:hover, .CardTile--pictures:hover {
       transform: scale(1.05); }
 
