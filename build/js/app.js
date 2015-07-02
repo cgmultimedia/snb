@@ -263,13 +263,15 @@ function youTubeVideoScrimFadeOut() {
     $(document).ready(function() {
 
         // Global vars within scope.
-        var swiper,
+        var _swiper,
+            _swiperIsInit = false;
             $allPictureCards = $(".CardTile--pictures"),
-            numCards = $allPictureCards.length,
-            initCardIndex = 0, // Initial Card Index
-            initSwiperIndex = 0, // The initial index for the swiper.
-            swiperToCardIndexDiff = 0,
-            numCardBufs = 3; // 3 cards on either side of main (selected) index.
+            _numCards = $allPictureCards.length,
+            _initCardIndex = 0, // Initial Card Index
+            _initSwiperIndex = 0, // The initial index for the swiper.
+            _cardToSwiperIndexDiff = 0, // The index difference between the Card and the swiper (e.g cardIdx = 6; swiperIdx = 1; So, diff = 5)
+            _numCardBufs = 3; // 3 cards on either side of main (selected) index.
+            _maxSwiperIndex = _numCardBufs * 2; // e.g. 012 3 456 (if buf is 3, so 3*2 = 6)
 
         window.aa = $allPictureCards;
 
@@ -277,13 +279,13 @@ function youTubeVideoScrimFadeOut() {
         function setInitGlobalVars($card) {
             try {
                 setInitCardIndex($card.index());
-                var minCardIndex = Math.max(initCardIndex - numCardBufs,0); // Ensure smallest possible val is 0
-                var maxCardIndex = Math.min(initCardIndex + numCardBufs,numCards - 1); // Ensure smallest possible val is 0
+                var minCardIndex = Math.max(_initCardIndex - _numCardBufs,0); // Ensure smallest possible val is 0
+                var maxCardIndex = Math.min(_initCardIndex + _numCardBufs,_numCards - 1); // Ensure smallest possible val is 0
                 
                 // Set the initial value for the swiper's index to be the appropriate value.
-                setInitSwiperIndex(initCardIndex - minCardIndex);
+                setInitSwiperIndex(_initCardIndex - minCardIndex);
 
-                setSwiperToCardIndexDiff(initSwiperIndex - initCardIndex);
+                setCardToSwiperIndexDiff(_initCardIndex - _initSwiperIndex);
 
                 return {min : minCardIndex, max: maxCardIndex};
             } catch(e) {
@@ -293,21 +295,85 @@ function youTubeVideoScrimFadeOut() {
         }
 
         function setInitCardIndex(index) {
-            initCardIndex = index;
+            _initCardIndex = index;
         }
 
         function setInitSwiperIndex(index) {
-            initSwiperIndex = index;
+            _initSwiperIndex = index;
         }
 
-        function setSwiperToCardIndexDiff(diffVal) {
-            swiperToCardIndexDiff = diffVal;
+        function setCardToSwiperIndexDiff(diffVal) {
+            _cardToSwiperIndexDiff = diffVal;
         }
 
+        // Using the active Index... refresh all global values and add / remove any slides
+        // ... and update indexes
         function updateSlides() {
-            //swiper
-            var actIdx = swiper.activeIndex;
+            // Only updateSlides if the swiper has been initialized.
+            if (_swiperIsInit) {
+                console.log("up");
+                //swiper
+                var actIdx      = _swiper.activeIndex;
 
+                // Difference from the the center to the new active position
+                // E.g. buf is 3 so swiper indexes is 012 3 456...
+                /// Then the new active index is 2.. so the diff is 3 - 2 = -1
+                var swiperActBufDiff  = actIdx - _numCardBufs; 
+
+                // E.g. If _cardToSwiperIndexDiff = 20...
+                // When moving from swiper index 3 to 2, is like moving from card index 23 to 22.
+                // the "newCardIndex" is that value (e.g. in example above 22)
+                var newCardIndex      = swiperActBufDiff + _cardToSwiperIndexDiff; 
+                
+                console.log("swiperActBufDiff: "+swiperActBufDiff);
+
+                // Vars for the following left or right shift
+                var maxPossibleAddDel,
+                    numToAddDel,
+                    newCardToSwiperIndexDiff;
+
+                // If moved left... 
+                if (swiperActBufDiff < 0) { //_numCardBufs) {
+
+                    // The max number you can delete / add (without going past first card)
+                    var maxPossibleAddDel = Math.max(0, newCardIndex - _numCardBufs); 
+
+                    // The actual number to add / delete 
+                    var numToAddDel = Math.min(Math.abs(swiperActBufDiff), maxPossibleAddDel);
+
+                    newCardToSwiperIndexDiff = _cardToSwiperIndexDiff - numToAddDel;
+
+                    console.log("L Add/Del: "+numToAddDel);
+                    console.log("n1: "+newCardIndex);
+                    console.log("n2: "+_numCardBufs);
+                    // Do nothing if the new card index is less than the _numCardBufs
+
+                    // Do nothing...
+                    // ... except at least ensure that the slides are showing properly...
+
+                } else if (swiperActBufDiff > 0) { // If it moved right.
+
+                    // The max number you can delete / add (without going past first card)
+                    var maxPossibleAddDel = Math.max(0, (_numCards - newCardIndex - _numCardBufs) ); 
+
+                    // The actual number to add / delete 
+                    var numToAddDel = Math.min(Math.abs(swiperActBufDiff), maxPossibleAddDel);
+
+                    newCardToSwiperIndexDiff = _cardToSwiperIndexDiff + numToAddDel;
+
+                    console.log("R Add/Del: "+numToAddDel);                
+
+                    // Also do nothing... or maybe at least ensure that the new values are correct.
+                    // ... Although to get to the very end shouldn't even happen in real life.
+                }
+
+                // NOTE: the swiper index should always be adjusted to be the buf number...
+                // ... and if so make adjustments to add / remove slides...
+                // But if the Card index approaches 0 or max, then don't do anything.
+                // ... or 0 or max number
+
+                //setCardToSwiperIndexDiff(newCardToSwiperIndexDiff);
+            }
         }
 
         function onNextSlide() {
@@ -400,7 +466,7 @@ function youTubeVideoScrimFadeOut() {
         }
 
         function resizeModal() {
-            if (swiper !== undefined && swiper.onResize) {
+            if (_swiper !== undefined && _swiper.onResize) {
 
                 var padding = 40,
                     maxImgWidth = 640,
@@ -419,7 +485,7 @@ function youTubeVideoScrimFadeOut() {
 
                 // ----------------------------------------
                 if (ww>maxTotalWidth) {
-                    swiper.params.slidesPerView = 'auto';
+                    _swiper.params.slidesPerView = 'auto';
                     newSwiperSlideWidth = maxWidth;
 
                 } else if (ww>maxWidthWhenNoPadding) {
@@ -457,11 +523,14 @@ function youTubeVideoScrimFadeOut() {
                 //if (ww<=switchVal2) swiper.params.slidesPerView = 1;
 
                 //swiper.reInit()
-                swiper.onResize();
+                _swiper.onResize();
             }
         }
 
         function openModal($this) {
+            // Since the swiper needs to be reinitialized...
+            // ... set _swiperIsInit = false.
+            _swiperIsInit = false;
 
             var $pb = $(".PicturesPage-backdrop").eq(0);
 
@@ -487,17 +556,17 @@ function youTubeVideoScrimFadeOut() {
                 var imgSrc = $imgLoader.data("img");
 
             
-                var swiperDiv = '<!-- Swiper --> \ 
-                    <div class="swiper-container"> \
-                        <div class="swiper-wrapper"> \
-                            '+imgData+' \
+                var swiperDiv = " \
+                    <div class='swiper-container'> \
+                        <div class='swiper-wrapper'> \
+                            "+imgData+" \
                         </div> \
                         <!-- Add Pagination --> \
-                        <div class="swiper-pagination"></div> \
+                        <div class='swiper-pagination'></div> \
                         <!-- Add Arrows --> \
-                        <div class="swiper-button-next"></div> \
-                        <div class="swiper-button-prev"></div> \
-                    </div>';
+                        <div class='swiper-button-next'></div> \
+                        <div class='swiper-button-prev'></div> \
+                    </div>";
 
 
                 // Close Modal button
@@ -519,7 +588,7 @@ function youTubeVideoScrimFadeOut() {
                 // Fade in or animate them in.
                 $pb.fadeIn(function() {
                     $pm.fadeIn(function() {
-                        swiper = new Swiper('.swiper-container', {
+                        _swiper = new Swiper('.swiper-container', {
                             // pagination: '.swiper-pagination',
                             // paginationClickable: true
 
@@ -528,7 +597,7 @@ function youTubeVideoScrimFadeOut() {
                             grabCursor: true,
                             centeredSlides: true,
                             slidesPerView: 'auto',
-                            initialSlide : initSwiperIndex,
+                            initialSlide : _initSwiperIndex,
                             //slidesPerView: 5,
                             //width: "600px",
                             coverflow: {
@@ -542,22 +611,24 @@ function youTubeVideoScrimFadeOut() {
                             prevButton: '.swiper-button-prev',
                             keyboardControl : true,
                             onInit : function() {
+                                _swiperIsInit = true;
                                 $(".PicturesPage-modal .swiper-container").eq(0).hide().css({"visibility" : "visible"}).fadeIn();
                                 $(".PicturesPage-modal .Loading").fadeOut();
                             },
-                            onSlideChangeStart : function(swiper) {
+                            onSlideChangeStart : function(_swiper) {
                                 console.log("onSlideChangeStart");
                             },
-                            onSlideChangeEnd : function(swiper) {
+                            onSlideChangeEnd : function(_swiper) {
                                 console.log("onSlideChangeEnd");
                             },
-                            onTransitionStart : function(swiper) {
-                                console.log("onTransitionStart");
+                            onTransitionStart : function(_swiper) {
+                                console.log("onTransitionStart "+_swiper.activeIndex);
+                                updateSlides();
                             },
-                            onTransitionEnd : function(swiper) {
-                                console.log("onTransitionEnd");
+                            onTransitionEnd : function(_swiper) {
+                                console.log("onTransitionEnd "+_swiper.activeIndex);
                             },
-                            onTouchStart : function(swiper) {
+                            onTouchStart : function(_swiper) {
                                 console.log("onTouchStart");
                             },
                             // onTouchMove : function(swiper) {
@@ -569,7 +640,7 @@ function youTubeVideoScrimFadeOut() {
                         });
                         resizeModal();
 
-                        window.ss = swiper;
+                        window.ss = _swiper;
                     }); 
                 });
             }
