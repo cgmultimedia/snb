@@ -3871,7 +3871,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
   .PicturesPage-modal .swiper-container {
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     visibility: hidden; }
   /* line 68, ../src/scss/snbComponents/_PicturesPage.scss */
   .PicturesPage-modal .swiper-slide {

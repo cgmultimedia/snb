@@ -317,9 +317,9 @@ function youTubeVideoScrimFadeOut() {
                 var cardIndexFirst = $(_swiper.slides[0]).find(".swiper-slide-container").data("index");
                 var cardIndexLast  = $(_swiper.slides[numSlides-1]).find(".swiper-slide-container").data("index");
 
-                // console.log("FL:"+actIdx);
-                // console.log(cardIndexFirst);
-                // console.log(cardIndexLast);
+                console.log("actIdx:"+actIdx);
+                console.log("cardIndexFirst" +cardIndexFirst);
+                console.log("cardIndexLast"+cardIndexLast);
 
                 // The desired number of slides to be added or removed from the left / right side.
                 // ... This is not considering whether those slides even exist to be added.
@@ -330,8 +330,8 @@ function youTubeVideoScrimFadeOut() {
                     addSlideArray = [],
                     i = 0;
 
-                // console.log("DLC:"+desiredLeftChange);
-                // console.log("DRC:"+desiredRightChange);
+                console.log("desiredLeftChange:"+desiredLeftChange);
+                console.log("desiredRightChange:"+desiredRightChange);
                 // LEFT changes
                 // If it is removal.. simply remove it 
                 if (desiredLeftChange <= 0) {
@@ -341,6 +341,9 @@ function youTubeVideoScrimFadeOut() {
                     for (i=0;i<numRemoveLeft;i++) {
                         removeSlideArray.push(i);
                     }
+
+                    console.log("Del L:");
+                    console.log(removeSlideArray);
 
                     if (removeSlideArray.length > 0) {
                         _swiper.removeSlide(removeSlideArray);
@@ -353,10 +356,13 @@ function youTubeVideoScrimFadeOut() {
 
                     addSlideArray = [];
                     for (i=cardIndexFirst-numAddLeft;i<cardIndexFirst;i++) {
-                        addSlideArray.push(i);
+                        addSlideArray.push(getCardDivByIndex(i));
                     }
-                    // console.log("Add L");
-                    // console.log(addSlideArray);
+                    console.log("Add L");
+                    console.log(addSlideArray);
+                    if (addSlideArray.length > 0) {
+                        _swiper.prependSlide(addSlideArray);
+                    }
                 }
 
                 // RIGHT changes
@@ -368,23 +374,34 @@ function youTubeVideoScrimFadeOut() {
                     for (i=numSlides-numRemoveRight;i<numSlides;i++) {
                         removeSlideArray.push(i);
                     }
-                    _swiper.removeSlide(removeSlideArray);
-                } else if (desiredLeftChange >= 0) {
+                    console.log("Del R:");
+                    console.log(removeSlideArray);
+                    if (removeSlideArray.length > 0) {
+                        _swiper.removeSlide(removeSlideArray);
+                    }
+                } else if (desiredRightChange >= 0) {
+                    // Right 
                     var maxRightChange = _numCards - 1 - cardIndexLast;
 
                     var numAddRight = Math.min(maxRightChange, desiredRightChange);
 
                     addSlideArray = [];
                     for (i=cardIndexLast+1;i<cardIndexLast+numAddRight+1;i++) {
-                        addSlideArray.push(i);
+                        addSlideArray.push(getCardDivByIndex(i));
                     }
-                    // console.log("Add R");
-                    // console.log(addSlideArray);
+                    console.log("Add R");
+                    console.log(addSlideArray);
+                    if (addSlideArray.length > 0) {
+                        _swiper.appendSlide(addSlideArray);
+                    }
                 }
 
                 // Determine # to add / delete from left
 
                 window.sss = _swiper;
+
+                // Refresh the sliders, and resize all needed slides.
+                resizeModal();
 /*
                 // E.g. If _cardToSwiperIndexDiff = 20...
                 // When moving from swiper index 3 to 2, is like moving from card index 23 to 22.
@@ -463,15 +480,6 @@ function youTubeVideoScrimFadeOut() {
 
                 //setCardToSwiperIndexDiff(newCardToSwiperIndexDiff);
             }
-        }
-
-        function onNextSlide() {
-            // swiper.appendSlide('<div class="swiper-slide">Slide ' + (++appendNumber) + '</div>');
-
-        }
-
-        function onPrevSlide() {
-
         }
 
         function getCardDivByIndex(idx) {
