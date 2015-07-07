@@ -61,6 +61,7 @@ $switchToFullTopBottomStyle : 735px;
             width: 100%;
             height: 100%;
             overflow: hidden;
+            overflow-y: auto;
             visibility: hidden;
             // padding-top: 50px;
             // padding-bottom: 50px;
@@ -103,6 +104,14 @@ $switchToFullTopBottomStyle : 735px;
                     bottom: $swiper-slide-container-text-padding;
                     background-color: white;
                     overflow: auto;
+                    font-size: 16px;
+                    line-height: 32px;
+
+                    &-value {
+                        &-date {
+                            margin-bottom: 16px;
+                        }
+                    }
                 }
 
                 @media (max-width: 735px) {

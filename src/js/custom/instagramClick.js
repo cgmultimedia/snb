@@ -16,8 +16,6 @@
             _numCardBufs = 3; // 3 cards on either side of main (selected) index.
             _maxSwiperIndex = _numCardBufs * 2; // e.g. 012 3 456 (if buf is 3, so 3*2 = 6)
 
-        window.aa = $allPictureCards;
-
         // Returns the min and max card index values.
         function setInitGlobalVars($card) {
             try {
@@ -25,8 +23,6 @@
                 var minCardIndex = Math.max(_prevCardIndex - _numCardBufs,0); // Ensure smallest possible val is 0
                 var maxCardIndex = Math.min(_prevCardIndex + _numCardBufs,_numCards - 1); // Ensure smallest possible val is 0
                 
-                console.log("minCardIndex"+minCardIndex);
-                console.log("maxCardIndex"+maxCardIndex);
                 // Set the initial value for the swiper's index to be the appropriate value.
                 _prevSwiperIndex = _prevCardIndex - minCardIndex;
 
@@ -43,7 +39,6 @@
         // Using the active Index... refresh all global values and add / remove any slides
         // ... and update indexes
         function updateSlides() {
-            console.log("-==============================");
             // Only updateSlides if the swiper has been initialized.
             if (_swiperIsInit) {
                 //swiper
@@ -60,10 +55,6 @@
                 var cardIndexFirst = $(_swiper.slides[0]).find(".swiper-slide-container").data("index");
                 var cardIndexLast  = $(_swiper.slides[numSlides-1]).find(".swiper-slide-container").data("index");
 
-                console.log("actIdx:"+actIdx);
-                console.log("cardIndexFirst" +cardIndexFirst);
-                console.log("cardIndexLast"+cardIndexLast);
-
                 // The desired number of slides to be added or removed from the left / right side.
                 // ... This is not considering whether those slides even exist to be added.
                 var desiredLeftChange  = _numCardBufs - actIdx;
@@ -73,8 +64,6 @@
                     addSlideArray = [],
                     i = 0;
 
-                console.log("desiredLeftChange:"+desiredLeftChange);
-                console.log("desiredRightChange:"+desiredRightChange);
                 // LEFT changes
                 // If it is removal.. simply remove it 
                 if (desiredLeftChange <= 0) {
@@ -84,9 +73,6 @@
                     for (i=0;i<numRemoveLeft;i++) {
                         removeSlideArray.push(i);
                     }
-
-                    console.log("Del L:");
-                    console.log(removeSlideArray);
 
                     if (removeSlideArray.length > 0) {
                         _swiper.removeSlide(removeSlideArray);
@@ -101,8 +87,6 @@
                     for (i=cardIndexFirst-numAddLeft;i<cardIndexFirst;i++) {
                         addSlideArray.push(getCardDivByIndex(i));
                     }
-                    console.log("Add L");
-                    console.log(addSlideArray);
                     if (addSlideArray.length > 0) {
                         _swiper.prependSlide(addSlideArray);
                     }
@@ -117,8 +101,6 @@
                     for (i=numSlides-numRemoveRight;i<numSlides;i++) {
                         removeSlideArray.push(i);
                     }
-                    console.log("Del R:");
-                    console.log(removeSlideArray);
                     if (removeSlideArray.length > 0) {
                         _swiper.removeSlide(removeSlideArray);
                     }
@@ -132,96 +114,13 @@
                     for (i=cardIndexLast+1;i<cardIndexLast+numAddRight+1;i++) {
                         addSlideArray.push(getCardDivByIndex(i));
                     }
-                    console.log("Add R");
-                    console.log(addSlideArray);
                     if (addSlideArray.length > 0) {
                         _swiper.appendSlide(addSlideArray);
                     }
                 }
 
-                // Determine # to add / delete from left
-
-                window.sss = _swiper;
-
                 // Refresh the sliders, and resize all needed slides.
                 resizeModal();
-/*
-                // E.g. If _cardToSwiperIndexDiff = 20...
-                // When moving from swiper index 3 to 2, is like moving from card index 23 to 22.
-                // the "newCardIndex" is that value (e.g. in example above 22)
-                var newCardIndex      = swiperActBufDiff + _cardToSwiperIndexDiff; 
-                console.log("newCardIndex: "+newCardIndex);
-                console.log("_cardToSwiperIndexDiff:"+_cardToSwiperIndexDiff);
-
-                console.log("swiperActBufDiff: "+swiperActBufDiff);
-                */
-
-
-
-/*
-                // Vars for the following left or right shift
-                var maxPossibleAddDel,
-                    numToAddDel,
-                    newCardToSwiperIndexDiff;
-
-                // If moved left... 
-                if (swiperActBufDiff < 0) { // swiperActBufDiff is negative
-
-                    var numToAddDel = Math.abs(swiperActBufDiff);
-                    console.log("numToAddDel:"+numToAddDel);
-                    // The max number you can delete / add (without going past first card)
-                    var maxPossibleAddDel = Math.max(0, newCardIndex - numToAddDel); 
-                    console.log("newCardIndex - numToAddDel:"+newCardIndex +" - "+ numToAddDel);
-
-                    // The actual number to add / delete 
-                    numToAddDel = Math.min(numToAddDel, maxPossibleAddDel);
-
-                    newCardToSwiperIndexDiff = _cardToSwiperIndexDiff - numToAddDel;
-
-                    console.log("L Add/Del (numToAddDel): "+numToAddDel);
-                    console.log("n1 newCardIndex: "+newCardIndex);
-                    console.log("n2 _numCardBufs: "+_numCardBufs);
-                    // Do nothing if the new card index is less than the _numCardBufs
-
-                    // Do nothing...
-                    // ... except at least ensure that the slides are showing properly...
-
-                } else if (swiperActBufDiff > 0) { // If it moved right.
-
-                    var numToAddDel = Math.abs(swiperActBufDiff);
-
-                    // The max number you can delete / add (without going past first card)
-                    var maxPossibleAddDel = Math.max(0, _numCards - newCardIndex - numToAddDel); 
-
-                    // The actual number to add / delete 
-                    numToAddDel = Math.min(numToAddDel, maxPossibleAddDel);
-
-                    console.log("L Add/Del: "+numToAddDel);
-                    console.log("n1: "+newCardIndex);
-                    console.log("n2: "+_numCardBufs);
-
-
-                    // // The max number you can delete / add (without going past first card)
-                    // var maxPossibleAddDel = Math.max(0, (_numCards - newCardIndex - _numCardBufs) ); 
-
-                    // // The actual number to add / delete 
-                    // var numToAddDel = Math.min(Math.abs(swiperActBufDiff), maxPossibleAddDel);
-
-                    // newCardToSwiperIndexDiff = _cardToSwiperIndexDiff + numToAddDel;
-
-                    // console.log("R Add/Del: "+numToAddDel);                
-
-                    // Also do nothing... or maybe at least ensure that the new values are correct.
-                    // ... Although to get to the very end shouldn't even happen in real life.
-                }
-                */
-
-                // NOTE: the swiper index should always be adjusted to be the buf number...
-                // ... and if so make adjustments to add / remove slides...
-                // But if the Card index approaches 0 or max, then don't do anything.
-                // ... or 0 or max number
-
-                //setCardToSwiperIndexDiff(newCardToSwiperIndexDiff);
             }
         }
 
@@ -453,16 +352,14 @@
                         });
                         resizeModal();
 
-                        window.ss = _swiper;
+                        //window.ss = _swiper;
                     }); 
                 });
             }
         }
 
         $(document).on("click", ".CardTile--pictures", function() {
-            var $this = $(this);
-            window.$t = $this;
-            openModal($this);
+            openModal($(this));
         });
 
         $(document).on("click", ".PicturesPage-backdrop", function() {
