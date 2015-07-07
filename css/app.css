@@ -2270,14 +2270,15 @@ File: _Logo.scss
       background-color: white;
       background-image: url("../media/img/general/loading-120.gif");
       background-repeat: no-repeat;
-      background-position: center; }
-    /* line 247, ../src/scss/snbComponents/_Card.scss */
+      background-position: center;
+      background-size: 60px; }
+    /* line 248, ../src/scss/snbComponents/_Card.scss */
     .Card--Instagram .Card-img img {
       width: 100%; }
-  /* line 251, ../src/scss/snbComponents/_Card.scss */
+  /* line 252, ../src/scss/snbComponents/_Card.scss */
   .Card--Instagram .Card-text {
     padding: 15px; }
-  /* line 254, ../src/scss/snbComponents/_Card.scss */
+  /* line 255, ../src/scss/snbComponents/_Card.scss */
   .Card--Instagram .Card-title {
     display: none; }
 
