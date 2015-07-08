@@ -333,6 +333,10 @@
       case 'cancelled' : $showdata['ticket_link'] = '<strong class="gigpress-cancelled">' . "Cancelled" . '</strong>';
       break;
     }
+
+    // DETAILS FOR THE IMAGE
+    //$showdata['img_url'] = $show->show_img_url;
+    $showdata['img_url'] = "http://splashnboots.com/childrensmusic/wp-content/uploads/2015/06/11355926_848138241888687_1795764461_n.jpg";
     
     //$showdata['tour'] = wptexturize($show->tour_name);
     //$showdata['tour_id'] = $show->tour_id;
@@ -362,6 +366,12 @@
             <?php //echo $showdata['country']; ?>
             <?php if ($showdata['venue_phone']) echo $showdata['venue_phone'] . "<br/>"; ?>
           </div>
+          <?php if (isset($showdata['img_url']) && $showdata['img_url'] != "") {?>
+              <div class="gigpress-image">
+                Use lazy loading for images.
+                <img class="gigpress-image-img" src="<?php echo $showdata['img_url']; ?>" style="width:100%" />
+              </div>
+          <?php } ?>
           <?php if ($showdata['calendar_details']) { ?>
             <div class="gigpress-details">
               <hr/>

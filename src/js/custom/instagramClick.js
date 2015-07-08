@@ -159,6 +159,7 @@
         }
 
         function getCard(imgSrc, title, date, index) {
+            if (title == "Untitled") title = "";
             return '<div class="swiper-slide" > \
                         <div class="swiper-slide-container test" data-index="'+index+'"> \
                             <div class="swiper-slide-container-photoRoot"> \

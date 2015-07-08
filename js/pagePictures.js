@@ -1,6 +1,7 @@
 // Encapsulate the pagePicture.js functions an vars.
 (function() { 
-	var itemBatchNum = 15,
+	var itemBatchNum = 30,
+		extraScrollTrigger = 400,
 		LastVisibleCardTile,
 		CanLoadNextBatch = true,
 		classMain = "CardTile",
@@ -44,7 +45,7 @@
 
 	    	// If the last visible cardtile is visible on the page...
 	    	// ... then load int he next batch/
-	    	if (boundRect && boundRect.bottom <= window.innerHeight +100) {
+	    	if (boundRect && boundRect.bottom <= window.innerHeight + extraScrollTrigger) {
 	    		showNextPicBatch();
 	    	}
 	    }
