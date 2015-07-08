@@ -13,7 +13,7 @@
             _prevCardIndex = 0, // Initial Card Index
             _prevSwiperIndex = 0, // The initial index for the swiper.
             _cardToSwiperIndexDiff = 0, // The index difference between the Card and the swiper (e.g cardIdx = 6; swiperIdx = 1; So, diff = 5)
-            _numCardBufs = 3; // 3 cards on either side of main (selected) index.
+            _numCardBufs = 4; // 3 cards on either side of main (selected) index.
             _maxSwiperIndex = _numCardBufs * 2; // e.g. 012 3 456 (if buf is 3, so 3*2 = 6)
 
         // Returns the min and max card index values.
@@ -47,7 +47,7 @@
                 // Difference from the the center to the new active position
                 // E.g. buf is 3 so swiper indexes is 012 3 456...
                 /// Then the new active index is 2.. so the diff is 3 - 2 = -1
-                var swiperActBufDiff  = actIdx - _numCardBufs; 
+                //var swiperActBufDiff  = actIdx - _numCardBufs; 
 
                 var numSlides = _swiper.slides.length;
 
@@ -63,6 +63,37 @@
                 var removeSlideArray = [],
                     addSlideArray = [],
                     i = 0;
+
+                // RIGHT changes...
+                // NOTE: you have to remove from the right first....
+                // ... otherwise, if it turns out that you add a card to the left...
+                // ... the indexing is off when removing.
+
+                // If it is removal.. simply remove it 
+                if (desiredRightChange >= 0) {
+                    // Right 
+                    var maxRightChange = _numCards - 1 - cardIndexLast;
+
+                    var numAddRight = Math.min(maxRightChange, desiredRightChange);
+
+                    addSlideArray = [];
+                    for (i=cardIndexLast+1;i<cardIndexLast+numAddRight+1;i++) {
+                        addSlideArray.push(getCardDivByIndex(i));
+                    }
+                    if (addSlideArray.length > 0) {
+                        _swiper.appendSlide(addSlideArray);
+                    }
+                } else if (desiredRightChange <= 0) {
+                    var numRemoveRight = Math.abs(desiredRightChange);
+
+                    removeSlideArray = [];
+                    for (i=numSlides-numRemoveRight;i<numSlides;i++) {
+                        removeSlideArray.push(i);
+                    }
+                    if (removeSlideArray.length > 0) {
+                        _swiper.removeSlide(removeSlideArray);
+                    }
+                }
 
                 // LEFT changes
                 // If it is removal.. simply remove it 
@@ -88,34 +119,8 @@
                         addSlideArray.push(getCardDivByIndex(i));
                     }
                     if (addSlideArray.length > 0) {
+                        addSlideArray = addSlideArray.reverse();
                         _swiper.prependSlide(addSlideArray);
-                    }
-                }
-
-                // RIGHT changes
-                // If it is removal.. simply remove it 
-                if (desiredRightChange <= 0) {
-                    var numRemoveRight = Math.abs(desiredRightChange);
-
-                    removeSlideArray = [];
-                    for (i=numSlides-numRemoveRight;i<numSlides;i++) {
-                        removeSlideArray.push(i);
-                    }
-                    if (removeSlideArray.length > 0) {
-                        _swiper.removeSlide(removeSlideArray);
-                    }
-                } else if (desiredRightChange >= 0) {
-                    // Right 
-                    var maxRightChange = _numCards - 1 - cardIndexLast;
-
-                    var numAddRight = Math.min(maxRightChange, desiredRightChange);
-
-                    addSlideArray = [];
-                    for (i=cardIndexLast+1;i<cardIndexLast+numAddRight+1;i++) {
-                        addSlideArray.push(getCardDivByIndex(i));
-                    }
-                    if (addSlideArray.length > 0) {
-                        _swiper.appendSlide(addSlideArray);
                     }
                 }
 
