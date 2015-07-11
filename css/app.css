@@ -2122,7 +2122,7 @@ File: _Logo.scss
   /* line 22, ../src/scss/snbComponents/_GridStatic.scss */
   .GridStatic {
     width: 2480px; } }
-/* line 26, ../src/scss/snbComponents/_Card.scss */
+/* line 27, ../src/scss/snbComponents/_Card.scss */
 .Card {
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -2144,18 +2144,18 @@ File: _Logo.scss
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
   background-color: white; }
-  /* line 44, ../src/scss/snbComponents/_Card.scss */
+  /* line 45, ../src/scss/snbComponents/_Card.scss */
   .Card--isLoading {
     -webkit-transform: rotateX(-40deg);
     -moz-transform: rotateX(-40deg);
     -ms-transform: rotateX(-40deg);
     -o-transform: rotateX(-40deg);
     transform: rotateX(-40deg); }
-    /* line 47, ../src/scss/snbComponents/_Card.scss */
+    /* line 48, ../src/scss/snbComponents/_Card.scss */
     .Card--isLoading .Card-container {
       -webkit-filter: brightness(0.5) opacity(0.2);
       filter: brightness(0.5) opacity(0.2); }
-  /* line 52, ../src/scss/snbComponents/_Card.scss */
+  /* line 53, ../src/scss/snbComponents/_Card.scss */
   .Card-container {
     -moz-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
@@ -2168,20 +2168,20 @@ File: _Logo.scss
     border-radius: 6px;
     overflow: hidden;
     background-color: white; }
-  /* line 60, ../src/scss/snbComponents/_Card.scss */
+  /* line 61, ../src/scss/snbComponents/_Card.scss */
   .Card-title {
     display: table;
     height: 90px;
     width: 280px;
     font-weight: bold;
     padding: 10px; }
-    /* line 67, ../src/scss/snbComponents/_Card.scss */
+    /* line 68, ../src/scss/snbComponents/_Card.scss */
     .Card--Video .Card-title {
       height: 50px; }
-    /* line 71, ../src/scss/snbComponents/_Card.scss */
+    /* line 72, ../src/scss/snbComponents/_Card.scss */
     .Card--Instagram .Card-title {
       height: 0px; }
-    /* line 75, ../src/scss/snbComponents/_Card.scss */
+    /* line 76, ../src/scss/snbComponents/_Card.scss */
     .Card-title-text {
       display: table-row;
       font-size: 14px;
@@ -2189,65 +2189,65 @@ File: _Logo.scss
       height: 70px;
       width: 100%;
       line-height: 15px; }
-      /* line 83, ../src/scss/snbComponents/_Card.scss */
+      /* line 84, ../src/scss/snbComponents/_Card.scss */
       .Card--Video .Card-title-text {
         height: 30px; }
-      /* line 87, ../src/scss/snbComponents/_Card.scss */
+      /* line 88, ../src/scss/snbComponents/_Card.scss */
       .Card--Instagram .Card-title-text {
         display: none;
         height: -20px; }
-      /* line 92, ../src/scss/snbComponents/_Card.scss */
+      /* line 93, ../src/scss/snbComponents/_Card.scss */
       .Card-title-text-container {
         display: table-cell;
         vertical-align: middle; }
-        /* line 96, ../src/scss/snbComponents/_Card.scss */
+        /* line 97, ../src/scss/snbComponents/_Card.scss */
         .Card-title-text-container-value {
           width: 100%;
           overflow: hidden;
           max-height: 70px; }
-          /* line 102, ../src/scss/snbComponents/_Card.scss */
+          /* line 103, ../src/scss/snbComponents/_Card.scss */
           .Card--Video .Card-title-text-container-value {
             max-height: 30px; }
-          /* line 103, ../src/scss/snbComponents/_Card.scss */
+          /* line 104, ../src/scss/snbComponents/_Card.scss */
           .Card--Instagram .Card-title-text-container-value {
             max-height: -20px; }
-    /* line 108, ../src/scss/snbComponents/_Card.scss */
+    /* line 109, ../src/scss/snbComponents/_Card.scss */
     .Card-title-date {
       display: table-row;
       width: 100%;
       font-size: 10px;
       color: #666;
       text-transform: uppercase; }
-      /* line 116, ../src/scss/snbComponents/_Card.scss */
+      /* line 117, ../src/scss/snbComponents/_Card.scss */
       .Card-title-date-value {
         display: table-cell;
         vertical-align: middle;
         padding-top: 10px; }
-    /* line 123, ../src/scss/snbComponents/_Card.scss */
+    /* line 124, ../src/scss/snbComponents/_Card.scss */
     .Card-title a:hover {
       text-decoration: underline; }
-  /* line 129, ../src/scss/snbComponents/_Card.scss */
+  /* line 130, ../src/scss/snbComponents/_Card.scss */
   .Card-content {
     position: relative;
     width: 100%;
     font-size: 14px;
     word-break: break-word; }
-    /* line 149, ../src/scss/snbComponents/_Card.scss */
+    /* line 150, ../src/scss/snbComponents/_Card.scss */
     .Card-content-container {
       position: relative;
       width: 100%; }
-  /* line 161, ../src/scss/snbComponents/_Card.scss */
+  /* line 162, ../src/scss/snbComponents/_Card.scss */
   .Card--video-thumb {
     width: 100%;
     padding-bottom: 56.25%;
     overflow: hidden;
     position: relative; }
-    /* line 168, ../src/scss/snbComponents/_Card.scss */
+    /* line 169, ../src/scss/snbComponents/_Card.scss */
     .Card--video-thumb-img {
       width: 100%;
       position: absolute;
       cursor: pointer; }
-    /* line 180, ../src/scss/snbComponents/_Card.scss */
+    /* line 181, ../src/scss/snbComponents/_Card.scss */
     .Card--video-thumb-play {
       position: absolute;
       width: 100%;
@@ -2257,30 +2257,61 @@ File: _Logo.scss
       background-position: center center;
       background-size: 60px;
       opacity: 0.6; }
-    /* line 208, ../src/scss/snbComponents/_Card.scss */
+    /* line 209, ../src/scss/snbComponents/_Card.scss */
     .Card--video-thumb-play:hover {
       opacity: 1.0; }
-  /* line 236, ../src/scss/snbComponents/_Card.scss */
+  /* line 237, ../src/scss/snbComponents/_Card.scss */
   .Card--Instagram .Card-img {
     position: relative;
     width: 300px;
     height: 300px; }
-    /* line 241, ../src/scss/snbComponents/_Card.scss */
+    /* line 242, ../src/scss/snbComponents/_Card.scss */
     .Card--Instagram .Card-img.ImgLoader {
       background-color: white;
       background-image: url("../media/img/general/loading-120.gif");
       background-repeat: no-repeat;
       background-position: center;
       background-size: 60px; }
-    /* line 248, ../src/scss/snbComponents/_Card.scss */
+    /* line 249, ../src/scss/snbComponents/_Card.scss */
     .Card--Instagram .Card-img img {
       width: 100%; }
-  /* line 252, ../src/scss/snbComponents/_Card.scss */
+  /* line 253, ../src/scss/snbComponents/_Card.scss */
   .Card--Instagram .Card-text {
     padding: 15px; }
-  /* line 255, ../src/scss/snbComponents/_Card.scss */
+  /* line 256, ../src/scss/snbComponents/_Card.scss */
   .Card--Instagram .Card-title {
     display: none; }
+  /* line 265, ../src/scss/snbComponents/_Card.scss */
+  .Card--Tour {
+    color: #333;
+    background-color: transparent; }
+    /* line 269, ../src/scss/snbComponents/_Card.scss */
+    .Card--Tour-header {
+      min-height: 81px; }
+    /* line 273, ../src/scss/snbComponents/_Card.scss */
+    .Card--Tour-venue {
+      padding-left: 85px; }
+      /* line 276, ../src/scss/snbComponents/_Card.scss */
+      .Card--Tour-venue--multi {
+        padding-left: 94px; }
+      /* line 280, ../src/scss/snbComponents/_Card.scss */
+      .Card--Tour-venue-name {
+        font-size: 20px; }
+    /* line 289, ../src/scss/snbComponents/_Card.scss */
+    .Card--Tour-image {
+      padding-top: 10px; }
+    /* line 293, ../src/scss/snbComponents/_Card.scss */
+    .Card--Tour-details {
+      padding-top: 10px; }
+    /* line 297, ../src/scss/snbComponents/_Card.scss */
+    .Card--Tour a, .Card--Tour a:hover {
+      color: #333; }
+    /* line 301, ../src/scss/snbComponents/_Card.scss */
+    .Card--Tour a {
+      text-decoration: none; }
+    /* line 304, ../src/scss/snbComponents/_Card.scss */
+    .Card--Tour a:hover {
+      text-decoration: underline; }
 
 /* line 4, ../src/scss/snbComponents/_CardTile.scss */
 .CardTile {
@@ -2314,6 +2345,13 @@ File: _Logo.scss
     /* line 37, ../src/scss/snbComponents/_CardTile.scss */
     .CardTile--videos:hover, .CardTile--pictures:hover {
       transform: scale(1.05); }
+  /* line 43, ../src/scss/snbComponents/_CardTile.scss */
+  .CardTile--tour .Card-container {
+    background-color: #F9EB30;
+    padding: 10px; }
+  /* line 48, ../src/scss/snbComponents/_CardTile.scss */
+  .CardTile--tour:nth-child(even) .Card-container {
+    background-color: #428ada; }
 
 /* line 2, ../src/scss/snbComponents/_Burger.scss */
 #burger {
@@ -3101,51 +3139,67 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
 /* ADDED BY ADAM */
 /* line 3, ../src/scss/snbComponents/_DateBox.scss */
 .DateBox {
-  width: 34px;
-  border: solid 1px;
-  border-color: #888888; }
-  /* line 8, ../src/scss/snbComponents/_DateBox.scss */
+  display: inline-block;
+  position: absolute;
+  background-color: white;
+  min-width: 70px;
+  top: 0;
+  left: 0; }
+  /* line 11, ../src/scss/snbComponents/_DateBox.scss */
+  .DateBox-contianer {
+    width: 65px;
+    border: solid 1px;
+    border-color: #888888; }
+  /* line 18, ../src/scss/snbComponents/_DateBox.scss */
   .DateBox-month {
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
-    background-color: #FCF401;
     color: #006EB5;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 1px;
-    padding-right: 0px;
+    padding: 0px;
     text-align: center; }
-  /* line 20, ../src/scss/snbComponents/_DateBox.scss */
+  /* line 30, ../src/scss/snbComponents/_DateBox.scss */
   .DateBox-day {
-    font-size: 16px;
+    font-size: 45px;
     /*background-color:#FFFFFF;
     */
     color: #000000;
     padding-top: 0px;
     padding-bottom: 0px;
     text-align: center; }
-  /* line 30, ../src/scss/snbComponents/_DateBox.scss */
+  /* line 40, ../src/scss/snbComponents/_DateBox.scss */
   .DateBox-year {
-    width: 34px;
+    width: 100%;
     font-size: 12px;
     /* background-color:#FFFFFF;
     */
     color: #000000;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    text-align: center;
-    padding-left: 1px;
-    padding-right: 1px; }
-
-/* line 44, ../src/scss/snbComponents/_DateBox.scss */
-.dtstart, .dtTO, .dtend {
-  float: left; }
-
-/* line 48, ../src/scss/snbComponents/_DateBox.scss */
-.dtTO {
-  margin-left: 3px;
-  margin-right: 3px;
-  margin-top: 8px; }
+    padding: 0;
+    text-align: center; }
+  /* line 50, ../src/scss/snbComponents/_DateBox.scss */
+  .DateBox-dtTO {
+    padding-top: 19px; }
+  /* line 54, ../src/scss/snbComponents/_DateBox.scss */
+  .DateBox-dtstart, .DateBox-dtend {
+    background-color: white;
+    padding: 2px;
+    width: 100%; }
+  /* line 61, ../src/scss/snbComponents/_DateBox.scss */
+  .DateBox-dtstart, .DateBox-dtTO, .DateBox-dtend {
+    float: left; }
+  /* line 68, ../src/scss/snbComponents/_DateBox.scss */
+  .DateBox--multi {
+    min-width: 85px;
+    padding-top: 12px;
+    padding-bottom: 12px; }
+  /* line 74, ../src/scss/snbComponents/_DateBox.scss */
+  .DateBox--multi .DateBox-month {
+    font-size: 15px; }
+  /* line 78, ../src/scss/snbComponents/_DateBox.scss */
+  .DateBox--multi .DateBox-day {
+    font-size: 25px; }
+  /* line 82, ../src/scss/snbComponents/_DateBox.scss */
+  .DateBox--multi .DateBox-dtstart, .DateBox--multi .DateBox-dtend {
+    width: auto; }
 
 /* line 2, ../src/scss/snbComponents/_gigpress.scss */
 .gigpress-cancelled, .gigpress-soldout {

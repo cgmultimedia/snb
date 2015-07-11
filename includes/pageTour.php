@@ -2,9 +2,8 @@
   include_once("cardFunctions.php");
 ?>
 
-<div class="HomeHub">
+<div class="PageTour">
 	<div id="container">
-
     <!--
       These are our filter options. The "data-filter" classes are used to identify which
       grid items to show.

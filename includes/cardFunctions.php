@@ -175,11 +175,11 @@
       // list($year,$month,$day) = split("-",$your_date_variable_in_php);
       $temp_year = $atoms[0];
       $temp_month = date("M", mktime(0, 0, 0, $atoms[1]));
-      $temp_day = $atoms[2];
+      $temp_day = ltrim($atoms[2], '0');
       // <abbr class="dtstart" title="< ? php echo $showdata['iso_date']; ? >">
       ?>
       <div class="<?php echo $className;?>">
-        <div class='DateBox'>
+        <div class='DateBox-container'>
           <div class='DateBox-month'>
             <?php echo $temp_month; ?>
           </div>
@@ -348,33 +348,43 @@
     // hub_video_thumbnail
     // <div class="Card--video-thumb-thumbnail cursor-pointer" href="#" data-v_code="vsRDsUOlhS8"></div>
      //onclick="youTubeVideoPopupAdd('<?php echo $youtubeId; ? >')">
+
+    $isMultiDate = ($showdata['show_date'] != $showdata['show_expire']);
+
     ?>
       <div class="Card-content-container">
-        <div class="Card--tour-thumb">
-          <div class="gigpress-date">
-            <?php printDateBox($showdata['show_date'], "dtstart"); ?>
-            <?php if ($showdata['show_date'] != $showdata['show_expire']) { ?>
-                <div class="dtTO">to</div>
-            <?php printDateBox($showdata['show_expire'], "dtend"); ?>
+        <div class="Card--Tour-header">
+          <div class="DateBox <?php if($isMultiDate) echo "DateBox--multi";?>">
+            <?php printDateBox($showdata['show_date'], "DateBox-dtstart"); ?>
+            <?php if ($isMultiDate) { ?>
+                <div class="DateBox-dtTO">to</div>
+            <?php printDateBox($showdata['show_expire'], "DateBox-dtend"); ?>
             <?php } ?>
+            <div class='clearfix'></div>
           </div>
-          <div class="gigpress-venue">
-            <?php echo $showdata['venue']; ?><br/>
-            <?php if ($showdata['address'])     echo $showdata['address'] . "<br/>"; ?>
-            <?php if ($showdata['city'])        echo $showdata['city'] . "<br/>"; ?>
-            <?php if ($showdata['state'])       echo ($showdata['city'] ? ", " : "") . $showdata['state'] . "<br/>"; ?>
+          <div class="Card--Tour-venue <?php if($isMultiDate) echo "Card--Tour-venue--multi";?>">
+            <div class='Card--Tour-venue-name'>
+              <?php echo $showdata['venue']; ?><br/>
+            </div>
+            <?php if ($showdata['address'])     echo "<div class='Card--Tour-venue-address'>" . $showdata['address'] . "</div>"; ?>
+            <div class='Card--Tour-venue-cityState'>
+            <?php if ($showdata['city'])        echo "<span class='Card--Tour-venue-city'>" . $showdata['city'] . "</span>"; ?>
+            <?php if ($showdata['state'])       echo "<span class='Card--Tour-venue-state'>" . ($showdata['city'] ? ", " : "") . $showdata['state'] . "</span>"; ?>
+              </div>
             <?php //echo $showdata['country']; ?>
             <?php if ($showdata['venue_phone']) echo $showdata['venue_phone'] . "<br/>"; ?>
           </div>
+        </div>
+        <div>
           <?php if (isset($showdata['img_url']) && $showdata['img_url'] != "") {?>
-              <div class="gigpress-image">
-                Use lazy loading for images.
+              <div class="Card--Tour-image">
                 <img class="gigpress-image-img" src="<?php echo $showdata['img_url']; ?>" style="width:100%" />
               </div>
           <?php } ?>
+        </div>
+        <div>
           <?php if ($showdata['calendar_details']) { ?>
-            <div class="gigpress-details">
-              <hr/>
+            <div class="Card--Tour-details">
               <?php if ($showdata['calendar_details']) echo $showdata['calendar_details'] . "<br/>"; ?>
               <?php if ($showdata['ticket_link']) echo $showdata['ticket_link'] . "<br/>" ;?>
             </div>

@@ -22,6 +22,7 @@ $height-Card--Instagram-title-text : $height-Card--Instagram-title - $height-Car
 $color-Card-title-text    : #06B;
 
 $padding-Card-title       : 10px;
+$padding-Card-general     : 10px;
 
 .Card {
 	// -webkit-transition       : all 0.4s ease-in-out; //cubic-bezier(0.5, -0.4, 0.5, 1.4);
@@ -258,6 +259,50 @@ $padding-Card-title       : 10px;
 		& .Card-date {
 
 			//display: none;
+		}
+	}
+
+	&--Tour {
+		color: #333;
+		background-color: transparent;
+
+		&-header {
+			min-height: 81px;
+		}
+
+		&-venue {
+			padding-left: 85px;
+
+			&--multi {
+				padding-left: 94px;
+			}
+
+			&-name {
+				font-size: 20px;
+			}
+		}
+
+		&-cityState {
+
+		}
+
+		&-image {
+			padding-top: $padding-Card-general;
+		}
+
+		&-details {
+			padding-top: $padding-Card-general;
+		}
+
+		& a,
+		& a:hover {
+			color: #333;
+		}
+		& a {
+			text-decoration: none;
+		}
+		& a:hover {
+			text-decoration:underline;	
 		}
 	}
 }

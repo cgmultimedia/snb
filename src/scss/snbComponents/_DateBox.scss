@@ -1,24 +1,34 @@
 /* ADDED BY ADAM */
 
 .DateBox {
-	width:34px;
-	border:solid 1px;
-	border-color:#888888;
+	display: inline-block;
+	position: absolute;
+	background-color: white;
+	min-width: 70px;
+	top:0;
+	left:0;
+
+	&-contianer {
+		width:65px;
+		border:solid 1px;
+		border-color:#888888;
+		
+	}
 
 	&-month {
-		font-size:14px;
+		font-size:20px;
 		font-weight: bold;
-		background-color: #FCF401;
+		//background-color: #FCF401;
 		color: #006EB5;	
-		padding-top:0px;
-		padding-bottom:0px;
-		padding-left:1px;
-		padding-right:0px;
+		padding:0px;
+		// padding-bottom:0px;
+		// padding-left:1px;
+		// padding-right:0px;
 		text-align:center;
 	}
 
 	&-day {
-		font-size:16px;
+		font-size:45px;
 		/*background-color:#FFFFFF;
 		*/
 		color:#000000;
@@ -28,25 +38,49 @@
 	}
 
 	&-year {
-		width:34px;
+		width:100%;
 		font-size:12px;
 		/* background-color:#FFFFFF;
 		*/
 		color:#000000;
-		padding-top:0px;
-		padding-bottom:0px;
+		padding:0;
 		text-align:center;
-		padding-left:1px;
-		padding-right:1px;
 	}
-}
 
-.dtstart, .dtTO, .dtend {
-	float : left;
-}
+	&-dtTO {
+		padding-top:19px;
+	}
 
-.dtTO {
-	margin-left: 3px;
-	margin-right: 3px;
-	margin-top: 8px;
+	&-dtstart, 
+	&-dtend {
+		background-color: white;
+		padding: 2px;
+		width: 100%;
+	}
+
+	&-dtstart, 
+	&-dtTO,
+	&-dtend {
+		float : left;
+	}
+
+	// Multi days style
+	&--multi {
+		min-width: 85px;
+		padding-top:12px;
+		padding-bottom:12px;
+	}
+
+	&--multi &-month {
+		font-size: 15px;
+	}
+
+	&--multi &-day {
+		font-size: 25px;
+	}
+
+	&--multi &-dtstart,
+	&--multi &-dtend {
+		width: auto;
+	}
 }

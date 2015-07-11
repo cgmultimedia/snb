@@ -39,6 +39,17 @@ $cardSpacerWidth : $padding-CardTile;
 		}
 	}
 
+	&--tour {
+		& .Card-container {
+			background-color: $color-yellowSNB;
+			padding: 10px;
+		}
+
+		&:nth-child(even) .Card-container {
+			background-color: $color-blueSNB;	
+		}
+	}
+
 	// @media (max-width: $gridWidth-1 - 1) {
 	//     width:100%;
 	// }

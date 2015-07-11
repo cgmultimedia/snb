@@ -56,7 +56,6 @@ File: app.scss
 
 // Tour related
 @import 'snbComponents/DateBox';
-@import 'snbComponents/CardTour';
 @import 'snbComponents/gigpress';
 
 // Page specific
@@ -65,6 +64,7 @@ File: app.scss
 @import 'snbComponents/PicturesPage';
 @import 'snbComponents/ContactPage';
 @import 'snbComponents/NewsPage';
+@import 'snbComponents/TourPage';
 
 /* Vendor Customized Overwrites */
 @import 'vendorOverwrites/idangerous.swiper.custom.scss';
