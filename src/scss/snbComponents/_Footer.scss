@@ -1,9 +1,13 @@
 .Footer {
+	background-color: #EEE;
+	text-align: center;
+	width: 100%;
+	padding:30px;
+	padding-left:10px;
+	padding-right:10px;
+
+
 	&-copyright {
-		text-align: center;
-		width: 100%;
-		padding:30px;
-		padding-left:10px;
-		padding-right:10px;
+		
 	}
 }

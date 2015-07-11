@@ -15,7 +15,7 @@
   }
 ?>
 
-<div class="HomeHub">
+<div class="PressPage">
 	<div id="container">
     <!-- Page -->
     <div class="PressPage-content">

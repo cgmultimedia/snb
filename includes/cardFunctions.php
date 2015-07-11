@@ -1,6 +1,7 @@
 <?php
 
   function printCardDetails($type, $title, $date) {
+    $newDate = convertDate($date);
 
     if ($type=="Instagram") { ?>
       <div class="Card-text">
@@ -18,7 +19,7 @@
         </div>
         <div class="Card-title-date">
           <div class="Card-title-date-value">
-            <?php echo $date ?>
+            <?php echo $newDate ?>
           </div>
         </div>
       </div>
@@ -44,8 +45,13 @@
     <?php
   }
 
+  function convertDate($date) {
+    //return date("F j, Y g:i A", strtotime($date));
+    return date("F j, Y", strtotime($date));
+  }
+
   function printCardDetailsForFullLength($type, $title, $date) {
-    $newDate = date("F j, Y g:i A", strtotime($date));
+    $newDate = convertDate($date);
     ?>
     <div class="FullLength-card-title">
       <?php echo $title;?>
