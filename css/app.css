@@ -3308,29 +3308,29 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         transform: rotate(2deg); }
     /* line 101, ../src/scss/snbComponents/_AboutPage.scss */
     .AboutPage-cell--bigyellowboot {
-      background-image: url("../media/img/about/yellowboot-background.jpg");
+      background-image: url("../media/img/about/yellowboot-background-2.jpg");
       padding-bottom: 70%; }
-      /* line 105, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 106, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--bigyellowboot-text {
         position: absolute;
         bottom: 1.5%;
         right: 1.5%;
         color: #F9EB30;
         text-align: right; }
-        /* line 117, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 118, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--bigyellowboot-text-header {
           font-size: 5vw;
           text-shadow: 3px 3px 0px #3678C2; }
-        /* line 121, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 122, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--bigyellowboot-text-reg {
           font-family: "Coming Soon", cursive;
           font-size: 3.2vw;
           text-shadow: 1px 1px 0px #3678C2; }
-    /* line 130, ../src/scss/snbComponents/_AboutPage.scss */
+    /* line 131, ../src/scss/snbComponents/_AboutPage.scss */
     .AboutPage-cell--friends {
       background-color: #5B96C5;
       background-image: url("../media/img/about/background-blue.jpg"); }
-      /* line 134, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 135, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--friends-title {
         display: block;
         position: absolute;
@@ -3342,7 +3342,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         font-size: 5vw;
         color: #3678C2;
         transform: rotate(-3.4deg); }
-        /* line 148, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 149, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--friends-title-text {
           display: block;
           position: absolute;
@@ -3353,7 +3353,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
           text-align: center;
           transform: rotate(2deg);
           margin-top: 1.6%; }
-        /* line 160, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 161, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--friends-title-img {
           display: block;
           position: absolute;
@@ -3361,7 +3361,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
           left: 0;
           z-index: 10;
           width: 100%; }
-      /* line 169, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 170, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--friends-sharonloisbram {
         display: block;
         position: absolute;
@@ -3370,7 +3370,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         width: 47%;
         transform: rotate(-4deg);
         z-index: 10; }
-      /* line 179, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 180, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--friends-treehouse {
         display: block;
         position: absolute;
@@ -3378,7 +3378,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         left: 56%;
         width: 40%;
         transform: rotate(5deg); }
-      /* line 188, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 189, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--friends-fred {
         display: block;
         position: absolute;
@@ -3386,7 +3386,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         left: 8%;
         width: 40%;
         transform: rotate(-1deg); }
-      /* line 197, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 198, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--friends-wiggles {
         display: block;
         position: absolute;
@@ -3394,11 +3394,11 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         left: 53%;
         width: 42%;
         transform: rotate(3deg); }
-    /* line 208, ../src/scss/snbComponents/_AboutPage.scss */
+    /* line 209, ../src/scss/snbComponents/_AboutPage.scss */
     .AboutPage-cell--awards {
       background-color: #F0D53D;
       background-image: url("../media/img/about/background-yellow.jpg"); }
-      /* line 211, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 212, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--awards-title {
         display: block;
         position: absolute;
@@ -3409,10 +3409,10 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         z-index: 20;
         text-align: center;
         color: #3678C2; }
-        /* line 221, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 222, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--awards-title-reg {
           font-size: 2.7vw; }
-      /* line 225, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 226, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--awards-juno1 {
         display: block;
         position: absolute;
@@ -3421,7 +3421,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         width: 29%;
         transform: rotate(-10deg);
         z-index: 1; }
-      /* line 234, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 235, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--awards-juno2 {
         display: block;
         position: absolute;
@@ -3430,7 +3430,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         width: 19%;
         transform: rotate(-3deg);
         z-index: 4; }
-      /* line 243, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 244, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--awards-indies {
         display: block;
         position: absolute;
@@ -3439,7 +3439,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         width: 27%;
         transform: rotate(4deg);
         z-index: 3; }
-      /* line 252, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 253, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--awards-juno3 {
         display: block;
         position: absolute;
@@ -3448,11 +3448,11 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         width: 21%;
         transform: rotate(9deg);
         z-index: 4; }
-    /* line 263, ../src/scss/snbComponents/_AboutPage.scss */
+    /* line 264, ../src/scss/snbComponents/_AboutPage.scss */
     .AboutPage-cell--worldMap {
       background-image: url("../media/img/about/world-map.gif");
       padding-bottom: 59%; }
-      /* line 267, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 268, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--worldMap-title {
         display: block;
         position: absolute;
@@ -3464,11 +3464,11 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         text-align: center;
         color: #F9EB30;
         text-shadow: 3px 3px 1px #428ada; }
-    /* line 288, ../src/scss/snbComponents/_AboutPage.scss */
+    /* line 289, ../src/scss/snbComponents/_AboutPage.scss */
     .AboutPage-cell--albums {
       background-color: #F0D53D;
       background-image: url("../media/img/about/background-yellow.jpg"); }
-      /* line 292, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 293, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--albums-title {
         display: block;
         position: absolute;
@@ -3479,12 +3479,12 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         z-index: 20;
         text-align: center;
         color: #428ada; }
-      /* line 305, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 306, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--albums-albums {
         position: absolute;
         padding-top: 9.5%;
         width: 100%; }
-      /* line 311, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 312, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--albums-album {
         float: left;
         display: block;
@@ -3499,19 +3499,19 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         -o-transition: all 300ms ease;
         -webkit-transition: all 300ms ease;
         transition: all 300ms ease; }
-        /* line 323, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 324, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--albums-album:hover {
           transform: scale(1.1) rotate(2deg);
           background-color: #428ada; }
-        /* line 327, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 328, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--albums-album-img {
           width: 100%;
           border-radius: 3%; }
-    /* line 335, ../src/scss/snbComponents/_AboutPage.scss */
+    /* line 336, ../src/scss/snbComponents/_AboutPage.scss */
     .AboutPage-cell--babysplash {
       background-color: #5B96C5;
       background-image: url("../media/img/about/background-blue.jpg"); }
-      /* line 338, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 339, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--babysplash-title {
         display: block;
         position: absolute;
@@ -3521,7 +3521,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         z-index: 20;
         text-align: center;
         color: #F9EB30; }
-      /* line 351, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 352, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--babysplash-title2 {
         display: block;
         position: absolute;
@@ -3532,14 +3532,14 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         text-align: center;
         transform: rotate(1deg);
         color: #F9EB30; }
-        /* line 361, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 362, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--babysplash-title2-header {
           font-size: 3.7vw; }
-        /* line 364, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 365, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--babysplash-title2-reg {
           font-family: "Coming Soon", cursive;
           font-size: 2.7vw; }
-      /* line 369, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 370, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--babysplash-baby {
         display: block;
         position: absolute;
@@ -3553,7 +3553,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         -webkit-animation-timing-function: ease-in-out;
         -moz-animation-timing-function: ease-in-out;
         animation-timing-function: ease-in-out; }
-        /* line 379, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 380, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--babysplash-baby-img {
           width: 63%;
           position: absolute;
@@ -3562,7 +3562,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
           left: 19%;
           z-index: 10;
           margin-top: 14%; }
-        /* line 388, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 389, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--babysplash-baby-frame {
           width: 100%;
           position: absolute;
@@ -3570,7 +3570,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
           top: 0;
           left: 0;
           z-index: 1; }
-      /* line 397, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 398, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--babysplash-teen {
         display: block;
         position: absolute;
@@ -3579,7 +3579,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         width: 40%;
         transform: rotate(-4deg);
         z-index: 2; }
-      /* line 406, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 407, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--babysplash-tape1 {
         display: block;
         position: absolute;
@@ -3588,7 +3588,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         width: 6%;
         transform: rotate(-60deg);
         z-index: 30; }
-      /* line 415, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 416, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--babysplash-tape2 {
         display: block;
         position: absolute;
@@ -3597,11 +3597,11 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         width: 6%;
         transform: rotate(29deg);
         z-index: 30; }
-    /* line 426, ../src/scss/snbComponents/_AboutPage.scss */
+    /* line 427, ../src/scss/snbComponents/_AboutPage.scss */
     .AboutPage-cell--babyboots {
       background-color: #F0D53D;
       background-image: url("../media/img/about/background-yellow.jpg"); }
-      /* line 430, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 431, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--babyboots-title {
         display: block;
         position: absolute;
@@ -3612,11 +3612,11 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         z-index: 20;
         text-align: center;
         color: #3678C2; }
-        /* line 444, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 445, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--babyboots-title-reg {
           font-family: "Coming Soon", cursive;
           font-size: 2.7vw; }
-      /* line 450, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 451, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--babyboots-title2 {
         display: block;
         position: absolute;
@@ -3627,14 +3627,14 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         text-align: center;
         transform: rotate(1deg);
         color: #3678C2; }
-        /* line 461, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 462, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--babyboots-title2-header {
           font-size: 3.7vw; }
-        /* line 464, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 465, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--babyboots-title2-reg {
           font-family: "Coming Soon", cursive;
           font-size: 2.7vw; }
-      /* line 470, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 471, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--babyboots-baby1 {
         display: block;
         position: absolute;
@@ -3643,7 +3643,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         width: 34%;
         transform: rotate(-6deg);
         z-index: 1; }
-      /* line 479, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 480, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--babyboots-baby2 {
         display: block;
         position: absolute;
@@ -3652,7 +3652,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         width: 19%;
         transform: rotate(3deg);
         z-index: 2; }
-      /* line 488, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 489, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--babyboots-tape {
         display: block;
         position: absolute;
@@ -3660,11 +3660,11 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         left: 49%;
         width: 6%;
         z-index: 30; }
-    /* line 498, ../src/scss/snbComponents/_AboutPage.scss */
+    /* line 499, ../src/scss/snbComponents/_AboutPage.scss */
     .AboutPage-cell--recording {
       background-color: #5B96C5;
       background-image: url("../media/img/about/background-blue.jpg"); }
-      /* line 501, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 502, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--recording-title {
         display: block;
         position: absolute;
@@ -3674,14 +3674,14 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         z-index: 20;
         text-align: center;
         color: #F9EB30; }
-        /* line 510, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 511, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--recording-title-header {
           font-size: 4.3vw; }
-        /* line 513, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 514, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--recording-title-reg {
           font-family: "Coming Soon", cursive;
           font-size: 2.7vw; }
-      /* line 518, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 519, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--recording-goldText {
         display: block;
         position: absolute;
@@ -3693,7 +3693,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         color: #F9EB30;
         font-family: "Coming Soon", cursive;
         font-size: 2.7vw; }
-      /* line 530, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 531, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--recording-img1 {
         display: block;
         position: absolute;
@@ -3702,7 +3702,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         width: 36%;
         transform: rotate(4deg);
         z-index: 1; }
-        /* line 538, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 539, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--recording-img1-img {
           width: 63%;
           position: absolute;
@@ -3711,7 +3711,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
           left: 19%;
           z-index: 10;
           margin-top: 14%; }
-        /* line 547, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 548, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--recording-img1-frame {
           width: 100%;
           position: absolute;
@@ -3719,7 +3719,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
           top: 0;
           left: 0;
           z-index: 1; }
-      /* line 556, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 557, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--recording-record {
         display: block;
         position: absolute;
@@ -3728,11 +3728,11 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         width: 40%;
         transform: rotate(-2deg);
         z-index: 2; }
-        /* line 564, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 565, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--recording-record-img {
           width: 100%;
           z-index: 1; }
-        /* line 568, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 569, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--recording-record-asterix {
           position: absolute;
           top: 12%;
@@ -3740,7 +3740,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
           color: white;
           font-size: 5vw;
           font-family: "Coming Soon", cursive; }
-      /* line 577, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 578, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--recording-tape1 {
         display: block;
         position: absolute;
@@ -3749,7 +3749,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         width: 5%;
         transform: rotate(29deg);
         z-index: 30; }
-      /* line 586, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 587, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--recording-tape2 {
         display: block;
         position: absolute;
@@ -3758,17 +3758,17 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         width: 5%;
         transform: rotate(-45deg);
         z-index: 30; }
-    /* line 597, ../src/scss/snbComponents/_AboutPage.scss */
+    /* line 598, ../src/scss/snbComponents/_AboutPage.scss */
     .AboutPage-cell--final {
       text-align: center; }
-      /* line 599, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 600, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--final-img {
         width: 100%; }
     @media (min-width: 1000px) {
-      /* line 607, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 608, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell {
         padding-bottom: 620px; }
-      /* line 611, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 612, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell-wrapper {
         display: block;
         position: absolute;
@@ -3776,54 +3776,54 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         height: 100%;
         left: 50%;
         margin-left: -500px; }
-      /* line 620, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 621, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell-title {
         font-size: 6.1em; }
-      /* line 624, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 625, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--bigyellowboot {
         padding-bottom: 700px; }
-        /* line 629, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 630, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--bigyellowboot-text-header {
           font-size: 3.85em;
           text-shadow: 3px 3px 1px #3678C2; }
-        /* line 633, ../src/scss/snbComponents/_AboutPage.scss */
+        /* line 634, ../src/scss/snbComponents/_AboutPage.scss */
         .AboutPage-cell--bigyellowboot-text-reg {
           font-size: 2.7em;
           text-shadow: 2px 2px 1px #3678C2; }
-      /* line 641, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 642, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--friends-title {
         font-size: 3.85em; }
-      /* line 648, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 649, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--awards-title-reg {
         font-size: 2.07em; }
-      /* line 654, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 655, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--worldMap {
         padding-bottom: 590px; }
-      /* line 660, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 661, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--babysplash-title2-header {
         font-size: 2.8em; }
-      /* line 663, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 664, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--babysplash-title2-reg {
         font-size: 2.1em; }
-      /* line 671, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 672, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--babyboots-title-reg {
         font-size: 2.1em; }
-      /* line 676, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 677, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--babyboots-title2-reg {
         font-size: 2.07em; }
-      /* line 679, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 680, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--babyboots-title2-header {
         font-size: 2.85em; }
-      /* line 687, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 688, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--recording-title-header {
         font-size: 3.3em; }
-      /* line 690, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 691, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--recording-title-reg {
         font-size: 2.1em; }
-      /* line 694, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 695, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--recording-goldText {
         font-size: 2.1em; }
-      /* line 700, ../src/scss/snbComponents/_AboutPage.scss */
+      /* line 701, ../src/scss/snbComponents/_AboutPage.scss */
       .AboutPage-cell--final-img {
         width: 1000px; } }
 
