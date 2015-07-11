@@ -2934,8 +2934,10 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
 .Masthead {
   position: relative;
   background-color: white;
-  z-index: 2; }
-  /* line 9, ../src/scss/snbComponents/_Masthead.scss */
+  z-index: 2;
+  max-height: 100vh;
+  overflow: hidden; }
+  /* line 11, ../src/scss/snbComponents/_Masthead.scss */
   .Masthead-video {
     display: inline-block;
     position: relative;
@@ -2943,7 +2945,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
     overflow: hidden;
     opacity: 0.5;
     background-color: white !important; }
-    /* line 17, ../src/scss/snbComponents/_Masthead.scss */
+    /* line 19, ../src/scss/snbComponents/_Masthead.scss */
     .Masthead-video-video {
       position: absolute;
       top: -3.4%;
@@ -2951,19 +2953,19 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
       left: 0;
       right: 0;
       background-color: white !important; }
-    /* line 26, ../src/scss/snbComponents/_Masthead.scss */
+    /* line 28, ../src/scss/snbComponents/_Masthead.scss */
     .Masthead-video-aspectRatioPusher {
       background-color: white;
       margin-top: 52.34%;
       /* 4:3 aspect ratio */ }
-  /* line 32, ../src/scss/snbComponents/_Masthead.scss */
+  /* line 34, ../src/scss/snbComponents/_Masthead.scss */
   .u-isMobile .Masthead .SNBLogo {
     display: none; }
   @media (max-width: 621px) {
-    /* line 37, ../src/scss/snbComponents/_Masthead.scss */
+    /* line 39, ../src/scss/snbComponents/_Masthead.scss */
     .Masthead {
       margin-top: 50px; }
-    /* line 41, ../src/scss/snbComponents/_Masthead.scss */
+    /* line 43, ../src/scss/snbComponents/_Masthead.scss */
     .Masthead .SNBLogo {
       display: none; } }
 
@@ -2998,7 +3000,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
     display: block;
     text-align: center;
     padding: 3%;
-    top: 70%;
+    bottom: 0%;
     left: 50%;
     height: 15%;
     width: 50%;
@@ -3009,9 +3011,10 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
     background-position: top center;
     background-size: 100%;
     background-repeat: no-repeat;
-    font-size: 8vw; }
+    font-size: 8vw;
+    padding-bottom: 5%; }
   @media (max-width: 621px) {
-    /* line 57, ../src/scss/snbComponents/_MastheadOverlays.scss */
+    /* line 58, ../src/scss/snbComponents/_MastheadOverlays.scss */
     .u-isMobile .MastheadOverlays-title {
       top: 70%;
       font-size: 11vw;
