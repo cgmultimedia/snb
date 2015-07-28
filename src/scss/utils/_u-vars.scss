@@ -44,6 +44,7 @@ $switchWidthiPad       	   : 800px; // Used in _Card.scss, and potentially other
 $switchWidthiPad2 		   : 725px; // Used in _Card.scss, and potentially others 
 $switchWidthMobileBig 	   : 621px; // Used in _Card.scss, and potentially others 
 $switchWidthMobileBig 	   : 621px; // Used in _Card.scss, and potentially others 
+$switchWidthMobileMed      : 481px; // Used in _Card.scss, and potentially others 
 
 
 $width-CardTile 		   : 300px;
@@ -117,7 +118,7 @@ $fontColor-default                         : $color-grey;
 $fontColor-links                           : $color-blueSNB;
 $fontColor-selected-background             : $color-blueSNB;
 $fontColor-selected                        : $color-yellowSNB;
-$fontColor-PressPage-cell                  : $color-blueSNB;
+$fontColor-PressPage-cell                  : $color-yellowSNB;
 
 $fontColor-Nav                             : $color-blueSNB;
 $fontColor-MastheadOverlays-title          : $color-blueSNB;
@@ -136,7 +137,13 @@ $textShadowColor-AboutPage-cell--yellowboot-text : $color-blueDark; // #124074;
 // ------------------
 // Background Color
 // ------------------
-$backgroundColor-Nav 			: $color-yellowSNB;
+$backgroundColor-Nav         : $color-yellowSNB;
+$background-bluePage         : #5B96C5;
+$background-yellowPage       : #F0D53D;
+$background-AboutPage-blue   : $background-bluePage;
+$background-AboutPage-yellow : $background-yellowPage;
+$background-NewsPage         : $background-bluePage;
+$background-PressPage        : $background-bluePage;
 
 
 // ======================================================================

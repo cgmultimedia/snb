@@ -182,7 +182,10 @@
       $temp_year = $atoms[0];
       $temp_month = date("M", mktime(0, 0, 0, $atoms[1]));
       $temp_day = ltrim($atoms[2], '0');
+      $temp_day = explode(" ", $temp_day); // Ensure no time is included.
+      $temp_day = $temp_day[0];
       // <abbr class="dtstart" title="< ? php echo $showdata['iso_date']; ? >">
+
       ?>
       <div class="<?php echo $className;?>">
         <div class='DateBox-container'>
@@ -369,14 +372,18 @@
             <div class='clearfix'></div>
           </div>
           <div class="Card--Tour-venue <?php if($isMultiDate) echo "Card--Tour-venue--multi";?>">
+            <div class='Card--Tour-title'>
+               <div class='Card--Tour-venue-cityState'>
+                <?php if ($showdata['city'])        echo "<span class='Card--Tour-venue-city'>" . $showdata['city'] . "</span>"; ?>
+                <?php if ($showdata['state'])       echo "<span class='Card--Tour-venue-state'>" . ($showdata['city'] ? ", " : "") . $showdata['state'] . "</span>"; ?>
+              </div>
+            </div>
             <div class='Card--Tour-venue-name'>
               <?php echo $showdata['venue']; ?><br/>
             </div>
             <?php if ($showdata['address'])     echo "<div class='Card--Tour-venue-address'>" . $showdata['address'] . "</div>"; ?>
-            <div class='Card--Tour-venue-cityState'>
-            <?php if ($showdata['city'])        echo "<span class='Card--Tour-venue-city'>" . $showdata['city'] . "</span>"; ?>
-            <?php if ($showdata['state'])       echo "<span class='Card--Tour-venue-state'>" . ($showdata['city'] ? ", " : "") . $showdata['state'] . "</span>"; ?>
-              </div>
+            
+           
             <?php //echo $showdata['country']; ?>
             <?php if ($showdata['venue_phone']) echo $showdata['venue_phone'] . "<br/>"; ?>
           </div>
@@ -392,7 +399,7 @@
           <?php if ($showdata['calendar_details']) { ?>
             <div class="Card--Tour-details">
               <?php if ($showdata['calendar_details']) echo $showdata['calendar_details'] . "<br/>"; ?>
-              <?php if ($showdata['ticket_link']) echo $showdata['ticket_link'] . "<br/>" ;?>
+              <?php if ($showdata['ticket_link']) echo $showdata['ticket_link'] . "<br/>";?>
             </div>
           <?php } ?>
         </div>
@@ -401,6 +408,374 @@
     printCardFooter(); //$type, $title, $date);
   }
 
+
+  // ============================================================
+  // BIG YELLOW BOOT
+  // ==============================
+  // TOUR
+
+  // Tour page content
+  function printBigYellowBootContent() {
+    // Create upcoming shows
+    // $data = json_decode(file_get_contents('http://splashnboots.com/SNBAPI/get/tour_upcoming.php'));
+    // $rows = $data->rows;
+
+    global $wpdb;
+    define('MTP_WP_TABLE', $wpdb->prefix . 'bigyellowboot');
+    //$shows = $wpdb->get_results("SELECT * FROM ". MTP_WP_TABLE ." ORDER BY showdatetime, showtime ASC");
+    $showsUpcoming = $wpdb->get_results("SELECT * FROM ". MTP_WP_TABLE ." WHERE showdatetime >= CURDATE() AND active = 1 ORDER BY showdatetime ASC");
+    $showsPast = $wpdb->get_results("SELECT * FROM ". MTP_WP_TABLE ." WHERE showdatetime < CURDATE() AND active = 1 ORDER BY showdatetime DESC");
+
+    //ORDER BY puppetorder ASC");
+    //return ($shows !== FALSE) ? $shows : FALSE;
+    ?><!--
+    <?php print_r($showsUpcoming ); ?>
+    //echo "4233";
+    //print_r($showsPast);
+--><?php
+
+    $name = "byb-upcoming";
+    if (count($showsUpcoming)) {
+      for ($i=0; $i<count($showsUpcoming); $i++) { 
+        ?>
+        <li class="CardTile CardTile--byb CardTile--byb--upcoming" data-filter-class='["<?php echo $name; ?>"]'>
+          <?php printCardBigYellowBoot($showsUpcoming[$i]); ?>
+        </li>
+        <?php
+      }
+    } else {
+      ?>
+        <li class="CardTile CardTile--byb CardTile--byb--past" data-filter-class='["<?php echo $name; ?>"]'>
+          There are no new episodes listed.<br/>
+          Please see <a href="http://www.treehousetv.com/schedule" target="_blank">http://www.treehousetv.com/schedule</a> for more details.
+        </li>
+      <?php 
+    }
+
+    $name = "byb-past";
+    if (count($showsPast)) {
+      for ($i=0; $i<count($showsPast); $i++) { 
+        ?>
+        <li class="CardTile CardTile--byb CardTile--byb--past" data-filter-class='["<?php echo $name; ?>"]'>
+          <?php printCardBigYellowBoot($showsUpcoming[$i]); ?>
+        </li>
+        <?php
+      }
+    } else {
+      ?>
+        <li class="CardTile CardTile--byb CardTile--byb--past" data-filter-class='["<?php echo $name; ?>"]'>
+          There are no past episodes listed.<br/>
+          Please see <a href="http://www.treehousetv.com/schedule" target="_blank">http://www.treehousetv.com/schedule</a> for more details.
+        </li>
+      <?php 
+    }
+  }
+
+/*
+  function printDateBoxBigYellowBoot($date, $className) {
+      // Get the year, month, and date
+      //$temp_date = $date;//$showdata['date_mysql'];
+      $atoms = explode('-',$date);
+      // list($year,$month,$day) = split("-",$your_date_variable_in_php);
+      $temp_year = $atoms[0];
+      $temp_month = date("M", mktime(0, 0, 0, $atoms[1]));
+      $temp_day = ltrim($atoms[2], '0');
+      // <abbr class="dtstart" title="< ? php echo $showdata['iso_date']; ? >">
+      ?>
+      <div class="<?php echo $className;?>">
+        <div class='DateBox-container'>
+          <div class='DateBox-month'>
+            <?php echo $temp_month; ?>
+          </div>
+          <div class='DateBox-day'>
+            <?php echo $temp_day; ?>
+          </div>
+        </div>
+        <div class='DateBox-year'>
+          <?php echo $temp_year; ?> 
+        </div>
+      </div>
+      <?php
+  }
+
+  function strTimeToFormattedTimeBigYellowBoot($strTime) {
+    $timeparts = explode(':', $strTime);
+    $AMPM;
+    $hour = intval($timeparts[0]);
+    if ($timeparts[2] == '01') {
+      return '';
+    } else {
+      // Determine AM or PM
+      if ($hour >= 12) {
+        $AMPM = "PM";
+      } else {
+        $AMPM = "AM";
+      }
+
+      // Correct the hour to not be 24 hour style.
+      if (intval($timeparts[0]) > 12) {
+        $hour = $hour - 12;
+      } else {
+        if ($hour == 0) {
+          $hour = 12;
+        }
+      }
+
+      //return ltrim($timepart0, '0') . ":" . $timeparts[1];
+      return $hour . ":" . $timeparts[1] . " " . $AMPM;
+    }
+  }
+*/
+  function printCardBigYellowBoot($show) {
+
+    // echo "hi";
+
+    // [id] => 7
+    // [hit_date] => 2015-07-28 04:54:45
+    // [name] => Jumping Jack Granny Says Goodnight
+    // [description] => Splash and Keys are visited by Jumping Jack Granny, who teaches them her goodnight dance.
+    // [imageurl] => http://localhost:8888/web%20dev/5-splashnboots/2015/2015-02-10%20new%20site/splashnboots/wp-content/uploads/big-yellow-boot-uploads/2015/07/Screen-Shot-2015-07-28-at-1.00.33-AM.png
+    // [active] => 1
+    // [extrafield] => 
+    // [showdatetime] => 2015-08-31 12:00:00
+    // [imgwidth] => 830
+    // [imgheight] => 394
+
+    // $show->id
+    // $show->hit_date 
+    // $show->name 
+    // $show->description 
+    // $show->imageurl 
+    // $show->active 
+    // $show->extrafield 
+    // $show->showdatetime 
+    // $show->imgwidth 
+    // $show->imgheight 
+
+    $showId = $show->id;
+    //$showHitDate = $show->['hit_date'];
+    $showName = $show->name;
+    $showDesc = $show->description;
+    $showImgUrl = $show->imageurl;
+    $showActive = $show->active;
+    $showExtraField = $show->extrafield;
+    $showDate = $show->showdatetime;
+
+    $phpdate = strtotime( $showDate );
+    $showTime = date('g:h A', $phpdate );
+
+    //$show = $show->imgwidth;
+    //$show = $show->imgheight;
+    $showImgRatio = $show->imgratio;
+
+    $type='byb';
+    printCardHeader($type);
+    // hub_video_thumbnail
+    // <div class="Card--video-thumb-thumbnail cursor-pointer" href="#" data-v_code="vsRDsUOlhS8"></div>
+     //onclick="youTubeVideoPopupAdd('<?php echo $youtubeId; ? >')">
+
+    ?>
+      <div class="Card-content-container">
+        <div class="Card--byb-header">
+          <div class="DateBox ">
+            <?php printDateBox($showDate, "DateBox-dtstart"); ?>
+            <div class='clearfix'></div>
+          </div>
+          <div class="Card--byb-desc ">
+            <div class='Card--byb-title'>
+               <div class='Card--byb-venue-cityState'>
+                <?php echo $showTime; ?> EST<br/>
+                <?php echo $showName; ?>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <?php if (isset($showImgUrl) && $showImgUrl != "") {?>
+              <div class="Card--byb-image">
+                <?php if ($showImgRatio > 0) { ?>
+                  <div class="Card--byb-image-spacer" style="padding-bottom: <?php echo $showImgRatio;?>%">
+                  </div>
+                  <img class="Card--byb-image-img Card--byb-image-img--withSpacer" src="<?php echo $showImgUrl; ?>" />
+                <?php } else { ?>
+                  <img class="Card--byb-image-img" src="<?php echo $showImgUrl; ?>" style="width:100%" />
+                <?php } ?>
+              </div>
+          <?php } ?>
+        </div>
+        <div>
+          <?php if ($showDesc != "") { ?>
+            <div class="Card--byb-details">
+              <?php echo $showDesc; ?>
+            </div>
+          <?php } ?>
+        </div>
+      </div>
+    <?php 
+    printCardFooter(); //$type, $title, $date);
+
+    /*
+    // $type  = 'Video';
+    // $title = 'New Video: “What I Like About Me” -Album: Happy Times';
+    // $date  = 'Thursday, January 8th, 2015';
+    
+    $type                       = 'Tour'; 
+    $target                     = " target ='_blank' ";
+    $showdata                   = array();
+    //$title                    = stripslashes($cardData->description);
+    $showdata['show_date']      = $show->show_date;
+    $showdata['show_expire']    = $show->show_expire;
+    //$youtubeId                = $cardData->alttext;
+    
+    // $showdata['address_url'] = ($show->venue_address) ? 'http://maps.google.com/maps?&amp;q='. urlencode($show->venue_address). ',' . urlencode($show->venue_city) . ',' . urlencode($show->venue_country) : '';
+    // $showdata['address']     = ($show->venue_address) ? '<a href="' . $showdata['address_url'] . '" class="gigpress-address"' . $target . '>' . wptexturize($show->venue_address) . '</a>' : '';
+    
+    $showdata['address_plain']  = ($show->venue_address) ? wptexturize($show->venue_address) : '';
+    $showdata['address_url']    = ($show->venue_address) ? 'http://maps.google.com/maps?&amp;q='. urlencode($show->venue_address). ',' . urlencode($show->venue_city) . ',' . urlencode($show->venue_country) : '';
+    $showdata['address']        = ($show->venue_address) ? '<a href="' . $showdata['address_url'] . '" class="gigpress-address"' . $target . '>' . wptexturize($show->venue_address) . '</a>' : '';
+    $showdata['city']           = wptexturize($show->venue_city); 
+    $showdata['country']        = ($gpo['country_view'] == 'long') ? wptexturize($gp_countries[$show->venue_country]) : $show->venue_country;
+    $showdata['venue']          = ($show->venue_url) ? '<a href="' . esc_url($show->venue_url) . '"' . $target . '>' . wptexturize($show->venue_name) . '</a>' : wptexturize($show->venue_name);
+    //$showdata['venue_id']       = $show->venue_id;
+    $showdata['venue_plain']    = wptexturize($show->venue_name);
+    $showdata['venue_phone']    = wptexturize($show->venue_phone);
+    $showdata['venue_url']      = ($show->venue_url) ? esc_url($show->venue_url) : ''; 
+
+    $timeparts = explode(':', $show->show_time);
+    $showdata['admittance'] = (!empty($show->show_ages) && $show->show_ages != 'Not sure') ? wptexturize($show->show_ages) : '';
+    //$showdata['artist'] = wptexturize($show->artist_name);
+    //$showdata['artist_id'] = $show->artist_id;
+    //$showdata['calendar_summary'] = $show->artist_name . ' ' . __("at", "gigpress") . ' ' . $show->venue_name;
+
+    $showdata['ticket_url'] = ($show->show_tix_url) ? esc_url($show->show_tix_url) : '';
+    $showdata['ticket_phone'] = wptexturize($show->show_tix_phone);
+    $showdata['time'] = strTimeToFormattedTime($show->show_time); //($timeparts[2] == '01') ? '' : ltrim($timeparts[0], '0') . ":" . $timeparts[1]; //($timeparts[2] == '01') ? '' : (date($gpo['time_format'], mktime($timeparts[0], $timeparts[1]));
+
+    $showdata['calendar_details'] = '';
+      //if($show->tour_name) $showdata['calendar_details'] .= $gpo['tour_label'] . ': ' . $show->tour_name . '. ';
+      // if($show->show_price) $showdata['calendar_details'] .= __("Price", "gigpress") . ': ' . $show->show_price . '. ';
+      // if($show->show_tix_phone) $showdata['calendar_details'] .= __("Box office", "gigpress") . ': ' . $show->show_tix_phone . '. ';
+      // if($show->show_venue_phone) $showdata['calendar_details'] .= __("Venue phone", "gigpress") . ': ' . $show->venue_phone . '. ';
+      // if($show->show_notes) $showdata['calendar_details'] .= __("Notes", "gigpress") . ': ' . $show->show_notes . ' ';
+
+      // Added Time and Ticket phone number
+      if($showdata['time']) $showdata['calendar_details']       .= "Time: " . $showdata['time'] . '. ';
+      if($show->show_price) $showdata['calendar_details']       .= "Price: " . $show->show_price . '. ';
+      if($show->show_tix_phone) $showdata['calendar_details']   .= "Box office: " . $show->show_tix_phone . '. ';
+      if($show->show_venue_phone) $showdata['calendar_details'] .= "Venue phone: " . $show->venue_phone . '. ';
+      if($show->show_notes) $showdata['calendar_details']       .= "Notes: " . wptexturize($show->show_notes) . ' ';
+
+      
+      if($showdata['ticket_phone']) $showdata['calendar_details']       .= "Tickets phone: " . $showdata['ticket_phone'] . ' ';
+
+      $showdata['calendar_details'] .= $showdata['admittance'];
+      //$showdata['calendar_details'] = str_replace(array(";",",","\n","\r"), array('\;','\,',' ',' '), $showdata['calendar_details']);
+
+    $showdata['calendar_location'] = $show->venue_name . ', ';
+      if($show->venue_address) $showdata['calendar_location'] .= $show->venue_address . ', ';
+      $showdata['calendar_location'] .= $show->venue_city . ', ' . $show->venue_country;
+    
+    $showdata['calendar_start'] = $show->show_date; //($timeparts[2] == '01') ? str_replace('-', '', $show->show_date) : str_replace(array('-',':',' '), array('','','T'), get_gmt_from_date($show->show_date . ' ' . $show->show_time)) . 'Z';
+    $showdata['calendar_end']   = $show->show_expire;
+    // if($timeparts[2] == '01') {
+    //   $showdata['calendar_end'] = ($show->show_expire == $show->show_date) ? $showdata['calendar_start'] : date('Ymd', strtotime($show->show_expire . '+1 day')); 
+    // } else {
+    //   $showdata['calendar_end'] = ($show->show_expire == $show->show_date) ? $showdata['calendar_start'] : str_replace(array('-',':',' '), array('','','T'), get_gmt_from_date($show->show_expire . ' ' . $show->show_time)) . 'Z';   
+    // }
+    //$showdata['date'] = ($show->show_related && $gpo['relatedlink_date'] == 1 && $scope == 'public') ? '<a href="' . gigpress_related_link($show->show_related, "url") . '">' . mysql2date($gpo['date_format'], $show->show_date) . '</a>' : mysql2date($gpo['date_format'], $show->show_date);
+    //$showdata['date_long'] = mysql2date($gpo['date_format_long'], $show->show_date);    
+    //$showdata['date_mysql'] = $show->show_date;   
+    //$showdata['end_date'] = ($show->show_date != $show->show_expire) ? mysql2date($gpo['date_format'], $show->show_expire) : '';
+    //$showdata['end_date_long'] = ($show->show_date != $show->show_expire) ? mysql2date($gpo['date_format_long'], $show->show_expire) : '';
+    //$showdata['end_date_mysql'] = $show->show_expire;   
+    //$showdata['ical'] = '<a href="' . GIGPRESS_ICAL . '&amp;show_id=' . $show->show_id . '">' . __("Download iCal", "gigpress") . '</a>';
+    //$showdata['id'] = $show->show_id;
+    //$showdata['iso_date'] = $show->show_date." ".$show->show_time;
+    //$showdata['iso_end_date'] = $show->show_expire." ".$show->show_time;
+    $showdata['notes'] = wptexturize($show->show_notes);
+    $showdata['price'] = wptexturize($show->show_price);
+    //$showdata['related_id'] = ($show->show_related) ? $show->show_related : 0;
+    //$showdata['related_url'] = ($show->show_related) ? gigpress_related_link($show->show_related, 'url') : '';
+    //$showdata['related_edit'] = ($show->show_related) ? gigpress_related_link($show->show_related, 'edit') : '';
+    //$showdata['related_link'] = ($show->show_related) ? gigpress_related_link($show->show_related, 'view') : '';
+    //$showdata['rss_date'] = mysql2date('D, d M Y', $show->show_date, false). " ". $show->show_time." " . gigpress_get_O_offset(get_option('gmt_offset'));
+    $showdata['status'] = $show->show_status;
+    switch($showdata['status']) {
+      //case 'active': $showdata['ticket_link'] = ($show->show_tix_url && $show->show_expire >= GIGPRESS_NOW) ? '<a href="' . esc_url($show->show_tix_url)  . '"' . $target . ' class="gigpress-tickets-link">' . __("Buy ticket", "gigpress") . '</a>' : '';
+      //case 'active': $showdata['ticket_link'] = ($show->show_tix_url && $show->show_expire >= GIGPRESS_NOW) ? '(<a href="' . esc_url($show->show_tix_url)  . '"' . $target . ' class="gigpress-tickets-link">' . 'Tickets &amp information' . '</a>)' : '';
+      case 'active': $showdata['ticket_link'] = ($show->show_tix_url && $show->isUpcoming == 1) ? '(<a href="' . esc_url($show->show_tix_url)  . '"' . $target . ' class="gigpress-tickets-link">' . 'Tickets &amp information' . '</a>)' : '';
+      break;
+      case 'soldout' : $showdata['ticket_link'] = '<strong class="gigpress-soldout">' . "Sold Out" . '</strong>';
+      break;
+      case 'cancelled' : $showdata['ticket_link'] = '<strong class="gigpress-cancelled">' . "Cancelled" . '</strong>';
+      break;
+    }
+
+    // DETAILS FOR THE IMAGE
+    //$showdata['img_url'] = $show->show_img_url;
+    $showdata['img_url'] = "http://splashnboots.com/childrensmusic/wp-content/uploads/2015/06/11355926_848138241888687_1795764461_n.jpg";
+    
+    //$showdata['tour'] = wptexturize($show->tour_name);
+    //$showdata['tour_id'] = $show->tour_id;
+    // if($showdata['related_url']) { $showdata['permalink'] = $showdata['related_url']; }
+    //   elseif($gpo['shows_page']) { $showdata['permalink'] = esc_url($gpo['shows_page']); }
+    //   else { $showdata['permalink'] = get_bloginfo('home'); }
+
+    printCardHeader($type);
+    // hub_video_thumbnail
+    // <div class="Card--video-thumb-thumbnail cursor-pointer" href="#" data-v_code="vsRDsUOlhS8"></div>
+     //onclick="youTubeVideoPopupAdd('<?php echo $youtubeId; ? >')">
+
+    $isMultiDate = ($showdata['show_date'] != $showdata['show_expire']);
+
+    ?>
+      <div class="Card-content-container">
+        <div class="Card--Tour-header">
+          <div class="DateBox <?php if($isMultiDate) echo "DateBox--multi";?>">
+            <?php printDateBox($showdata['show_date'], "DateBox-dtstart"); ?>
+            <?php if ($isMultiDate) { ?>
+                <div class="DateBox-dtTO">to</div>
+            <?php printDateBox($showdata['show_expire'], "DateBox-dtend"); ?>
+            <?php } ?>
+            <div class='clearfix'></div>
+          </div>
+          <div class="Card--Tour-venue <?php if($isMultiDate) echo "Card--Tour-venue--multi";?>">
+            <div class='Card--Tour-title'>
+               <div class='Card--Tour-venue-cityState'>
+                <?php if ($showdata['city'])        echo "<span class='Card--Tour-venue-city'>" . $showdata['city'] . "</span>"; ?>
+                <?php if ($showdata['state'])       echo "<span class='Card--Tour-venue-state'>" . ($showdata['city'] ? ", " : "") . $showdata['state'] . "</span>"; ?>
+              </div>
+            </div>
+            <div class='Card--Tour-venue-name'>
+              <?php echo $showdata['venue']; ?><br/>
+            </div>
+            <?php if ($showdata['address'])     echo "<div class='Card--Tour-venue-address'>" . $showdata['address'] . "</div>"; ?>
+            
+           
+            <?php //echo $showdata['country']; ?>
+            <?php if ($showdata['venue_phone']) echo $showdata['venue_phone'] . "<br/>"; ?>
+          </div>
+        </div>
+        <div>
+          <?php if (isset($showdata['img_url']) && $showdata['img_url'] != "") {?>
+              <div class="Card--Tour-image">
+                <img class="gigpress-image-img" src="<?php echo $showdata['img_url']; ?>" style="width:100%" />
+              </div>
+          <?php } ?>
+        </div>
+        <div>
+          <?php if ($showdata['calendar_details']) { ?>
+            <div class="Card--Tour-details">
+              <?php if ($showdata['calendar_details']) echo $showdata['calendar_details'] . "<br/>"; ?>
+              <?php if ($showdata['ticket_link']) echo $showdata['ticket_link'] . "<br/>";?>
+            </div>
+          <?php } ?>
+        </div>
+      </div>
+    <?php 
+    printCardFooter(); //$type, $title, $date);
+*/
+  }
   
   // ==============================
   // PICTURES

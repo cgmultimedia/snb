@@ -5,8 +5,9 @@
 // 			<img class="PressPage-content-cell-img" src="<?php echo $imgSrc; ?>"/>
 // 		</div>
 .PressPage {
-	background-color: $AboutPage-background-yellow;
-	background-image : url("../media/img/general/background-yellow-repeat.jpg");
+	background-color: $background-PressPage;
+	//background-image : url("../media/img/general/background-yellow-repeat.jpg");
+	background-image: url("../media/img/general/background-blue-med.jpg");
 	background-size: 100%;
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -18,7 +19,7 @@
 
 		& > a {
 			@include transition(all 300ms ease);
-			opacity: 0.9;
+			//opacity: 0.9;
 			@include transform(scale(1));
 			text-decoration: none;
 
@@ -34,6 +35,12 @@
 			width: 24%;
 			padding: 0.5%;
 			text-align: center;
+			color: $fontColor-PressPage-cell!important;
+
+			& a,
+			& a:hover {
+				color: $fontColor-PressPage-cell;				
+			}
 			
 			&-title {
 				width: 100%;
@@ -41,7 +48,6 @@
 				padding-bottom: 10px;
 
 				font-family: $fontFamily-PressPage-cell; 
-				color: $fontColor-PressPage-cell;
 				font-size: 1.5em;
 			}
 

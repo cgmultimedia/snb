@@ -2,7 +2,7 @@
   include_once("cardFunctions.php");
 ?>
 
-<div class="HomeHub">
+<div class="VideosPage">
 	<div id="container">
 
     <!--
@@ -11,9 +11,10 @@
       -->
     <br/>
     <div>
-	    <ol class="GridFilters" id="filters">
-	      <li data-filter="all" class="active">All</li>
-        <li data-filter="videos-musicvideos">Music Videos</li>
+	    <ol class="GridFilters VideosPage-gridFilters" id="filters">
+	      <!-- <li data-filter="all" class="active">All</li> -->
+        <li data-filter="videos-musicvideos" class="active">Music Videos</li>
+        <li data-filter="videos-byb">Big Yellow Boot</li>
         <li data-filter="videos-fanvideos">Live Shows</li>
         <li data-filter="videos-kitchenjams">Kitchen Jams</li>
 	      <li data-filter="videos-fanvideos">Fan Videos</li>

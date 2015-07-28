@@ -39,7 +39,8 @@ $cardSpacerWidth : $padding-CardTile;
 		}
 	}
 
-	&--tour {
+	&--tour,
+	&--byb {
 		& .Card-container {
 			background-color: $color-yellowSNB;
 			padding: 10px;

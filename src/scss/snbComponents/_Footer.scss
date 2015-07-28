@@ -1,5 +1,6 @@
 .Footer {
-	background-color: #EEE;
+//	@include background-image( linear-gradient(to left, $color-blueSNB, white) );
+	@include linear-gradient(to bottom, $color-blueSNB, white);
 	text-align: center;
 	width: 100%;
 	padding:30px;
@@ -8,6 +9,6 @@
 
 
 	&-copyright {
-		
+
 	}
 }

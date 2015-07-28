@@ -1,6 +1,7 @@
 <?php 
 	// globals
 	global $titleBanner;
+	global $titleBannerClass;
 	
 	$VideoFull = "VideoFull";
 	if (isset($_GET['v']) && $_GET['v'] > 0 && $_GET['v'] <= 4) {
@@ -34,7 +35,7 @@
 		<!-- <div class="MastheadOverlays-buyAlbum">
 		</div>
 		-->
-		<div class="MastheadOverlays-title MastheadOverlays-title--home">
+		<div class="MastheadOverlays-title <?php echo $titleBannerClass; ?>">
 			<?php echo $titleBanner;?>
 		</div>
 	</div>

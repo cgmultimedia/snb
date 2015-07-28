@@ -6,7 +6,7 @@
     $menu[$i++] = array("title" => "On Tour",           "url" => "?page_id=5");
     $menu[$i++] = array("title" => "Videos",            "url" => "?page_id=6");
     $menu[$i++] = array("title" => "Pictures",          "url" => "?page_id=13");
-    $menu[$i++] = array("title" => "Big Yellow Boot",   "url" => "?page_id=14");
+    $menu[$i++] = array("title" => "Big Yellow Boot",   "url" => "?page_id=1");
     $menu[$i++] = array("title" => "News",              "url" => "?page_id=12");
     $menu[$i++] = array("title" => "Press",             "url" => "?page_id=7");
     $menu[$i++] = array("title" => "Contact",           "url" => "?page_id=14");

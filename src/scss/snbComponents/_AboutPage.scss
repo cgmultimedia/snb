@@ -5,8 +5,7 @@ $CellFixedPaddingBottom             : $StopCellGrowthWidth * 0.62; // NOTE: same
 $CellPaddingBottom--yellowboot      : 70%; // SAME as modifed rav below: (70%)
 $CellFixedPaddingBottom--yellowboot : $StopCellGrowthWidth * 0.70; // NOTE: same as above: $CellPaddingBottom--yellowboot;
 
-$AboutPage-background-blue   : #5B96C5;
-$AboutPage-background-yellow : #F0D53D;
+//$PressPage-background; background-color: $background-AboutPage-blue;
 @include keyframes(rockFrame) {
   0%{transform: rotate(5deg)}
   50%{transform: rotate(-5deg)}
@@ -37,7 +36,7 @@ $AboutPage-background-yellow : #F0D53D;
 
 
 		&--splash {
-			background-color: $AboutPage-background-blue;
+			background-color: $background-AboutPage-blue;
 			background-image : url("../media/img/about/background-blue.jpg");
 
 			&-title {
@@ -69,7 +68,7 @@ $AboutPage-background-yellow : #F0D53D;
 		}
 
 		&--boots {
-			background-color: $AboutPage-background-yellow;
+			background-color: $background-AboutPage-yellow;
 			background-image : url("../media/img/about/background-yellow.jpg");
 			
 			&-title {
@@ -129,7 +128,7 @@ $AboutPage-background-yellow : #F0D53D;
 
 		
 		&--friends {
-			background-color: $AboutPage-background-blue;
+			background-color: $background-AboutPage-blue;
 			background-image : url("../media/img/about/background-blue.jpg");
 			
 			&-title {
@@ -207,7 +206,7 @@ $AboutPage-background-yellow : #F0D53D;
 		}
 
 		&--awards {
-			background-color: $AboutPage-background-yellow;
+			background-color: $background-AboutPage-yellow;
 		    background-image: url("../media/img/about/background-yellow.jpg");
 		    &-title {
 		        display: block;
@@ -287,7 +286,7 @@ $AboutPage-background-yellow : #F0D53D;
 		}
 
 		&--albums {
-			background-color: $AboutPage-background-yellow;
+			background-color: $background-AboutPage-yellow;
 			background-image: url("../media/img/about/background-yellow.jpg");
 
 			&-title {
@@ -334,7 +333,7 @@ $AboutPage-background-yellow : #F0D53D;
 		}
 
 		&--babysplash {
-		    background-color: $AboutPage-background-blue;
+		    background-color: $background-AboutPage-blue;
 		    background-image: url("../media/img/about/background-blue.jpg");
 		    &-title {
 		        display: block;
@@ -425,7 +424,7 @@ $AboutPage-background-yellow : #F0D53D;
 		}
 
 		&--babyboots {
-			background-color: $AboutPage-background-yellow;
+			background-color: $background-AboutPage-yellow;
 		    background-image: url("../media/img/about/background-yellow.jpg");
 
 		    &-title {
@@ -497,7 +496,7 @@ $AboutPage-background-yellow : #F0D53D;
 		}
 
 		&--recording {
-		    background-color: $AboutPage-background-blue;
+		    background-color: $background-AboutPage-blue;
 		    background-image: url("../media/img/about/background-blue.jpg");
 		    &-title {
 		        display: block;
