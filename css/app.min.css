@@ -136,7 +136,7 @@ body{font-family:Quicksand,"Roboto Condensed",Roboto,HelveticaNeue,"Helvetica Ne
 #main,.l-wrapper{position:relative}
 #hub-left-container,#hub-snb-rock-img,#hub-title,#menu_treehouse,.CloseButton,.hub_type_Press{background-repeat:no-repeat}
 .l-wrapper{margin:auto;display:block;background-color:#fff;z-index:3}
-@media (max-width:621px){.l-wrapper{position:relative;-webkit-transition:-webkit-transform 1s ease;-moz-transition:-moz-transform 1s ease;transition:transform 1s ease;-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1);opacity:1;-webkit-transform-origin:50% 0;-moz-transform-origin:50% 0;-ms-transform-origin:50% 0;-o-transform-origin:50% 0;transform-origin:50% 0;background-color:#fff}
+@media (max-width:750px){.l-wrapper{position:relative;-webkit-transition:-webkit-transform 1s ease;-moz-transition:-moz-transform 1s ease;transition:transform 1s ease;-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);transform:scale(1);opacity:1;-webkit-transform-origin:50% 0;-moz-transform-origin:50% 0;-ms-transform-origin:50% 0;-o-transform-origin:50% 0;transform-origin:50% 0;background-color:#fff}
 }
 a,a:active,a:hover,a:link,a:visited{outline:0;border:0;color:#428ada;text-decoration:underline}
 a:hover{opacity:.95}
@@ -216,9 +216,7 @@ a:hover{opacity:.95}
 }
 @media (max-width:800px){.SNBLogo{font-size:.7em}
 }
-@media (max-width:725px){.SNBLogo{font-size:.6em}
-}
-@media (max-width:621px){.SNBLogo{position:fixed;top:1em;left:5em;left:50%;margin-left:-12em;font-size:.2em;z-index:8}
+@media (max-width:750px){.SNBLogo{position:fixed;top:1em;left:5em;left:50%;margin-left:-12em;font-size:.2em;z-index:8}
 }
 .Grid{position:relative;margin:0}
 .wookmark-placeholder{-moz-transition:left .3s ease-out,top .3s ease-out;-o-transition:left .3s ease-out,top .3s ease-out;-webkit-transition:left .3s ease-out,top .3s ease-out;transition:left .3s ease-out,top .3s ease-out}
@@ -309,9 +307,9 @@ a:hover{opacity:.95}
 #burger.active .bar,.mobile-menu-trigger:checked+.banner #burger .bar{-webkit-transform:translateY(50%);-ms-transform:translateY(50%);transform:translateY(50%)}
 #burger.active .bar1,.mobile-menu-trigger:checked+.banner #burger .bar1{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
 #burger.active .bar2,#burger.active .bar3,.mobile-menu-trigger:checked+.banner #burger .bar2,.mobile-menu-trigger:checked+.banner #burger .bar3{-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg)}
-.NavArea{position:relative;margin-top:-2px;z-index:7;height:5em}
+.NavArea{position:relative;margin-top:-2px;z-index:7;height:5.6em}
 .NavArea a{text-decoration:none}
-.NavArea-container{font-family:'Love Ya Like A Sister',cursive;font-size:2.5em;display:block;height:2em}
+.NavArea-container{font-family:'Love Ya Like A Sister',cursive;font-size:2.8em;display:block;height:2em}
 .NavArea-container-logo{position:static;display:inline-block;width:2.7em;margin-right:10px;-webkit-transform:translate(-20em,-.2em);-moz-transform:translate(-20em,-.2em);-ms-transform:translate(-20em,-.2em);-o-transform:translate(-20em,-.2em);transform:translate(-20em,-.2em)}
 .NavArea-container-logo .SNBLogo{display:inline-block;position:static;width:100%}
 .NavArea-container-logo .SNBLogo-img{margin-top:.2em}
@@ -320,25 +318,31 @@ a:hover{opacity:.95}
 .NavArea-container-menu-x{display:inline-block;border:1px solid #666;border-left:transparent;-moz-border-radius:0 40px 40px 0;-webkit-border-radius:0 40px 40px 0;-ms-border-radius:0 40px 40px 0;border-radius:0 40px 40px 0}
 .NavArea-container-menu-x-char{opacity:0}
 .NavArea-container-nav{background-position:top center;background-size:auto 2.5em;background-repeat-y:no-repeat;width:100%;height:2em;background-color:#F9EB30;white-space:nowrap}
-.NavArea-container-nav ul{display:inline-block;list-style:none;margin:0;padding:.5em 0 0;white-space:nowrap;-webkit-transform:translate(-1.4em,0);-moz-transform:translate(-1.4em,0);-ms-transform:translate(-1.4em,0);-o-transform:translate(-1.4em,0);transform:translate(-1.4em,0)}
+.NavArea-container-nav ul{display:inline-block;list-style:none;margin:0;padding:.5em 0 0;white-space:nowrap;-webkit-transform:translate(-1.6em,0);-moz-transform:translate(-1.6em,0);-ms-transform:translate(-1.6em,0);-o-transform:translate(-1.6em,0);transform:translate(-1.6em,0)}
 .NavArea-container-nav ul li{display:inline;margin:0}
 .NavArea-container-nav ul li a,.NavArea-container-nav ul li a:hover{margin:0 10px;padding:0 2px;color:#428ada}
 .NavArea-container-nav ul li a:hover{text-decoration:underline}
 .NavAreaMobile a,.PressPage-content>a{text-decoration:none}
-@media (max-width:1200px){.NavArea{height:4em}
-.NavArea-container{font-size:2em}
+@media (max-width:1525px){.NavArea{height:5em}
+.NavArea-container{font-size:2.5em}
 }
-@media (max-width:1050px){.NavArea{height:3.5em}
-.NavArea-container{font-size:1.75em}
+@media (max-width:1310px){.NavArea{height:4.4em}
+.NavArea-container{font-size:2.2em}
 }
-@media (max-width:900px){.NavArea{height:3em}
-.NavArea-container{font-size:1.5em}
+@media (max-width:1200px){.NavArea{height:3.8em}
+.NavArea-container{font-size:1.9em}
 }
-@media (max-width:800px){.NavArea{height:2.6em}
-.NavArea-container{font-size:1.3em}
+@media (max-width:1050px){.NavArea{height:3.44em}
+.NavArea-container{font-size:1.72em}
 }
-@media (max-width:725px){.NavArea{height:2.2em}
-.NavArea-container{font-size:1.1em}
+@media (max-width:975px){.NavArea{height:3.1em}
+.NavArea-container{font-size:1.55em}
+}
+@media (max-width:900px){.NavArea{height:2.66em}
+.NavArea-container{font-size:1.33em}
+}
+@media (max-width:800px){.NavArea{height:2.4em}
+.NavArea-container{font-size:1.2em}
 }
 .NavArea--sticky .NavArea-container{position:fixed;top:0;left:0;margin-top:0;width:100%}
 .NavArea--sticky .NavArea-container-nav{position:fixed;z-index:9999;top:0;left:0;background-color:#F9EB30;width:100%;border-bottom:1px solid #93C3F7}
@@ -350,7 +354,7 @@ a:hover{opacity:.95}
 .NavArea-logo{display:inline-block;width:3em;position:relative}
 .NavArea-logo .SNBLogo{display:inline-block;width:100%;position:static}
 .NavAreaMobile{display:none}
-@media (max-width:621px){.NavArea{display:none}
+@media (max-width:750px){.NavArea{display:none}
 .NavAreaMobile,.NavAreaMobile-container,.NavAreaMobile-mobileBar{width:100%;position:fixed;top:0;left:0}
 .NavAreaMobile{display:block;height:50px;background-color:#F9EB30;font-family:'Love Ya Like A Sister',cursive;font-size:1em;z-index:7}
 .NavAreaMobile-container{right:0;bottom:0;height:100%;background-color:#F9EB30;padding-bottom:70px;z-index:5;-webkit-transform-origin:center top;-moz-transform-origin:center top;-ms-transform-origin:center top;-o-transform-origin:center top;transform-origin:center top;-webkit-transform:translateY(-100%);-moz-transform:translateY(-100%);-ms-transform:translateY(-100%);-o-transform:translateY(-100%);transform:translateY(-100%);-moz-transition:all 800ms ease-in-out;-o-transition:all 800ms ease-in-out;-webkit-transition:all 800ms ease-in-out;transition:all 800ms ease-in-out}
@@ -374,7 +378,7 @@ a:hover{opacity:.95}
 .Masthead-video-video{position:absolute;top:-3.4%;bottom:0;left:0;right:0;background-color:#fff!important}
 .Masthead-video-aspectRatioPusher{background-color:#fff;margin-top:52.34%}
 .u-isMobile .Masthead .SNBLogo{display:none}
-@media (max-width:621px){.Masthead{margin-top:50px}
+@media (max-width:750px){.Masthead{margin-top:50px}
 .Masthead .SNBLogo{display:none}
 }
 .MastheadOverlays{position:absolute;top:0;left:0;right:0;bottom:0;height:100%;width:100%}
@@ -383,9 +387,9 @@ a:hover{opacity:.95}
 .u-isMobile .MastheadOverlays-buyAlbum{top:62%}
 .MastheadOverlays-title{text-align:center;padding:3% 3% 5%;bottom:0;height:15%;width:50%;margin-left:-28%;font-family:'Love Ya Like A Sister',cursive;color:#428ada;background-image:url(../media/img/masthead/titleBanner.png);background-repeat:no-repeat;font-size:8vw}
 .MastheadOverlays-title--bigYellowBoot{font-size:7vw}
-@media (max-width:621px){.u-isMobile .MastheadOverlays-title{top:70%;font-size:11vw;text-align:center;padding:5%;height:10%;width:70%;margin-left:-40%}
+@media (max-width:750px){.u-isMobile .MastheadOverlays-title{top:70%;font-size:11vw;text-align:center;padding:5%;height:10%;width:70%;margin-left:-40%}
 }
-.Footer{background-color:#428ada;background-image:-webkit-linear-gradient(top,#428ada,#fff);background-image:linear-gradient(to bottom,#428ada,#fff);width:100%;padding:30px 10px}
+.Footer{background-color:#428ada;background-image:-webkit-linear-gradient(top,#428ada,#fff);background-image:linear-gradient(to bottom,#428ada,#fff);width:100%;padding:30px 0}
 .Loading{width:110px;height:110px;background-image:url(../media/img/general/loading-120.gif);background-color:#fff;background-position:center;border-radius:50%;top:50%;margin-top:-55px;margin-left:-55px}
 .Modal-closeButton{display:block;position:absolute;top:2px;right:2px;background-color:#F9EB30;width:35px;height:35px;cursor:pointer;border-radius:50%}
 .Modal-closeButton::after,.Modal-closeButton::before{content:' ';border-radius:2px;width:25px;height:3px;background:#428ada;display:block;position:absolute;top:50%;left:50%;margin-left:-13px;margin-top:-2px}

@@ -1007,7 +1007,7 @@ body {
 #main {
   position: relative; }
 
-@media (max-width: 621px) {
+@media (max-width: 750px) {
   .l-wrapper {
     position: relative;
     -webkit-transition: -webkit-transform 1s ease;
@@ -1699,10 +1699,10 @@ File: _Logo.scss
   @media (max-width: 800px) {
     .SNBLogo {
       font-size: .7em; } }
-  @media (max-width: 725px) {
+  @media (max-width: 750px) {
     .SNBLogo {
       font-size: 0.6em; } }
-  @media (max-width: 621px) {
+  @media (max-width: 750px) {
     .SNBLogo {
       position: fixed;
       top: 1em;
@@ -2144,12 +2144,12 @@ File: _NavArea.scss
   position: relative;
   margin-top: -2px;
   z-index: 7;
-  height: 5em; }
+  height: 5.6em; }
   .NavArea a {
     text-decoration: none; }
   .NavArea-container {
     font-family: 'Love Ya Like A Sister', cursive;
-    font-size: 2.5em;
+    font-size: 2.8em;
     display: block;
     text-align: center;
     height: 2em; }
@@ -2206,11 +2206,11 @@ File: _NavArea.scss
         padding: 0;
         padding-top: 0.5em;
         white-space: nowrap;
-        -webkit-transform: translate(-1.4em, 0);
-        -moz-transform: translate(-1.4em, 0);
-        -ms-transform: translate(-1.4em, 0);
-        -o-transform: translate(-1.4em, 0);
-        transform: translate(-1.4em, 0); }
+        -webkit-transform: translate(-1.65em, 0);
+        -moz-transform: translate(-1.65em, 0);
+        -ms-transform: translate(-1.65em, 0);
+        -o-transform: translate(-1.65em, 0);
+        transform: translate(-1.65em, 0); }
         .NavArea-container-nav ul li {
           display: inline;
           margin: 0; }
@@ -2220,31 +2220,41 @@ File: _NavArea.scss
             color: #428ada; }
           .NavArea-container-nav ul li a:hover {
             text-decoration: underline; }
+  @media (max-width: 1525px) {
+    .NavArea {
+      height: 5em; }
+    .NavArea-container {
+      font-size: 2.5em; } }
+  @media (max-width: 1310px) {
+    .NavArea {
+      height: 4.4em; }
+    .NavArea-container {
+      font-size: 2.2em; } }
   @media (max-width: 1200px) {
     .NavArea {
-      height: 4em; }
+      height: 3.8em; }
     .NavArea-container {
-      font-size: 2em; } }
+      font-size: 1.9em; } }
   @media (max-width: 1050px) {
     .NavArea {
-      height: 3.5em; }
+      height: 3.44em; }
     .NavArea-container {
-      font-size: 1.75em; } }
+      font-size: 1.72em; } }
+  @media (max-width: 975px) {
+    .NavArea {
+      height: 3.1em; }
+    .NavArea-container {
+      font-size: 1.55em; } }
   @media (max-width: 900px) {
     .NavArea {
-      height: 3em; }
+      height: 2.66em; }
     .NavArea-container {
-      font-size: 1.5em; } }
+      font-size: 1.33em; } }
   @media (max-width: 800px) {
     .NavArea {
-      height: 2.6em; }
+      height: 2.4em; }
     .NavArea-container {
-      font-size: 1.3em; } }
-  @media (max-width: 725px) {
-    .NavArea {
-      height: 2.2em; }
-    .NavArea-container {
-      font-size: 1.1em; } }
+      font-size: 1.2em; } }
   .NavArea--sticky .NavArea-container {
     position: fixed;
     top: 0;
@@ -2294,7 +2304,7 @@ File: _NavArea.scss
       width: 100%;
       position: static; }
 
-@media (max-width: 621px) {
+@media (max-width: 750px) {
   .NavArea {
     display: none; } }
 
@@ -2399,7 +2409,7 @@ File: _NavAreaMobile.scss
   .NavAreaMobile a {
     text-decoration: none; }
 
-@media (max-width: 621px) {
+@media (max-width: 750px) {
   .NavAreaMobile {
     display: block;
     position: fixed;
@@ -2615,7 +2625,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
       /* 4:3 aspect ratio */ }
   .u-isMobile .Masthead .SNBLogo {
     display: none; }
-  @media (max-width: 621px) {
+  @media (max-width: 750px) {
     .Masthead {
       margin-top: 50px; }
     .Masthead .SNBLogo {
@@ -2663,7 +2673,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
     padding-bottom: 5%; }
     .MastheadOverlays-title--bigYellowBoot {
       font-size: 7vw; }
-  @media (max-width: 621px) {
+  @media (max-width: 750px) {
     .u-isMobile .MastheadOverlays-title {
       top: 70%;
       font-size: 11vw;
@@ -2680,8 +2690,8 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
   text-align: center;
   width: 100%;
   padding: 30px;
-  padding-left: 10px;
-  padding-right: 10px; }
+  padding-left: 0;
+  padding-right: 0; }
 
 .Loading {
   display: block;

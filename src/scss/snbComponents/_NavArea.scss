@@ -14,7 +14,7 @@ $NavArea-li-marginPadding-left:  $NavArea-li-margin-left  + $NavArea-li-margin-l
 	position: relative;
 	margin-top:-2px;
 	z-index: index($zIndexElements--bodyElements, 'NavArea');
-	height: 5em;
+	height: 5.6em;
 
 	& a {
 		text-decoration: none;
@@ -22,7 +22,7 @@ $NavArea-li-marginPadding-left:  $NavArea-li-margin-left  + $NavArea-li-margin-l
 	
 	&-container {
 		font-family: $fontFamily-NavArea-container; 
-		font-size: 2.5em;
+		font-size: 2.8em;
 		display: block;
 		text-align: center;
 		height: 2em;
@@ -94,7 +94,7 @@ $NavArea-li-marginPadding-left:  $NavArea-li-margin-left  + $NavArea-li-margin-l
 				padding-top: 0.5em;
 				//overflow: hidden;
 				white-space: nowrap;
-				@include transform(translate(-1.4em, 0));
+				@include transform(translate(-1.65em, 0));
 				@extend .u-extend-transition-all--fast;
 
 				& li {
@@ -115,51 +115,83 @@ $NavArea-li-marginPadding-left:  $NavArea-li-margin-left  + $NavArea-li-margin-l
 			}
 		}	
 	}
+
+	//font-size:2.0em;
+	@media (max-width: 1525px) {
+		& {
+			height: 5em;
+		}
+		&-container {
+			font-size:2.5em;
+		}	    
+	}
+
+	//font-size:2.0em;
+	@media (max-width: 1310px) {
+		& {
+			height: 4.4em;
+		}
+		&-container {
+			font-size:2.2em;
+		}	    
+	}
+
 		//font-size:2.0em;
 	@media (max-width: $switchWidthDesktopLarge) {
 		& {
-			height: 4em;
+			height: 3.8em;
 		}
 		&-container {
-			font-size:2.0em;
+			font-size:1.9em;
 		}	    
 	}
 
 	@media (max-width: $switchWidthDesktopMedium) {
 		& {
-			height: 3.5em;
+			height: 3.44em;
 		}
 		&-container {
-			font-size:1.75em;
+			font-size:1.72em;
+		}	    
+	}
+
+
+	@media (max-width: ($switchWidthDesktop + $switchWidthDesktopMedium) / 2) {
+	//@media (max-width: 975px) {
+		& {
+			height: 3.10em;
+		}
+		&-container {
+			font-size:1.55em;
 		}	    
 	}
 
 	@media (max-width: $switchWidthDesktop) {
 		& {
-			height: 3em;
+			height: 2.66em;
 		}
 		&-container {
-			font-size:1.50em
+			font-size:1.33em
 		}	    
 	}
 
 	@media (max-width: $switchWidthiPad) {
 		& {
-			height: 2.6em;
+			height: 2.4em;
 		}
 		&-container {
-			font-size:1.30em
+			font-size:1.20em
 		}	    
 	}
 
-	@media (max-width: $switchWidthiPad2) {
-		& {
-			height: 2.2em;
-		}
-		&-container {
-			font-size:1.10em
-		}	    
-	}
+	// @media (max-width: $switchWidthiPad2) {
+	// 	& {
+	// 		height: 2.2em;
+	// 	}
+	// 	&-container {
+	// 		font-size:1.1em
+	// 	}	    
+	// }
 
 	&--sticky {
 		

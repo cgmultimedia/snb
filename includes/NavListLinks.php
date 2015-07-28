@@ -11,12 +11,18 @@
     $menu[$i++] = array("title" => "Press",             "url" => "?page_id=7");
     $menu[$i++] = array("title" => "Contact",           "url" => "?page_id=14");
     $menu[$i++] = array("title" => "Store",             "url" => "http://store.splashnboots.com/merch");
+
+    
+    // <li class="navExtraSpaceTop">
+    //     &nbsp;
+    // </li>
+    
+    // <li class="navExtraSpaceBottom">
+    //     &nbsp;
+    // </li>
 ?>
 
 <ul>
-    <li class="navExtraSpaceTop">
-        &nbsp;
-    </li>
     <?php
         for($i=0; $i<count($menu); $i++) {
             $class = "menu_item";
@@ -28,8 +34,4 @@
             echo "</li>";
         }
     ?>
-    
-    <li class="navExtraSpaceBottom">
-        &nbsp;
-    </li>
 </ul>
