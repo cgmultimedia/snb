@@ -261,8 +261,15 @@ $CellFixedPaddingBottom--yellowboot : $StopCellGrowthWidth * 0.70; // NOTE: same
 		}
 
 		&--worldMap {
-			background-image: url("../media/img/about/world-map.gif");
-			padding-bottom: 59%;
+			//background-image: url("../media/img/about/background-blue.jpg");
+			//background-image: url("../media/img/about/world-map.gif");
+			//padding-bottom: 59%;
+			background-color: $background-bluePage;
+    		background-image: url("../media/img/general/background-blue-med.jpg");
+
+			padding-bottom:40px;
+			padding-bottom:12vw!important;
+			height: 600px!important;
 
 			&-title {
 				// display: block;
@@ -273,8 +280,8 @@ $CellFixedPaddingBottom--yellowboot : $StopCellGrowthWidth * 0.70; // NOTE: same
 				// margin-left:-20px;
 				// text-align: center;
 				display: block;
-				position: absolute;
-				top: 1.8%;
+				position: relative;
+				top: 0;//.3vw;
 				left: 50%;
 				width: 80%;
 				margin-left: -40%;
@@ -282,6 +289,22 @@ $CellFixedPaddingBottom--yellowboot : $StopCellGrowthWidth * 0.70; // NOTE: same
 				text-align: center;
 				color: $color-yellowSNB;
 				text-shadow: 3px 3px 1px $color-blueSNB;
+			}
+			&-text {
+				position: relative;
+				font-family: $fontFamily-AboutPage-cell-subtitle;
+		        font-size: 3.5vw;
+		        color: $color-yellowSNB;
+		        text-align: center;
+		        padding-top:2.7vw;
+			}
+			&-map {
+				width: 96%;
+				position: relative;
+				top:3vw;
+				left:50%;
+				margin-left: -48%;
+				border:2px solid $color-yellowSNB;
 			}
 		}
 
@@ -352,7 +375,7 @@ $CellFixedPaddingBottom--yellowboot : $StopCellGrowthWidth * 0.70; // NOTE: same
 		        display: block;
 		        position: absolute;
 		        top: 55%;
-		        left: 48%;
+		        left: 47%;
 		        width: 52%;
 		        z-index: 20;
 		        text-align: center;
@@ -651,9 +674,9 @@ $CellFixedPaddingBottom--yellowboot : $StopCellGrowthWidth * 0.70; // NOTE: same
 				}
 			}
 
-			&--worldMap {
-				padding-bottom: 590px;
-			}
+			// &--worldMap {
+			// 	padding-bottom: 590px;
+			// }
 
 			&--babysplash {
 				&-title2 {
@@ -663,6 +686,12 @@ $CellFixedPaddingBottom--yellowboot : $StopCellGrowthWidth * 0.70; // NOTE: same
 					&-reg {
 						font-size: 2.1em;
 					}
+				}
+			}
+
+			&--worldMap {
+				&-text { 
+					font-size: 2.69em
 				}
 			}
 

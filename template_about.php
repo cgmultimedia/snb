@@ -9,7 +9,9 @@ Template Name: Template - About
 	//$PageTitle="New Page Title";
 	function customPageHeader() { 
 		global $templateDir;
-
+		?>
+		<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&amp;v=3"></script>
+		<?php
 		// Put page specific css here.
 		// ... Or page specific CSS that NEEDS to be in head...
 		// ... otherwise put it in the customerPageFooter function.

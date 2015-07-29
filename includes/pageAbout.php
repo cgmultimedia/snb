@@ -6,6 +6,15 @@
 ?>      
 
 <div class="AboutPage">
+
+    <!-- <div class="AboutPage-cell AboutPage-cell- -worldMap">
+        <div class="AboutPage-cell-wrapper">
+            <div class="AboutPage-cell- -worldMap-title AboutPage-cell-title">
+                Map Coming Soon!
+            </div>
+        </div>
+    </div> -->
+
     <div class="AboutPage-cell AboutPage-cell--splash">
         <div class="AboutPage-cell-wrapper">
             <img class="AboutPage-cell--splash-paper" src="<?php echo $aboutImgDir."splash-paper-high.jpg";?>"/>
@@ -65,10 +74,18 @@
             </div>
         </div>
     </div>
-    <div class="AboutPage-cell AboutPage-cell--worldMap">
+    <div class="AboutPage-cell AboutPage-cell--worldMap">">
+    
+        <div class="AboutPage-cell--worldMap-title AboutPage-cell-title">
+            Map of Wonders!
+        </div>
+        <div class="AboutPage-cell--worldMap-text">
+            Check out some of the places we've been! 
+        </div>
+        
         <div class="AboutPage-cell-wrapper">
-            <div class="AboutPage-cell--worldMap-title AboutPage-cell-title">
-                Map Coming Soon!
+            <div class="AboutPage-cell--worldMap-map">
+                <?php include('pageAboutMap.php'); ?>
             </div>
         </div>
     </div>

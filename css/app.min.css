@@ -318,7 +318,7 @@ a:hover{opacity:.95}
 .NavArea-container-menu-x{display:inline-block;border:1px solid #666;border-left:transparent;-moz-border-radius:0 40px 40px 0;-webkit-border-radius:0 40px 40px 0;-ms-border-radius:0 40px 40px 0;border-radius:0 40px 40px 0}
 .NavArea-container-menu-x-char{opacity:0}
 .NavArea-container-nav{background-position:top center;background-size:auto 2.5em;background-repeat-y:no-repeat;width:100%;height:2em;background-color:#F9EB30;white-space:nowrap}
-.NavArea-container-nav ul{display:inline-block;list-style:none;margin:0;padding:.5em 0 0;white-space:nowrap;-webkit-transform:translate(-1.6em,0);-moz-transform:translate(-1.6em,0);-ms-transform:translate(-1.6em,0);-o-transform:translate(-1.6em,0);transform:translate(-1.6em,0)}
+.NavArea-container-nav ul{display:inline-block;list-style:none;margin:0;padding:.5em 0 0;white-space:nowrap;-webkit-transform:translate(-1.65em,0);-moz-transform:translate(-1.65em,0);-ms-transform:translate(-1.65em,0);-o-transform:translate(-1.65em,0);transform:translate(-1.65em,0)}
 .NavArea-container-nav ul li{display:inline;margin:0}
 .NavArea-container-nav ul li a,.NavArea-container-nav ul li a:hover{margin:0 10px;padding:0 2px;color:#428ada}
 .NavArea-container-nav ul li a:hover{text-decoration:underline}
@@ -439,26 +439,27 @@ a:hover{opacity:.95}
 .AboutPage-cell--boots-paper{display:block;position:absolute;top:10%;left:55%;width:38%;transform:rotate(2deg)}
 .AboutPage-cell--bigyellowboot{background-image:url(../media/img/about/yellowboot-background-2.jpg);padding-bottom:70%}
 .AboutPage-cell--bigyellowboot-text{position:absolute;bottom:1.5%;right:1.5%;color:#F9EB30;text-align:right}
-.AboutPage-cell--awards-title,.AboutPage-cell--friends-title-text,.AboutPage-cell--worldMap-title{display:block;position:absolute;text-align:center}
 .AboutPage-cell--bigyellowboot-text-header{font-size:5vw;text-shadow:3px 3px 0 #3678C2}
 .AboutPage-cell--bigyellowboot-text-reg{font-family:'Coming Soon',cursive;font-size:3.2vw;text-shadow:1px 1px 0 #3678C2}
 .AboutPage-cell--friends{background-color:#5B96C5;background-image:url(../media/img/about/background-blue.jpg)}
 .AboutPage-cell--friends-title{display:block;position:absolute;top:38%;left:49%;width:64%;margin-left:-33%;z-index:20;font-size:5vw;color:#3678C2;transform:rotate(-3.4deg)}
-.AboutPage-cell--friends-title-text{top:0;left:0;z-index:20;width:100%;transform:rotate(2deg);margin-top:1.6%}
+.AboutPage-cell--friends-title-text{display:block;position:absolute;top:0;left:0;z-index:20;width:100%;text-align:center;transform:rotate(2deg);margin-top:1.6%}
 .AboutPage-cell--friends-title-img{display:block;position:absolute;top:0;left:0;z-index:10;width:100%}
 .AboutPage-cell--friends-sharonloisbram{display:block;position:absolute;top:4%;left:4%;width:47%;transform:rotate(-4deg);z-index:10}
 .AboutPage-cell--friends-treehouse{display:block;position:absolute;top:5%;left:56%;width:40%;transform:rotate(5deg)}
 .AboutPage-cell--friends-fred{display:block;position:absolute;top:54%;left:8%;width:40%;transform:rotate(-1deg)}
 .AboutPage-cell--friends-wiggles{display:block;position:absolute;top:46%;left:53%;width:42%;transform:rotate(3deg)}
 .AboutPage-cell--awards{background-color:#F0D53D;background-image:url(../media/img/about/background-yellow.jpg)}
-.AboutPage-cell--awards-title{top:1.8%;left:50%;width:80%;margin-left:-40%;z-index:20;color:#3678C2}
+.AboutPage-cell--awards-title{display:block;position:absolute;top:1.8%;left:50%;width:80%;margin-left:-40%;z-index:20;text-align:center;color:#3678C2}
 .AboutPage-cell--awards-title-reg{font-size:2.7vw}
 .AboutPage-cell--awards-juno1{display:block;position:absolute;top:28%;left:7%;width:29%;transform:rotate(-10deg);z-index:1}
 .AboutPage-cell--awards-juno2{display:block;position:absolute;top:31%;left:33%;width:19%;transform:rotate(-3deg);z-index:4}
 .AboutPage-cell--awards-indies{display:block;position:absolute;top:26%;left:49%;width:27%;transform:rotate(4deg);z-index:3}
 .AboutPage-cell--awards-juno3{display:block;position:absolute;top:48%;left:72%;width:21%;transform:rotate(9deg);z-index:4}
-.AboutPage-cell--worldMap{background-image:url(../media/img/about/world-map.gif);padding-bottom:59%}
-.AboutPage-cell--worldMap-title{top:1.8%;left:50%;width:80%;margin-left:-40%;z-index:20;color:#F9EB30;text-shadow:3px 3px 1px #428ada}
+.AboutPage-cell--worldMap{background-color:#5B96C5;background-image:url(../media/img/general/background-blue-med.jpg);padding-bottom:12vw!important;height:600px!important}
+.AboutPage-cell--worldMap-title{display:block;position:relative;top:.3vw;left:50%;width:80%;margin-left:-40%;z-index:20;text-align:center;color:#F9EB30;text-shadow:3px 3px 1px #428ada}
+.AboutPage-cell--worldMap-text{position:relative;font-family:'Coming Soon',cursive;font-size:3.5vw;color:#F9EB30;text-align:center;padding-top:2.7vw}
+.AboutPage-cell--worldMap-map{width:96%;position:relative;top:3vw;left:50%;margin-left:-48%;border:2px solid #F9EB30}
 .AboutPage-cell--albums{background-color:#F0D53D;background-image:url(../media/img/about/background-yellow.jpg)}
 .AboutPage-cell--albums-title{display:block;position:absolute;top:1.8%;left:50%;width:80%;margin-left:-40%;z-index:20;text-align:center;color:#428ada}
 .AboutPage-cell--babysplash-title,.AboutPage-cell--babysplash-title2{display:block;position:absolute;z-index:20;text-align:center;color:#F9EB30}
@@ -469,7 +470,7 @@ a:hover{opacity:.95}
 .AboutPage-cell--albums-album-img{width:100%;border-radius:3%}
 .AboutPage-cell--babysplash{background-color:#5B96C5;background-image:url(../media/img/about/background-blue.jpg)}
 .AboutPage-cell--babysplash-title{top:11.8%;left:4%;width:54%}
-.AboutPage-cell--babysplash-title2{top:55%;left:48%;width:52%;transform:rotate(1deg)}
+.AboutPage-cell--babysplash-title2{top:55%;left:47%;width:52%;transform:rotate(1deg)}
 .AboutPage-cell--babysplash-title2-header{font-size:3.7vw}
 .AboutPage-cell--babyboots-title-reg,.AboutPage-cell--babysplash-title2-reg{font-family:'Coming Soon',cursive;font-size:2.7vw}
 .AboutPage-cell--babysplash-baby{display:block;position:absolute;top:3%;left:58%;width:27%;z-index:1;-webkit-animation:rockFrame 1.7s infinite;-moz-animation:rockFrame 1.7s infinite;animation:rockFrame 1.7s infinite;-webkit-animation-timing-function:ease-in-out;-moz-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out}
@@ -512,9 +513,10 @@ a:hover{opacity:.95}
 .AboutPage-cell--bigyellowboot-text-reg{font-size:2.7em;text-shadow:2px 2px 1px #3678C2}
 .AboutPage-cell--friends-title{font-size:3.85em}
 .AboutPage-cell--awards-title-reg{font-size:2.07em}
-.AboutPage-cell--worldMap{padding-bottom:590px}
 .AboutPage-cell--babysplash-title2-header{font-size:2.8em}
-.AboutPage-cell--babyboots-title-reg,.AboutPage-cell--babysplash-title2-reg{font-size:2.1em}
+.AboutPage-cell--babysplash-title2-reg{font-size:2.1em}
+.AboutPage-cell--worldMap-text{font-size:2.69em}
+.AboutPage-cell--babyboots-title-reg{font-size:2.1em}
 .AboutPage-cell--babyboots-title2-reg{font-size:2.07em}
 .AboutPage-cell--babyboots-title2-header{font-size:2.85em}
 .AboutPage-cell--recording-title-header{font-size:3.3em}
