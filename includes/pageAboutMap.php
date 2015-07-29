@@ -1,5 +1,14 @@
-<?php $mapHeight = "500px";
+<?php 
+require_once("vendor/Mobile_Detect.php"); 
+$detect = new Mobile_Detect; // http://mobiledetect.net/
+$isTablet = $detect->isTablet();
+$isMobile = $detect->isMobile();// && !$isTablet;
 
+if ($isMobile) {
+  $mapHeight = "340px";
+} else {
+  $mapHeight = "500px";
+}
 ?>
 <div id="googft-mapCanvas"></div>
 
@@ -21,7 +30,6 @@
       g = d.getElementsByTagName('body')[0],
       x = w.innerWidth || e.clientWidth || g.clientWidth;
       //y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-
       return x;
   }
 
@@ -54,10 +62,10 @@
     // var rightMostWidth = 1000;
     // var leftMostLong = -90;
     // var leftMostWidth = 500;
-    var rml = -0.2;
-    var rmw = 1000;
-    var lml = -90;
-    var lmw = 500;
+    var rml = -0.2; // rightMostLong
+    var rmw = 1000; // rightMostWidth
+    var lml = -90;  // leftMostLong
+    var lmw = 500;  // leftMostWidth
     var a = (lml - rml) / (lmw - rmw); // NOTE lmw - rmw cannot be zero.
     var b = a * rmw + rml;
 
@@ -143,53 +151,11 @@
       }
     });
 
-// options = $.extend({
-//     scrollwheel: false,
-//     navigationControl: false,
-//     mapTypeControl: false,
-//     scaleControl: false,
-//     draggable: false,
-//     mapTypeId: google.maps.MapTypeId.ROADMAP
-// }, options);
-
-    // if (isMobile) {
-    //   var legend = document.getElementById('googft-legend');
-    //   var legendOpenButton = document.getElementById('googft-legend-open');
-    //   var legendCloseButton = document.getElementById('googft-legend-close');
-    //   if (legend && legend.style) {
-    //     legend.style.display = 'none';
-    //   }
-    //   legendOpenButton.style.display = 'block';
-    //   legendCloseButton.style.display = 'block';
-    //   legendOpenButton.onclick = function() {
-    //     legend.style.display = 'block';
-    //     legendOpenButton.style.display = 'none';
-    //   }
-    //   legendCloseButton.onclick = function() {
-    //     legend.style.display = 'none';
-    //     legendOpenButton.style.display = 'block';
-    //   }
-    // }
   }
 
   google.maps.event.addDomListener(window, 'load', initialize);
 
-  // function initialize() {
-  //   var mapOptions = {
-  //       zoom: 9,
-  //       center: new google.maps.LatLng(28.9285745, 77.09149350000007),
-  //       mapTypeId: google.maps.MapTypeId.TERRAIN
-  //    };
- 
-  //   var map = new google.maps.Map(document.getElementById('location-canvas'), mapOptions);
- 
-  //   var marker = new google.maps.Marker({
-  //       map: map,
-  //       draggable: false,
-  //       position: new google.maps.LatLng(28.9285745, 77.09149350000007)
-  //   });
-  // }
-   
+   <?php if (!$isMobile) { ?>
   google.maps.event.addDomListener(window, 'resize', initialize);
-  //google.maps.event.addDomListener(window, 'load', initialize)
+  <?php } ?>
 </script>
