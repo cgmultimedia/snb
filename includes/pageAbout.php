@@ -83,7 +83,7 @@
             Check out some of the places we've been! 
         </div>
         
-        <div class="AboutPage-cell-wrapper">
+        <div class="AboutPage-cell-wrapper AboutPage-cell--worldMap-wrapper">
             <div class="AboutPage-cell--worldMap-map">
                 <?php include('pageAboutMap.php'); ?>
             </div>

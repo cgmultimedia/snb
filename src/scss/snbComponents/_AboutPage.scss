@@ -268,8 +268,12 @@ $CellFixedPaddingBottom--yellowboot : $StopCellGrowthWidth * 0.70; // NOTE: same
     		background-image: url("../media/img/general/background-blue-med.jpg");
 
 			padding-bottom:40px;
-			padding-bottom:12vw!important;
+			padding-bottom:6vw!important;
 			//height: 600px!important;
+
+			&-wrapper {
+				position: relative!important;
+			}
 
 			&-title {
 				// display: block;
@@ -306,6 +310,7 @@ $CellFixedPaddingBottom--yellowboot : $StopCellGrowthWidth * 0.70; // NOTE: same
 				margin-left: -48%;
 				border:2px solid $color-yellowSNB;
 			}
+
 		}
 
 		&--albums {
