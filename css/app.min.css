@@ -457,7 +457,7 @@ a:hover{opacity:.95}
 .AboutPage-cell--awards-indies{display:block;position:absolute;top:26%;left:49%;width:27%;transform:rotate(4deg);z-index:3}
 .AboutPage-cell--awards-juno3{display:block;position:absolute;top:48%;left:72%;width:21%;transform:rotate(9deg);z-index:4}
 .AboutPage-cell--worldMap{background-color:#5B96C5;background-image:url(../media/img/general/background-blue-med.jpg);padding-bottom:12vw!important;height:600px!important}
-.AboutPage-cell--worldMap-title{display:block;position:relative;top:.3vw;left:50%;width:80%;margin-left:-40%;z-index:20;text-align:center;color:#F9EB30;text-shadow:3px 3px 1px #428ada}
+.AboutPage-cell--worldMap-title{display:block;position:relative;top:0;left:50%;width:80%;margin-left:-40%;z-index:20;text-align:center;color:#F9EB30;text-shadow:3px 3px 1px #428ada}
 .AboutPage-cell--worldMap-text{position:relative;font-family:'Coming Soon',cursive;font-size:3.5vw;color:#F9EB30;text-align:center;padding-top:2.7vw}
 .AboutPage-cell--worldMap-map{width:96%;position:relative;top:3vw;left:50%;margin-left:-48%;border:2px solid #F9EB30}
 .AboutPage-cell--albums{background-color:#F0D53D;background-image:url(../media/img/about/background-yellow.jpg)}

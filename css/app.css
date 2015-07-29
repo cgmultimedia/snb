@@ -3068,8 +3068,7 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
       background-color: #5B96C5;
       background-image: url("../media/img/general/background-blue-med.jpg");
       padding-bottom: 40px;
-      padding-bottom: 12vw !important;
-      height: 600px !important; }
+      padding-bottom: 12vw !important; }
       .AboutPage-cell--worldMap-title {
         display: block;
         position: relative;
