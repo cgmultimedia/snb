@@ -2467,6 +2467,8 @@ File: _NavAreaMobile.scss
             width: 100%;
             vertical-align: middle;
             text-align: center; }
+            .NavAreaMobile-container-nav ul li:first-child {
+              height: 60px; }
             .NavAreaMobile-container-nav ul li span {
               display: table-cell;
               text-align: center;
@@ -2710,8 +2712,8 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
 .Modal-closeButton {
   display: block;
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 5px;
+  right: 5px;
   background-color: #F9EB30;
   width: 35px;
   height: 35px;
@@ -2878,6 +2880,17 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
   100% {
     transform: rotate(5deg); } }
 
+.AboutPage-paperDetails, .AboutPage-cell--splash-paper, .AboutPage-cell--boots-paper {
+  display: block;
+  position: absolute;
+  padding: 3vw;
+  padding-top: 6vw;
+  padding-bottom: 5vw;
+  padding-bottom: 5vw;
+  font-size: 1.9vw;
+  line-height: 3vw;
+  font-family: 'Coming Soon', cursive; }
+
 .AboutPage {
   z-index: 1; }
   .AboutPage-cell {
@@ -2911,12 +2924,19 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         width: 36%;
         transform: rotate(3deg); }
       .AboutPage-cell--splash-paper {
-        display: block;
-        position: absolute;
+        width: 36%;
         top: 13%;
         left: 6%;
-        width: 36%;
-        transform: rotate(-1deg); }
+        transform: rotate(-1deg);
+        background-color: #FDFB94;
+        color: rgba(40, 101, 143, 0.97); }
+        @media (min-width: 1000px) {
+          .AboutPage-cell--splash-paper {
+            width: 380px;
+            font-size: 19px;
+            padding: 30px;
+            padding-top: 60px;
+            line-height: 30px; } }
     .AboutPage-cell--boots {
       background-color: #F0D53D;
       background-image: url("../media/img/about/background-yellow.jpg"); }
@@ -2935,12 +2955,19 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
         width: 40%;
         transform: rotate(-1deg); }
       .AboutPage-cell--boots-paper {
-        display: block;
-        position: absolute;
-        top: 10%;
-        left: 55%;
         width: 38%;
-        transform: rotate(2deg); }
+        top: 10%;
+        left: 53%;
+        transform: rotate(2deg);
+        background-color: white;
+        color: rgba(40, 101, 143, 0.97); }
+        @media (min-width: 1000px) {
+          .AboutPage-cell--boots-paper {
+            width: 380px;
+            font-size: 19px;
+            line-height: 30px;
+            padding: 30px;
+            padding-top: 60px; } }
     .AboutPage-cell--bigyellowboot {
       background-image: url("../media/img/about/yellowboot-background-2.jpg");
       padding-bottom: 70%; }
@@ -3092,10 +3119,10 @@ $NavAreaMobile-nav-item-padding-topbottom : 10px;
       .AboutPage-cell--worldMap-map {
         width: 96%;
         position: relative;
-        top: 3vw;
-        left: 50%;
-        margin-left: -48%;
-        border: 2px solid #F9EB30; }
+        border: 2px solid #F9EB30;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3vw; }
     .AboutPage-cell--albums {
       background-color: #F0D53D;
       background-image: url("../media/img/about/background-yellow.jpg"); }

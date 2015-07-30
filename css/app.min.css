@@ -363,6 +363,7 @@ a:hover{opacity:.95}
 .NavAreaMobile-container-nav a,.NavAreaMobile-container-nav a:active,.NavAreaMobile-container-nav a:hover,.NavAreaMobile-container-nav a:visited{color:#428ada}
 .NavAreaMobile-container-nav ul{display:table;height:100%;width:100%}
 .NavAreaMobile-container-nav ul li{display:table-row;width:100%;vertical-align:middle;text-align:center}
+.NavAreaMobile-container-nav ul li:first-child{height:60px}
 .NavAreaMobile-container-nav ul li span{display:table-cell;text-align:center;vertical-align:middle}
 .NavAreaMobile-container-nav .navExtraSpaceTop{font-size:1px;height:60px}
 .NavAreaMobile-container-nav .navExtraSpaceBottom{font-size:1px;height:10px}
@@ -391,7 +392,7 @@ a:hover{opacity:.95}
 }
 .Footer{background-color:#428ada;background-image:-webkit-linear-gradient(top,#428ada,#fff);background-image:linear-gradient(to bottom,#428ada,#fff);width:100%;padding:30px 0}
 .Loading{width:110px;height:110px;background-image:url(../media/img/general/loading-120.gif);background-color:#fff;background-position:center;border-radius:50%;top:50%;margin-top:-55px;margin-left:-55px}
-.Modal-closeButton{display:block;position:absolute;top:2px;right:2px;background-color:#F9EB30;width:35px;height:35px;cursor:pointer;border-radius:50%}
+.Modal-closeButton{display:block;position:absolute;top:5px;right:5px;background-color:#F9EB30;width:35px;height:35px;cursor:pointer;border-radius:50%}
 .Modal-closeButton::after,.Modal-closeButton::before{content:' ';border-radius:2px;width:25px;height:3px;background:#428ada;display:block;position:absolute;top:50%;left:50%;margin-left:-13px;margin-top:-2px}
 .Modal-closeButton::before{-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg)}
 .Modal-closeButton::after{-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}
@@ -425,6 +426,7 @@ a:hover{opacity:.95}
 @keyframes rockFrame{0%,100%{transform:rotate(5deg)}
 50%{transform:rotate(-5deg)}
 }
+.AboutPage-cell--boots-paper,.AboutPage-cell--splash-paper,.AboutPage-paperDetails{display:block;position:absolute;padding:6vw 3vw 5vw;font-size:1.9vw;line-height:3vw;font-family:'Coming Soon',cursive}
 .AboutPage{z-index:1}
 .AboutPage-cell{position:relative;width:100%;padding-bottom:62%;background-size:100%;font-family:'Love Ya Like A Sister',cursive;z-index:1}
 .AboutPage-cell-wrapper{margin-left:auto;margin-right:auto;width:100%}
@@ -432,11 +434,15 @@ a:hover{opacity:.95}
 .AboutPage-cell--splash{background-color:#5B96C5;background-image:url(../media/img/about/background-blue.jpg)}
 .AboutPage-cell--splash-title{display:block;position:absolute;top:3%;left:50%;transform:rotate(3deg);color:#F9EB30}
 .AboutPage-cell--splash-photo{display:block;position:absolute;top:17%;left:53%;width:36%;transform:rotate(3deg)}
-.AboutPage-cell--splash-paper{display:block;position:absolute;top:13%;left:6%;width:36%;transform:rotate(-1deg)}
+.AboutPage-cell--splash-paper{width:36%;top:13%;left:6%;transform:rotate(-1deg);background-color:#FDFB94;color:rgba(40,101,143,.97)}
+@media (min-width:1000px){.AboutPage-cell--splash-paper{width:380px;font-size:19px;padding:60px 30px 30px;line-height:30px}
+}
 .AboutPage-cell--boots{background-color:#F0D53D;background-image:url(../media/img/about/background-yellow.jpg)}
 .AboutPage-cell--boots-title{display:block;position:absolute;top:4.5%;left:3%;transform:rotate(-3deg);color:#3678C2}
 .AboutPage-cell--boots-photo{display:block;position:absolute;top:11%;left:8%;width:40%;transform:rotate(-1deg)}
-.AboutPage-cell--boots-paper{display:block;position:absolute;top:10%;left:55%;width:38%;transform:rotate(2deg)}
+.AboutPage-cell--boots-paper{width:38%;top:10%;left:53%;transform:rotate(2deg);background-color:#fff;color:rgba(40,101,143,.97)}
+@media (min-width:1000px){.AboutPage-cell--boots-paper{width:380px;font-size:19px;line-height:30px;padding:60px 30px 30px}
+}
 .AboutPage-cell--bigyellowboot{background-image:url(../media/img/about/yellowboot-background-2.jpg);padding-bottom:70%}
 .AboutPage-cell--bigyellowboot-text{position:absolute;bottom:1.5%;right:1.5%;color:#F9EB30;text-align:right}
 .AboutPage-cell--bigyellowboot-text-header{font-size:5vw;text-shadow:3px 3px 0 #3678C2}
@@ -456,7 +462,7 @@ a:hover{opacity:.95}
 .AboutPage-cell--awards-juno2{display:block;position:absolute;top:31%;left:33%;width:19%;transform:rotate(-3deg);z-index:4}
 .AboutPage-cell--awards-indies{display:block;position:absolute;top:26%;left:49%;width:27%;transform:rotate(4deg);z-index:3}
 .AboutPage-cell--awards-juno3{display:block;position:absolute;top:48%;left:72%;width:21%;transform:rotate(9deg);z-index:4}
-.AboutPage-cell--worldMap{background-color:#5B96C5;background-image:url(../media/img/general/background-blue-med.jpg);padding-bottom:7vw!important}
+.AboutPage-cell--worldMap{background-color:#5B96C5;background-image:url(../media/img/general/background-blue-med.jpg);padding-bottom:6vw!important}
 .AboutPage-cell--worldMap-wrapper{position:relative!important}
 .AboutPage-cell--worldMap-title{display:block;position:relative;top:0;left:50%;width:80%;margin-left:-40%;z-index:20;text-align:center;color:#F9EB30;text-shadow:3px 3px 1px #428ada}
 .AboutPage-cell--worldMap-text{position:relative;font-family:'Coming Soon',cursive;font-size:3.5vw;color:#F9EB30;text-align:center;padding-top:2.7vw}

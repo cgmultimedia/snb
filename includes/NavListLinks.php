@@ -23,6 +23,7 @@
 ?>
 
 <ul>
+    <li></li><?php // First one left blank ?>
     <?php
         for($i=0; $i<count($menu); $i++) {
             $class = "menu_item";

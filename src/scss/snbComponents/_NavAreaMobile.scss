@@ -74,6 +74,11 @@ $NavAreaMobile-mobileBarNavExtraSpace: 10px;//0.5em;
 						vertical-align: middle;
 						text-align: center;
 
+						// First child is an extra space.
+						&:first-child {
+							height: $NavAreaMobile-mobileBarHeight + $NavAreaMobile-mobileBarNavExtraSpace;
+						}
+
 						& span {
 							display: table-cell;
 							text-align: center;

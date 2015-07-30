@@ -3,10 +3,23 @@
 
     global $templateDir;
     $aboutImgDir = $templateDir."/media/img/about/";
+
+    $test = "test";
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post(); 
+            // Post Content here
+            $aboutSplash = get_post_custom_values('about_splash');
+            if (count($aboutSplash) >= 1) $aboutSplash = nl2br($aboutSplash[0]);
+
+            $aboutBoots = get_post_custom_values('about_boots');
+            if (count($aboutBoots) >= 1) $aboutBoots = nl2br($aboutBoots[0]);
+
+        } // end while
+    } // end if
 ?>      
 
 <div class="AboutPage">
-
     <!-- <div class="AboutPage-cell AboutPage-cell- -worldMap">
         <div class="AboutPage-cell-wrapper">
             <div class="AboutPage-cell- -worldMap-title AboutPage-cell-title">
@@ -17,14 +30,22 @@
 
     <div class="AboutPage-cell AboutPage-cell--splash">
         <div class="AboutPage-cell-wrapper">
-            <img class="AboutPage-cell--splash-paper" src="<?php echo $aboutImgDir."splash-paper-high.jpg";?>"/>
+            <!-- <img class="AboutPage-cell--splash-paper" src="<?php echo $aboutImgDir."splash-paper-high.jpg";?>"/>
+            -->
+            <div class="AboutPage-cell--splash-paper">
+                <?php echo $aboutSplash; ?>
+            </div>
             <img class="AboutPage-cell--splash-photo" src="<?php echo $aboutImgDir."splash-photo-high.jpg";?>"/>
             <div class="AboutPage-cell--splash-title AboutPage-cell-title">Meet Splash!</div>
         </div>
     </div>
     <div class="AboutPage-cell AboutPage-cell--boots">
         <div class="AboutPage-cell-wrapper">
-            <img class="AboutPage-cell--boots-paper" src="<?php echo $aboutImgDir."boots-paper-high.jpg";?>"/>
+
+            <div class="AboutPage-cell--boots-paper">
+                <?php echo $aboutBoots; ?>
+            </div>
+            <!-- <img class="AboutPage-cell--boots-paper" src="<?php echo $aboutImgDir."boots-paper-high.jpg";?>"/> -->
             <img class="AboutPage-cell--boots-photo" src="<?php echo $aboutImgDir."boots-photo-high.jpg";?>"/>
             <div class="AboutPage-cell--boots-title AboutPage-cell-title">Meet Boots...</div>
         </div>
@@ -80,7 +101,7 @@
             Map of Wonders!
         </div>
         <div class="AboutPage-cell--worldMap-text">
-            Check out some of the places we've been! 
+            Check out some of the places we've performed! 
         </div>
         
         <div class="AboutPage-cell-wrapper AboutPage-cell--worldMap-wrapper">
